@@ -4,6 +4,7 @@ var mainNav = document.getElementById("main-nav");
 var smallNav = document.getElementById("small-nav");
 
 window.addEventListener("resize", check);
+window.onload = check;
 
 function check() {
     if (window.innerWidth < 1000) {
