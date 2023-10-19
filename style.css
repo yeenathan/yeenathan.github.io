@@ -10,42 +10,21 @@ nav h2 {
     color: white;
 }
 
-#main-nav {
+nav {
     background-color: darkgreen;
     width: 50%;
-    min-width: 800px;
+    min-width: 640px;
     margin:auto;
     margin-bottom: 10px;
     padding: 5px 20px;
-}
-
-#small-nav {
-    display: none;
-    background-color: lightblue;
-    width: 80%;
-    margin:auto;
-    margin-bottom: 10px;
-    padding: 5px 20px;
-}
-
-#small-nav h2 {
-    color: black;
 }
 
 #main {
     margin:auto;
     width: 50%;
-    min-width: 800px;
+    min-width: 640px;
     background-color: rgb(252, 247, 241);
     padding: 5px 20px 20px 20px;
-}
-
-#main-small {
-    display: none;
-    margin:auto;
-    width: 80%;
-    background-color: pink;
-    padding: 5px 20px;
 }
 
 #output {
@@ -63,4 +42,31 @@ button {
 button:hover {
     background-color: pink;
     color: black;
+}
+
+@media only screen and (max-width: 800px) {
+    #main {
+        margin:auto;
+        width: 80%;
+        min-width: 0;
+        background-color: pink;
+        padding: 5px 20px 20px 20px;
+    }
+
+    nav {
+        min-width: 0;
+        background-color: lightblue;
+        width: 80%;
+        margin:auto;
+        margin-bottom: 10px;
+        padding: 5px 20px;
+    }
+
+    nav h2 {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 16pt;
+        margin: 5px 10px;
+        color: black;
+    }
 }
