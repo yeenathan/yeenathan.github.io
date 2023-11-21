@@ -1,72 +1,44 @@
-html {
+body {
     font-family: sans-serif;
 }
 
-nav h2 {
-    display: inline-block;
+.main {
+    display:grid;
+    margin: 16px auto;
+    max-width: 80%;
+}
+
+header {
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+.banner {
+    grid-column: span 12;
+}
+
+.linkbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-start: 2;
+    align-items: center;
+}
+
+.linkbox img {
+    max-height: 64px;
+}
+.linkbox a {
+    text-decoration: 0;
+}
+
+header h1 {
     font-weight: 400;
+    margin: 8px;
+}
+
+header h6 {
     font-size: 16pt;
-    margin: 5px 10px;
-    color: white;
-}
-
-nav {
-    background-color: darkgreen;
-    width: 50%;
-    min-width: 640px;
-    margin:auto;
-    margin-bottom: 10px;
-    padding: 5px 20px;
-}
-
-#main {
-    margin:auto;
-    width: 50%;
-    min-width: 640px;
-    background-color: rgb(252, 247, 241);
-    padding: 5px 20px 20px 20px;
-}
-
-#output {
-    margin-left: 5px;
-    display: inline-block;
-}
-
-button {
-    border: none;
-    padding: 5px 10px 5px 10px;
-    color:white;
-    background-color: darkgreen;
-}
-
-button:hover {
-    background-color: pink;
-    color: black;
-}
-
-@media only screen and (max-width: 800px) {
-    #main {
-        margin:auto;
-        width: 80%;
-        min-width: 0;
-        background-color: pink;
-        padding: 5px 20px 20px 20px;
-    }
-
-    nav {
-        min-width: 0;
-        background-color: lightblue;
-        width: 80%;
-        margin:auto;
-        margin-bottom: 10px;
-        padding: 5px 20px;
-    }
-
-    nav h2 {
-        display: inline-block;
-        font-weight: 400;
-        font-size: 16pt;
-        margin: 5px 10px;
-        color: black;
-    }
+    margin: 8px;
+    font-weight: 100;
 }
