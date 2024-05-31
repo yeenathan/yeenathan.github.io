@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a, img {
     margin: 0;
     color: var(--dark-text)
 }
+.project > .main h1,
+.project > .main h2,
+.project > .main h3 {
+    margin: 1.5rem 0 1rem 0;
+}
 h3, h4, h5, h6 {
     font-weight: 400;
 }
@@ -27,12 +32,22 @@ h3 {
 h4 {
     font-size: 16pt;
 }
-p {
+p, li {
     font-size: 16pt;
 }
 
 header {
     margin-bottom: 3rem;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 3rem;
+}
+footer a {
+    font-weight: 400;
+    font-size: 12pt;
 }
 #header-main {
     display: flex;
@@ -106,7 +121,6 @@ a, a:visited {
     flex-flow: column;
     gap: .5rem;
     width: fit-content;
-    margin-top: 3rem;
 }
 
 .nav-links {
@@ -130,6 +144,11 @@ a, a:visited {
     font-size: 20pt;
 }
 
+#cover-photo {
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
 @media screen and (min-width: 1440px) {
     body {
         width: 1440px;
@@ -141,6 +160,7 @@ a, a:visited {
     .projects-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
 }
 
 @media screen and (max-width: 1439px) and (min-width: 768px) {
