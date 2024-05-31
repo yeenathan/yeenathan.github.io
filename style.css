@@ -32,11 +32,13 @@ p {
 }
 
 header {
+    margin-bottom: 3rem;
+}
+#header-main {
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
 }
 a {
     text-decoration: none;
@@ -48,12 +50,6 @@ a:hover, a:visited:hover {
 }
 a, a:visited {
     color: var(--dark-text);
-}
-header ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 2rem;
 }
 
 .projects-container {
@@ -113,6 +109,27 @@ header ul {
     margin-top: 3rem;
 }
 
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+#burger {
+    display: none;
+    padding: 1rem;
+    width: 32px;
+}
+
+#burger-expand {
+    flex-flow: column;
+    align-items: flex-end;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+#burger-expand a {
+    font-size: 20pt;
+}
+
 @media screen and (min-width: 1440px) {
     body {
         width: 1440px;
@@ -143,10 +160,13 @@ header ul {
         padding: 0 1rem;
     }
     header {
-        padding: 1.5rem 0;
+        padding: 1.5rem 0 0 0;
     }
-    ul.nav-links {
+    .nav-links {
         display: none;
+    }
+    #burger {
+        display:block;
     }
     h1 {
         font-size: 24pt;
