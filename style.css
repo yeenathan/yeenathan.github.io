@@ -153,7 +153,7 @@ a, a:visited {
     gap: 1rem;
 }
 #burger-expand a {
-    font-size: 20pt;
+    font-size: 16pt;
 }
 
 #cover-photo {
@@ -192,8 +192,17 @@ a, a:visited {
     header {
         padding: 2.5rem 0;
     }
+    .nav-links a{
+        font-size: 14pt;
+    }
+    h4 {
+        font-size: 14pt;
+    }
     .projects-container {
         grid-template-columns: 1fr 1fr;
+    }
+    p, li {
+        font-size: 14pt;
     }
 }
 
@@ -218,6 +227,19 @@ a, a:visited {
     }
     h4 {
         font-size: 14pt;
+    }
+    p, li {
+        font-size: 12pt;
+    }
+    #personas-sitemap-toggle {
+        font-size: 16pt;
+    }
+    .success-challenges {
+        flex-flow: column;
+    }
+    .success-challenges > div {
+        width: 100%;
+        margin-bottom: 1rem;
     }
     .projects-container {
         grid-template-columns: 1fr;
