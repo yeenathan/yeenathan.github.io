@@ -264,7 +264,7 @@ a, a:visited {
     h4 {
         font-size: 14pt;
     }
-    p, li {
+    p, li, a {
         font-size: 12pt;
     }
     #personas-sitemap-toggle {
