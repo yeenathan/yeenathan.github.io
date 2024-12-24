@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import Footer from "./components/Footer.js";
 import "./index.css";
 import projects from "./projects.js"
@@ -27,15 +27,26 @@ export default function App() {
         <header className="flex justify-center md:justify-start items-center min-w-full">
           <div className="flex flex-col items-center md:items-start">
             <h1 className="text-3xl md:text-6xl">Nathan Yee</h1>
-            <p className="text-l md:text-2xl">Web Design/Development</p>
-            <p className="text-l md:text-2xl">Graphic Design</p>
+            <p className="text-l md:text-2xl">Web Design/Development & Graphic Design</p>
           </div>
         </header>
+        <div className="flex flex-col items-center gap-1">
+          <p className="text-center">Welcome to my page. I am passionate about web UX/UI development and graphic design.</p>
+          <p>I'm also a foodie and a gamer :P</p>
+        </div>
+        <div className="flex flex-col items-start gap-1 min-w-full">
+          <h3>Get in touch with me:</h3>
+          <div className="flex flex-col pl-8">
+            <Link to={"https://github.com/yeenathan/"} target="_blank">Github</Link>
+            <Link to={"https://www.linkedin.com/in/yeenathan/"} target="_blank">LinkedIn</Link>
+            <p>yeenathan21@gmail.com</p>
+          </div>
+        </div>
         <div className="min-w-full">
           <h2 className="text-2xl md:text-4xl">Projects</h2>
           {myProjects}
         </div>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </div>
   )

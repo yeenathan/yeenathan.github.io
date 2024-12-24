@@ -4,7 +4,7 @@ export default function Footer() {
   return(
     <footer className="flex items-center flex-col md:items-start text-sm min-w-full">
       <Link to={"https://github.com/yeenathan/"} target="_blank">Github</Link>
-      <p>236 688 9827</p>
+      <Link to={"https://www.linkedin.com/in/yeenathan/"} target="_blank">LinkedIn</Link>
       <p>yeenathan21@gmail.com</p>
     </footer>
   )

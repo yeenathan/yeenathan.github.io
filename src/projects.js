@@ -34,7 +34,7 @@ export function Remedify() {
             <img src="/images/remedify/figma.jpg"/>
           </div>
           <h2>Links</h2>
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row md:gap-4">
             <Link to={"https://www.remedify.ca/"} target="_blank">Remedify Landing Page</Link>
             <Link to={"https://remedify-blog.vercel.app/"} target="_blank">Remedify Blog</Link>
             <Link to={"https://github.com/yeenathan/asclepius"} target="_blank">Project Repo</Link>
