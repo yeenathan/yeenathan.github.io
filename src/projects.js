@@ -22,7 +22,7 @@ export default projects;
 
 export function Remedify() {
   return(
-    <div className="bg-neutral-900 text-zinc-100 min-h-screen">
+    <div className="bg-neutral-900 text-zinc-300 min-h-screen">
       <div className="container mx-auto flex p-4 flex-col items-center gap-5">
         <Header/>
         <div className="flex flex-col items-start">
