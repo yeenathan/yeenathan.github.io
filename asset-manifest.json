@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yeenathan/yeenathan.github.io/static/css/main.abd9d1dc.css",
+    "main.js": "/yeenathan/yeenathan.github.io/static/js/main.c5b902c6.js",
+    "index.html": "/yeenathan/yeenathan.github.io/index.html",
+    "main.abd9d1dc.css.map": "/yeenathan/yeenathan.github.io/static/css/main.abd9d1dc.css.map",
+    "main.c5b902c6.js.map": "/yeenathan/yeenathan.github.io/static/js/main.c5b902c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd9d1dc.css",
+    "static/js/main.c5b902c6.js"
+  ]
+}
