@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --DARK-BLUE: rgb(72, 203, 255);
+  --LIGHT-BLUE: rgb(200, 239, 255);
+}
+
 h1, h2 {
-  color: rgb(200, 239, 255);
+  color: var(--LIGHT-BLUE);
   font-weight: 600;
+}
+
+a {
+  color: var(--DARK-BLUE);
+}
+
+a:hover {
+  color: var(--LIGHT-BLUE);
 }
