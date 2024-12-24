@@ -7,7 +7,7 @@
   --LIGHT-BLUE: rgb(200, 239, 255);
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: var(--LIGHT-BLUE);
   font-weight: 600;
 }

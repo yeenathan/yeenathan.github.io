@@ -30,9 +30,8 @@ export default function App() {
             <p className="text-l md:text-2xl">Web Design/Development & Graphic Design</p>
           </div>
         </header>
-        <div className="flex flex-col items-center gap-1">
-          <p className="text-center">Welcome to my page. I am passionate about web UX/UI development and graphic design.</p>
-          <p>I'm also a foodie and a gamer :P</p>
+        <div className="flex justify-center md:justify-start min-w-full">
+          <p className="text-center md:text-left">Hi! I'm a frontend developer and graphic designer based in Vancouver. I am passionate about food and gaming :P</p>
         </div>
         <div className="flex flex-col items-start gap-1 min-w-full">
           <h3>Get in touch with me:</h3>
@@ -46,7 +45,6 @@ export default function App() {
           <h2 className="text-2xl md:text-4xl">Projects</h2>
           {myProjects}
         </div>
-        {/* <Footer/> */}
       </div>
     </div>
   )
