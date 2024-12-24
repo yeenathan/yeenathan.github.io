@@ -107,7 +107,7 @@ export function GraphicDesignComms() {
         <Header/>
         <div className="min-w-full">
           <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design Commissions</h1>
-          <p>A compilation of graphic design work done for friends & clients. I use a combination of Adobe Photoshop, Illustrator, and InDesign.</p>
+          <p>A compilation of graphic design work done for friends & clients.</p>
         </div>
         <div className="flex flex-col min-w-full gap-1 md:gap-2">
           <p className="text-l md:text-xl">For a friend's <Link to={"https://www.youtube.com/watch?v=Gx1JC46uWj4"}>commentary reel</Link></p>
@@ -151,6 +151,35 @@ export function GraphicDesignProjs() {
         <div className="min-w-full">
           <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design</h1>
           <p>A compilation of various academic graphic design projects.</p>
+        </div>
+        <div className="flex flex-col min-w-full gap-1 md:gap-2">
+          <p className="text-l md:text-xl">Various poster designs</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center">
+            <img src="/images/graphic-design-bcit/motfd.png"></img>
+            <img src="/images/graphic-design-bcit/poster.jpg"></img>
+            <img src="/images/graphic-design-bcit/slizzard.jpg"></img>
+          </div>
+        </div>
+        <div className="flex flex-col min-w-full gap-1 md:gap-2">
+          <p className="text-l md:text-xl">A print magazine on the architecture of the Dragon Ball universe. <Link to={"/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0"}>Download</Link> for optimal viewing.</p>
+          <div className="grid grid-cols-2">
+            <img src="/images/graphic-design-bcit/db_Page_06.jpg"></img>
+            <img src="/images/graphic-design-bcit/db_Page_07.jpg"></img>
+          </div>
+          <div className="grid grid-cols-2">
+            <img src="/images/graphic-design-bcit/db_Page_10.jpg"></img>
+            <img src="/images/graphic-design-bcit/db_Page_11.jpg"></img>
+          </div>
+        </div>
+        <div className="flex flex-col min-w-full gap-1 md:gap-2">
+          <p className="text-l md:text-xl">Misc</p>
+          <div className="flex flex-row flex-wrap justify-center gap-1 md:gap-2">
+            <img src="/images/graphic-design-bcit/inclass1.jpg"></img>
+            <img style={{maxWidth: "50%"}} src="/images/graphic-design-bcit/can_Page_3.jpg"></img>
+            <video style={{maxWidth: "40%"}} controls>
+              <source src="/images/graphic-design-bcit/sleep.mp4" type="video/webm"/>
+            </video>
+          </div>
         </div>
         <Footer/>    
       </div>
