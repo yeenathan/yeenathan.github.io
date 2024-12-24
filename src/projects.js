@@ -6,12 +6,14 @@ import "./index.css";
 const projects = [
   {
     name: "Remedify",
-    image: "/images/remedify/cover.jpg"
+    image: "/images/remedify/cover.jpg",
+    route: "/remedify"
   },
-  // {
-  //   name: "Graphic Design",
-  //   image: "/images/remedify.jpg"
-  // },
+  {
+    name: "Graphic Design Commissions",
+    image: "/images/graphic-design/cover.jpg",
+    route: "/graphic-design-commissions"
+  },
   // {
   //   name: "Studius",
   //   image: "/images/remedify.jpg"
@@ -46,6 +48,16 @@ export function Remedify() {
           <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
         </div>
         <Footer/>
+      </div>
+    </div>
+  )
+}
+
+export function GraphicDesignComms() {
+  return(
+    <div className="bg-neutral-900 text-zinc-300 min-h-screen">
+      <div className="container mx-auto flex p-4 flex-col items-center gap-5">
+        wip
       </div>
     </div>
   )

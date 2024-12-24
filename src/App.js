@@ -11,7 +11,7 @@ export default function App() {
       {
         projects.map((project) => {
           return(
-            <div className="flex flex-col items-end hover:opacity-80" style={{cursor: "pointer"}} onClick={() => navigate("/remedify")}>
+            <div className="flex flex-col items-end hover:opacity-80" style={{cursor: "pointer"}} onClick={() => navigate(project.route)}>
               <img className="border-2 border-sky-600" src={project.image}/>
               <h3 className="text-sky-50 text-xl md:text-2xl">{project.name}</h3>
             </div>
