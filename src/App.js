@@ -1,5 +1,4 @@
 import { useNavigate, Link } from "react-router";
-import Footer from "./components/Footer.js";
 import "./index.css";
 import projects from "./projects.js"
 

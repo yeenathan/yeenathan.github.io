@@ -10,14 +10,20 @@ const projects = [
     route: "/remedify"
   },
   {
+    name: "Studius",
+    image: "/images/studius/studius-cover.png",
+    route: "/studius"
+  },
+  {
+    name: "Graphic Design Projects",
+    image: "/images/graphic-design-bcit/cover.jpg",
+    route: "/graphic-design-projects"
+  },
+  {
     name: "Graphic Design Commissions",
     image: "/images/graphic-design/cover.jpg",
     route: "/graphic-design-commissions"
-  },
-  // {
-  //   name: "Studius",
-  //   image: "/images/remedify.jpg"
-  // }
+  }
 ]
 
 export default projects;
@@ -48,6 +54,35 @@ export function Remedify() {
           <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
         </div>
         <Footer/>
+      </div>
+    </div>
+  )
+}
+
+export function Studius() {
+  return(
+    <div className="bg-neutral-900 text-zinc-300 min-h-screen">
+      <div className="container mx-auto flex p-4 flex-col items-center gap-5">
+        <Header/>
+        <div className="flex flex-col items-start min-w-full">
+          <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Studius</h1>
+          <p><span className="italic">studiUs</span> is a study helper app designed for college students. It features a self-assessment quiz to help users find their ideal study method(s), and a study group system that can assist users with finding study buddies. </p>
+          <div className="flex min-w-full justify-center my-2 md:my-4">
+            <img src="/images/studius/studius-cover.png"/>
+          </div>
+          <h2>Links</h2>
+          <div className="flex flex-col md:flex-row md:gap-4">
+            <Link to={"https://studius-app.vercel.app/"} target="_blank">Web App</Link>
+            <Link to={"https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1"} target="_blank">Figma Prototype</Link>
+            <Link to={"https://github.com/jasantiaguel/studius-app"} target="_blank">Project Repo</Link>
+            <Link to={"https://studi-us-style-guide.vercel.app/"} target="_blank">Online Style Guide</Link>
+          </div>
+        </div>
+        <div>
+          <p className="mb-2">Academic project done in teams of 3. We were to ideate, design, test, and develop a mobile-focused web app over the course of several months. Within the team I took a lead role in the development process, while contributing meaningfully to ideas and design. This is a frontend development project, so a number of features were not implemented.</p>
+          <p>From this project I learned a lot about interaction design & theory, and getting used to tools such as Figma and developing in Javascript with the Next.js framework. We originally had very ambitious ideas for our app, and we had to redefine our scope due to our timeline and abilities. As a result we cut out many things that we would have loved to have added.</p>
+        </div>
+        <Footer/>    
       </div>
     </div>
   )
@@ -103,6 +138,21 @@ export function GraphicDesignComms() {
           </div>
         </div>
         <Footer/>
+      </div>
+    </div>
+  )
+}
+
+export function GraphicDesignProjs() {
+  return(
+    <div className="bg-neutral-900 text-zinc-300 min-h-screen">
+      <div className="container mx-auto flex p-4 flex-col items-center gap-5 md:gap-8">
+        <Header/>
+        <div className="min-w-full">
+          <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design</h1>
+          <p>A compilation of various academic graphic design projects.</p>
+        </div>
+        <Footer/>    
       </div>
     </div>
   )
