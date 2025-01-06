@@ -34,7 +34,8 @@ export function Remedify() {
       <div className="container mx-auto flex p-4 flex-col items-center gap-5">
         <Header/>
         <div className="flex flex-col items-start min-w-full">
-          <h1 className="text-3xl md:text-6xl">Remedify</h1>
+          <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Remedify</h1>
+          <p className="italic">"Remedify aims to improve medication adherence while maintaining a low learning curve to prioritize accessibility for users. Users who are prone to polypharmacy and cognitive impairments will have a convenient reminder and easy support system in their life. In addition to our support system at the touch of your fingers, Remedify aims to empower our users by giving them full control over their schedule and medication details."</p>
           <div className="grid grid-cols-2 my-4">
             <img src="/images/remedify/cover.jpg"/>
             <img src="/images/remedify/asclepius.jpg"/>
@@ -49,7 +50,6 @@ export function Remedify() {
           </div>
         </div>
         <div className="min-w-full flex flex-col gap-2">
-          <p className="italic">"Remedify aims to improve medication adherence while maintaining a low learning curve to prioritize accessibility for users. Users who are prone to polypharmacy and cognitive impairments will have a convenient reminder and easy support system in their life. In addition to our support system at the touch of your fingers, Remedify aims to empower our users by giving them full control over their schedule and medication details."</p>
           <p><span className="italic">Remedify</span> was an academic project in which we were tasked with designing and developing an app to assist an underrepresented or disadvantaged community with the use of AI tools. Teams were to organize themselves into multiple sub-teams and simulate a real-world work environment, spanning the whole semester. I was the lead developer of our team, working with two other developers.</p>
           <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
         </div>
