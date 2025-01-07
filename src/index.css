@@ -7,6 +7,12 @@
   --LIGHT-BLUE: rgb(200, 239, 255);
 }
 
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #171717;
+  color: #d4d4d8;
+}
+
 h1, h2, h3 {
   color: var(--LIGHT-BLUE);
   font-weight: 600;
