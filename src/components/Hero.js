@@ -22,7 +22,7 @@ export function Info({small=false}) {
   const size = small ? "min-w-12":"min-w-16";
 
   function handleEmail(e) {
-    navigator.clipboard.writeText("yeenathan21@gmail.com");
+    if (!copied) navigator.clipboard.writeText("yeenathan21@gmail.com");
     setCopied(!copied);
   }
 
