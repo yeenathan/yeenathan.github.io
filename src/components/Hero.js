@@ -7,7 +7,7 @@ export default function Hero({scroll}) {
     <div style={{minHeight: "75vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center">
       <h1 className="text-5xl md:text-6xl">Nathan Yee</h1>
       <p className="text-2xl md:text-2xl">Frontend Developer/Designer</p>
-      <div className="flex mt-0.5 md:mt-1 flex-row justify-between gap-4 md:gap-8">
+      <div className="flex mt-0.5 md:mt-1 flex-col md:flex-row items-center md:gap-8">
         <a href={RESUME_LINK} download={"resume"}>Resume (PDF)</a>
         <Link to={"https://github.com/yeenathan/"} target="_blank">Github</Link>
         <Link to={"https://www.linkedin.com/in/yeenathan/"} target="_blank">LinkedIn</Link>
