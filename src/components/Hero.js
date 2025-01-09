@@ -13,7 +13,7 @@ export default function Hero({scroll}) {
         <Link to={"https://www.linkedin.com/in/yeenathan/"} target="_blank">LinkedIn</Link>
         <p>yeenathan21@gmail.com</p>
       </div>
-      <p className="text-xl my-4 text-center md:text-left">Mission statement, mission statement and mission statement.</p>
+      <p className="text-xl my-4 text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
       <button className="mt-2 md:mt-0 hero-button" onClick={scroll}>View Projects</button>
     </div>
   )
