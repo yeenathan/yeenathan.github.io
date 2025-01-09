@@ -1,9 +1,13 @@
 import { Link } from "react-router";
+import { useState } from "react";
+
+const RESUME_LINK = "https://www.dropbox.com/scl/fi/t48hatvpkncpldqrotkg0/resume2.pdf?rlkey=7ljnvzola3nqgguggjn72gl57&st=bbyxgc24&dl=1";
 
 function Icon({url, src, hover}) {
   return(
-    <Link className="min-w-16" to={url} target="_blank">
+    <Link to={url} target="_blank">
       <img 
+        className="min-w-16"
         src={src}
         onMouseOver={(e) => e.currentTarget.src=hover}
         onMouseOut={(e) => e.currentTarget.src=src}
@@ -13,26 +17,63 @@ function Icon({url, src, hover}) {
 }
 
 function Info() {
+  const [copied, setCopied] = useState(false);
+
+  function handleEmail(e) {
+    navigator.clipboard.writeText("yeenathan21@gmail.com");
+    setCopied(!copied);
+  }
+
   return(
-    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-      <Icon url="https://github.com/yeenathan/" src="/images/icons/gh-black.svg" hover="/images/icons/gh-brightblue.svg"/>
-      <Icon url="https://linkedin.com/in/yeenathan/" src="/images/icons/linkedin-black.svg" hover="/images/icons/linkedin-brightblue.svg"/>
+    <div className="flex flex-col items-center md:flex-row gap-2 md:gap-4">
+      <div className="flex flex-row gap-2 md:gap-4">
+        <a href={RESUME_LINK} download={"resume"}>
+          <img 
+            className="min-w-16"
+            src={"/images/icons/resume-black.svg"}
+            onMouseOver={(e) => e.currentTarget.src="/images/icons/resume-brightblue.svg"}
+            onMouseOut={(e) => e.currentTarget.src="/images/icons/resume-black.svg"}
+          />
+        </a>
+        <Icon url="https://github.com/yeenathan/" src="/images/icons/gh-black.svg" hover="/images/icons/gh-brightblue.svg"/>
+        <Icon url="https://linkedin.com/in/yeenathan/" src="/images/icons/linkedin-black.svg" hover="/images/icons/linkedin-brightblue.svg"/>
+        <button>
+          <img
+            className="min-w-16"
+            src="/images/icons/mail-black.svg"
+            onMouseOver={e => e.currentTarget.src="/images/icons/mail-brightblue.svg"}
+            onMouseOut={e => {
+              if (!copied)
+              e.currentTarget.src="/images/icons/mail-black.svg"
+            }}
+            onClick={handleEmail}
+          />
+        </button>
+      </div>
+      {
+        copied &&
+        <div className="flex flex-col items-center md:items-start">
+          <p style={{color: "#48cbff"}}>yeenathan21@gmail.com</p>
+          <p>Automatically copied to clipboard.</p>
+        </div>
+      }
     </div>
+
   )
 }
 
 export default function Hero({scroll}) { 
   return(
     <div style={{minHeight: "75vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h1 className="text-5xl md:text-6xl">Nathan Yee</h1>
         <p className="text-2xl md:text-2xl">Frontend Developer & Designer</p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col items-center md:items-start gap-4">
         <p className="text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
         <Info/>
       </div>
-      <button className="mt-2 hero-button" onClick={scroll}>View Projects</button>
+      <button className="mt-2 hero-button text-xl px-6 py-4" onClick={scroll}>View Projects</button>
     </div>
   )
 }

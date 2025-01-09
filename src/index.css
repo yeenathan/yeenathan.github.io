@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --DARK-BLUE: rgb(72, 203, 255);
-  --LIGHT-BLUE: rgb(200, 239, 255);
+  --DARK-BLUE: #48cbff;
+  --LIGHT-BLUE: #c8efff;
   --DARK-GREY: #171717;
   --LIGHT-GREY: #d4d4d8;
 }
@@ -33,7 +33,6 @@ a:hover {
 }
 
 .hero-button {
-  padding: .5rem 1rem;
   border: 2px solid var(--LIGHT-BLUE);
   border-radius: .5rem;
 }
