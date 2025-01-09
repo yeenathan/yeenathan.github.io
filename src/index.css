@@ -42,3 +42,9 @@ a:hover {
   background-color: var(--LIGHT-BLUE);
   color: var(--DARK-GREY);
 }
+
+@media screen and (max-width: 768px) {
+  .hero-button {
+    padding: .5rem 3rem;
+  }
+}
