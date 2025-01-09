@@ -5,12 +5,18 @@
 :root {
   --DARK-BLUE: rgb(72, 203, 255);
   --LIGHT-BLUE: rgb(200, 239, 255);
+  --DARK-GREY: #171717;
+  --LIGHT-GREY: #d4d4d8;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #171717;
-  color: #d4d4d8;
+  background-color: var(--DARK-GREY);
+  color: var(--LIGHT-GREY);
 }
 
 h1, h2, h3 {
@@ -24,4 +30,15 @@ a {
 
 a:hover {
   color: var(--LIGHT-BLUE);
+}
+
+.hero-button {
+  padding: .5rem 1rem;
+  border: 1px solid var(--LIGHT-BLUE);
+  border-radius: .5rem;
+}
+
+.hero-button:hover {
+  background-color: var(--LIGHT-BLUE);
+  color: var(--DARK-GREY);
 }
