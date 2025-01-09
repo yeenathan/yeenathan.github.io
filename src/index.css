@@ -34,7 +34,7 @@ a:hover {
 
 .hero-button {
   padding: .5rem 1rem;
-  border: 1px solid var(--LIGHT-BLUE);
+  border: 2px solid var(--LIGHT-BLUE);
   border-radius: .5rem;
 }
 
@@ -42,6 +42,7 @@ a:hover {
   background-color: var(--LIGHT-BLUE);
   color: var(--DARK-GREY);
 }
+
 
 @media screen and (max-width: 768px) {
   .hero-button {
