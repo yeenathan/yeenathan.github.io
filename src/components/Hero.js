@@ -4,7 +4,7 @@ const RESUME_LINK = "https://www.dropbox.com/scl/fi/t48hatvpkncpldqrotkg0/resume
 
 export default function Hero({scroll}) { 
   return(
-    <div style={{height: "80vh"}} className="flex flex-col items-start min-w-full justify-center">
+    <div style={{height: "75vh"}} className="flex flex-col items-start min-w-full justify-center">
       <h1 className="text-4xl md:text-6xl">Nathan Yee</h1>
       <p className="text-xl md:text-2xl">Frontend Developer/Designer</p>
       <div className="flex flex-col mt-0.5 md:mt-1 md:flex-row md:justify-between md:gap-8">

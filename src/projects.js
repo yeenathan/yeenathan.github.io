@@ -30,7 +30,7 @@ export default projects;
 
 export function Remedify() {
   return(
-    <div className="container mx-auto flex p-4 flex-col items-center gap-5">
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <div className="flex flex-col items-start min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Remedify</h1>
@@ -68,7 +68,7 @@ export function Remedify() {
 
 export function Studius() {
   return(
-    <div className="container mx-auto flex p-4 flex-col items-center gap-5">
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <div className="flex flex-col items-start min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Studius</h1>
@@ -107,7 +107,7 @@ export function GraphicDesignComms() {
   ]
 
   return(
-    <div className="container mx-auto flex p-4 flex-col items-center gap-5 md:gap-8">
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <div className="min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design Commissions</h1>
@@ -148,7 +148,7 @@ export function GraphicDesignComms() {
 
 export function GraphicDesignProjs() {
   return(
-    <div className="container mx-auto flex p-4 flex-col items-center gap-5 md:gap-8">
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <div className="min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design</h1>
