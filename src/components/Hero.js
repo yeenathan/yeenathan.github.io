@@ -3,11 +3,12 @@ import { useState } from "react";
 
 const RESUME_LINK = "https://www.dropbox.com/scl/fi/t48hatvpkncpldqrotkg0/resume2.pdf?rlkey=7ljnvzola3nqgguggjn72gl57&st=bbyxgc24&dl=1";
 
-function Icon({url, src, hover}) {
+
+function Icon({url, src, hover, size=null}) {
   return(
     <Link to={url} target="_blank">
       <img 
-        className="min-w-16"
+        className={size}
         src={src}
         onMouseOver={(e) => e.currentTarget.src=hover}
         onMouseOut={(e) => e.currentTarget.src=src}
@@ -16,8 +17,9 @@ function Icon({url, src, hover}) {
   )
 }
 
-function Info() {
+export function Info({small=false}) {
   const [copied, setCopied] = useState(false);
+  const size = small ? "min-w-12":"min-w-16";
 
   function handleEmail(e) {
     navigator.clipboard.writeText("yeenathan21@gmail.com");
@@ -29,17 +31,17 @@ function Info() {
       <div className="flex flex-row gap-2 md:gap-4">
         <a href={RESUME_LINK} download={"resume"}>
           <img 
-            className="min-w-16"
+            className={size}
             src={"/images/icons/resume-black.svg"}
             onMouseOver={(e) => e.currentTarget.src="/images/icons/resume-brightblue.svg"}
             onMouseOut={(e) => e.currentTarget.src="/images/icons/resume-black.svg"}
           />
         </a>
-        <Icon url="https://github.com/yeenathan/" src="/images/icons/gh-black.svg" hover="/images/icons/gh-brightblue.svg"/>
-        <Icon url="https://linkedin.com/in/yeenathan/" src="/images/icons/linkedin-black.svg" hover="/images/icons/linkedin-brightblue.svg"/>
+        <Icon url="https://github.com/yeenathan/" src="/images/icons/gh-black.svg" hover="/images/icons/gh-brightblue.svg" size={size}/>
+        <Icon url="https://linkedin.com/in/yeenathan/" src="/images/icons/linkedin-black.svg" hover="/images/icons/linkedin-brightblue.svg" size={size}/>
         <button>
           <img
-            className="min-w-16"
+            className={size}
             src="/images/icons/mail-black.svg"
             onMouseOver={e => e.currentTarget.src="/images/icons/mail-brightblue.svg"}
             onMouseOut={e => {
