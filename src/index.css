@@ -21,7 +21,7 @@ body {
 
 h1, h2, h3 {
   color: var(--LIGHT-BLUE);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 a {
@@ -38,10 +38,15 @@ a:hover {
 }
 
 .hero-button:hover {
-  background-color: var(--LIGHT-BLUE);
+  border-color: var(--DARK-BLUE);
+  background-color: var(--DARK-BLUE);
   color: var(--DARK-GREY);
 }
 
+.project-cover {
+  border: 2px solid var(--DARK-BLUE);
+  border-radius: .5rem;
+}
 
 @media screen and (max-width: 768px) {
   .hero-button {

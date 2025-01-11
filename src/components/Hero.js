@@ -66,7 +66,7 @@ export function Info({small=false}) {
 
 export default function Hero({scroll}) { 
   return(
-    <div style={{minHeight: "75vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
+    <div style={{minHeight: "70vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
       <div className="flex flex-col items-center md:items-start">
         <h1 className="text-5xl md:text-6xl">Nathan Yee</h1>
         <p className="text-center md:text-left text-xl md:text-2xl">Frontend Developer & Designer</p>
