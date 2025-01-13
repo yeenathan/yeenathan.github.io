@@ -68,8 +68,8 @@ export default function Hero({scroll}) {
   return(
     <div style={{minHeight: "70vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
       <div className="flex flex-col items-center md:items-start">
-        <h1 className="text-5xl md:text-6xl">Nathan Yee</h1>
-        <p className="text-center md:text-left text-xl md:text-2xl">Frontend Developer & Designer</p>
+        <h1 className="text-5xl md:text-8xl">Nathan Yee</h1>
+        <p className="text-center md:text-left text-xl md:text-2xl subhead">Frontend Developer & Designer</p>
       </div>
       <div className="flex flex-col items-center md:items-start gap-4">
         <p className="text-l md:text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>

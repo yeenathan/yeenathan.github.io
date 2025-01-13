@@ -19,6 +19,10 @@ body {
   color: var(--LIGHT-GREY);
 }
 
+.subhead {
+  font-family: "Roboto Slab", serif;
+}
+
 h1, h2, h3 {
   color: var(--LIGHT-BLUE);
   font-weight: 700;
