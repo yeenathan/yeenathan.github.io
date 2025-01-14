@@ -7,22 +7,32 @@ const projects = [
   {
     name: "Remedify",
     image: "/images/remedify/cover.jpg",
-    route: "/remedify"
+    route: "/remedify",
+    type: "dev"
   },
   {
     name: "Studius",
     image: "/images/studius/studius-cover.png",
-    route: "/studius"
+    route: "/studius",
+    type: "dev"
   },
   {
     name: "Graphic Design Projects",
     image: "/images/graphic-design-bcit/cover.jpg",
-    route: "/graphic-design-projects"
+    route: "/graphic-design-projects",
+    type: "gd"
   },
   {
     name: "Graphic Design Commissions",
     image: "/images/graphic-design/cover.jpg",
-    route: "/graphic-design-commissions"
+    route: "/graphic-design-commissions",
+    type: "gd"
+  },
+  {
+    name: "Van-Go",
+    image: "/images/",
+    route: "/",
+    type: "dev"
   }
 ]
 
