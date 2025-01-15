@@ -48,23 +48,15 @@ export default function App() {
 
   const [filter, setFilter] = useState("all");
   const [filterProjects, setFilterProjects] = useState(doFilter(filter));
-  const [visible, setVisible] = useState(false);
   
   useEffect(() => {
     setFilterProjects(doFilter(filter));
   }, [filter])
 
-  window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      setVisible(true);
-    }
-    else setVisible(false);
-  })
-
   return (
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 text-zinc-100">
       <Header/>
-      {visible && <ToTop/>}
+      <ToTop/>
       <Hero scroll={scroll}/>
       <div ref={ref} className="min-w-full flex flex-col gap-2">
         <h2 className="text-2xl md:text-4xl">Projects</h2>

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./index.css";
+import ToTop from "./components/ToTop";
 
 const projects = [
   {
@@ -68,9 +69,10 @@ export function Remedify() {
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
+      <ToTop/>
       <div className="flex flex-col items-start min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Remedify</h1>
-        <p className="italic">"Remedify aims to improve medication adherence while maintaining a low learning curve to prioritize accessibility for users. Users who are prone to polypharmacy and cognitive impairments will have a convenient reminder and easy support system in their life. In addition to our support system at the touch of your fingers, Remedify aims to empower our users by giving them full control over their schedule and medication details."</p>
+        <p className="italic">"Remedify aims to improve medication adherence while maintaining a low learning curve to prioritize accessibility. People who are prone to polypharmacy and cognitive impairments will have a convenient reminder and easy support system in their life. In addition to our support system at the touch of your fingers, Remedify aims to empower our users by giving them full control over their schedule and medication details."</p>
         <div className="grid grid-cols-2 my-4">
           <img src="/images/remedify/cover.jpg"/>
           <img src="/images/remedify/asclepius.jpg"/>
@@ -105,6 +107,7 @@ export function Studius() {
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
+      <ToTop/>
       <div className="flex flex-col items-start min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Studius</h1>
         <p><span className="italic">studiUs</span> is a study helper app designed for college students. It features a self-assessment quiz to help users find their ideal study method(s), and a study group system that can assist users with finding study buddies. </p>
@@ -113,7 +116,7 @@ export function Studius() {
         </div>
         <ProjectDetails
           links={[
-            { url: "https://studius-app.vercel.app/", label: "Web App" },
+            { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
             { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
             { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
             { url: "https://studi-us-style-guide.vercel.app/", label: "Online Style Guide/Case Study" }
@@ -151,6 +154,7 @@ export function GraphicDesignComms() {
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
+      <ToTop/>
       <div className="min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design Commissions</h1>
         <p>A compilation of graphic design work done for friends & clients.</p>
@@ -192,6 +196,7 @@ export function GraphicDesignProjs() {
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
+      <ToTop/>
       <div className="min-w-full">
         <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design</h1>
         <p>A compilation of various academic graphic design projects.</p>
