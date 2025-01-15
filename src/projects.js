@@ -23,20 +23,46 @@ const projects = [
     type: "gd"
   },
   {
+    name: "Van-Go",
+    image: "/images/van-go/cover.jpg",
+    route: "/",
+    type: "dev"
+  },
+  {
     name: "Graphic Design Commissions",
     image: "/images/graphic-design/cover.jpg",
     route: "/graphic-design-commissions",
     type: "gd"
-  },
-  {
-    name: "Van-Go",
-    image: "/images/",
-    route: "/",
-    type: "dev"
   }
 ]
 
 export default projects;
+
+function ProjectDetails({links, tools}) {
+  return(
+    <div className="flex flex-col gap-2 md:gap-3">
+      <h2 className="subhead font-normal text-xl md:text-2xl">Details</h2>
+      { links && 
+        <div className="flex flex-col md:flex-row md:gap-4">
+        {
+          links.map((link, key) => {
+            return <Link to={link.url} target="_blank" key={key}>{link.label}</Link>
+          })
+        }
+      </div>
+      }
+      <h3>Tools used</h3>
+      <ul className="pl-8 list-disc grid grid-cols-2">
+        {
+          tools.map((tool, key) => {
+            return <li key={key}>{tool}</li>
+          })
+        }
+      </ul>
+      
+    </div>
+  )
+}
 
 export function Remedify() {
   return(
@@ -51,25 +77,24 @@ export function Remedify() {
           <img src="/images/remedify/page.jpg"/>
           <img src="/images/remedify/figma.jpg"/>
         </div>
-        <h2 className="mt-2 md:m3-3">Links</h2>
-        <div className="flex flex-col md:flex-row md:gap-4">
-          <Link to={"https://www.remedify.ca/"} target="_blank">Remedify Landing Page</Link>
-          <Link to={"https://remedify-blog.vercel.app/"} target="_blank">Remedify Blog</Link>
-          <Link to={"https://github.com/yeenathan/asclepius"} target="_blank">Project Repo</Link>
-        </div>
+        <ProjectDetails
+          links={[
+            { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
+            { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" },
+            { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" }
+          ]}
+          tools={[
+            "Expo/React Native",
+            "Kitten UI",
+            "Azure cloud functions",
+            "Azure Computer Vision (OCR)",
+            "OpenAI GPT-4o mini"
+          ]}
+        />
       </div>
-      <div className="min-w-full flex flex-col gap-2">
+      <div className="min-w-full flex flex-col gap-2 md:gap-3">
         <p><span className="italic">Remedify</span> was an academic project in which we were tasked with designing and developing an app to assist an underrepresented or disadvantaged community with the use of AI tools. Teams were to organize themselves into multiple sub-teams and simulate a real-world work environment, spanning the whole semester. I was the lead developer of our team, working with two other developers.</p>
         <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
-        <h3 className="mt-2 md:mt-3">Details</h3>
-        <p>Built using</p>
-        <ul className="pl-8 list-disc">
-          <li>Expo/React Native</li>
-          <li>Kitten UI</li>
-          <li>Azure cloud functions</li>
-          <li>Azure Computer Vision (OCR)</li>
-          <li>OpenAI GPT-4o mini</li>
-        </ul>
       </div>
       <Footer/>
     </div>
@@ -86,13 +111,20 @@ export function Studius() {
         <div className="flex min-w-full justify-center my-2 md:my-4">
           <img src="/images/studius/studius-cover.png"/>
         </div>
-        <h2>Links</h2>
-        <div className="flex flex-col md:flex-row md:gap-4">
-          <Link to={"https://studius-app.vercel.app/"} target="_blank">Web App</Link>
-          <Link to={"https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1"} target="_blank">Figma Prototype</Link>
-          <Link to={"https://github.com/jasantiaguel/studius-app"} target="_blank">Project Repo</Link>
-          <Link to={"https://studi-us-style-guide.vercel.app/"} className="underline" target="_blank">Online Style Guide/Case Study</Link>
-        </div>
+        <ProjectDetails
+          links={[
+            { url: "https://studius-app.vercel.app/", label: "Web App" },
+            { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
+            { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
+            { url: "https://studi-us-style-guide.vercel.app/", label: "Online Style Guide/Case Study" }
+          ]}
+          tools={[
+            "Next.js",
+            "Figma",
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ]}
+        />
       </div>
       <div>
         <p className="mb-2">Academic project done in teams of 3. We were to ideate, design, test, and develop a mobile-focused web app over the course of several months. Within the team I took a lead role in the development process, while contributing meaningfully to ideas and design. This is a frontend development project, so a number of features were not implemented.</p>
