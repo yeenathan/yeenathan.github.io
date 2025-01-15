@@ -71,4 +71,7 @@ a:hover {
   .hero-button {
     padding: .5rem 3rem;
   }
+  .totop {
+    right: 2.5rem;
+  }
 }
