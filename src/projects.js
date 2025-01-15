@@ -24,9 +24,9 @@ const projects = [
     type: "gd"
   },
   {
-    name: "Van-Go",
+    name: "VAN-GO",
     image: "/images/van-go/cover.jpg",
-    route: "/",
+    route: "/van-go",
     type: "dev"
   },
   {
@@ -231,6 +231,28 @@ export function GraphicDesignProjs() {
         </div>
       </div>
       <Footer/>    
+    </div>
+  )
+}
+
+export function VanGo() {
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <h1>VAN-GO</h1>
+      <ToTop/>
+      <Footer/>
+    </div>
+  )
+}
+
+export function About() {
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <h1>About</h1>
+      <ToTop/>
+      <Footer/>
     </div>
   )
 }
