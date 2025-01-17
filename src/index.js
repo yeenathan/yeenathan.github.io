@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { HashRouter, Routes, Route } from 'react-router';
 import { Remedify, GraphicDesignComms, GraphicDesignProjs, Studius, VanGo } from './projects';
 import About from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path='/' element={<App />}/>
       <Route path='/remedify' element={<Remedify />}/>
@@ -18,5 +18,5 @@ root.render(
       <Route path='van-go' element={<VanGo />}></Route>
       <Route path='/about' element={<About />}/>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
