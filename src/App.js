@@ -9,10 +9,6 @@ import ToTop from "./components/ToTop.js";
 export default function App() {
   const navigate = useNavigate();
   const ref = useRef(null);
-
-  function scroll() {
-    ref.current.scrollIntoView();
-  }
   
   function MyProjects ({projects}) {
     return(
@@ -57,7 +53,7 @@ export default function App() {
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 text-zinc-100">
       <Header/>
       <ToTop/>
-      <Hero scroll={scroll}/>
+      <Hero projectRef={ref}/>
       <div ref={ref} className="min-w-full flex flex-col gap-2">
         <h2 className="text-2xl md:text-4xl">Projects</h2>
         <div className="flex flex-row gap-4">

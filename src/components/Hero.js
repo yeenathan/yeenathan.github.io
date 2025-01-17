@@ -64,7 +64,10 @@ export function Info({small=false}) {
   )
 }
 
-export default function Hero({scroll}) { 
+export default function Hero({projectRef}) { 
+  function handleClick() {
+    projectRef.current.scrollIntoView();
+  }
   return(
     <div style={{minHeight: "70vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
       <div className="flex flex-col items-center md:items-start">
@@ -75,7 +78,7 @@ export default function Hero({scroll}) {
         <p className="text-l md:text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
         <Info/>
       </div>
-      <button className="mt-2 hero-button text-xl px-6 py-4" onClick={scroll}>View Projects</button>
+      <button className="mt-2 hero-button text-xl px-6 py-4" onClick={handleClick}>View Projects</button>
     </div>
   )
 }
