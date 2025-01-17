@@ -21,6 +21,8 @@ body {
 
 .subhead {
   font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 h1, h2, h3 {

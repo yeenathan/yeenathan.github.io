@@ -55,7 +55,7 @@ export default function App() {
       <ToTop/>
       <Hero projectRef={ref}/>
       <div ref={ref} className="min-w-full flex flex-col gap-2">
-        <h2 className="text-2xl md:text-4xl">Projects</h2>
+        <h3 className="text-2xl md:text-4xl">Projects</h3>
         <div className="flex flex-row gap-4">
           <Filter label="All" category="all"/>
           <Filter label="Development" category="dev"/>
