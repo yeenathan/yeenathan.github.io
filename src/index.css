@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --DARK-BLUE: #48cbff;
+  --DARK-BLUE: #547c99;
+  --BRIGHT-BLUE: #48cbff;
   --LIGHT-BLUE: #c8efff;
   --DARK-GREY: #171717;
   --LIGHT-GREY: #d4d4d8;
@@ -31,7 +32,7 @@ h1, h2, h3 {
 }
 
 a {
-  color: var(--DARK-BLUE);
+  color: var(--BRIGHT-BLUE);
 }
 
 a:hover {
@@ -44,8 +45,8 @@ a:hover {
 }
 
 .hero-button:hover {
-  border-color: var(--DARK-BLUE);
-  background-color: var(--DARK-BLUE);
+  border-color: var(--BRIGHT-BLUE);
+  background-color: var(--BRIGHT-BLUE);
   color: var(--DARK-GREY);
 }
 
@@ -66,7 +67,7 @@ a:hover {
 }
 
 .totop:hover {
-  background-color: var(--DARK-BLUE);
+  background-color: var(--BRIGHT-BLUE);
 }
 
 @media screen and (max-width: 768px) {
