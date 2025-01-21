@@ -19,7 +19,7 @@ function Icon({url, src, hover, size=null}) {
 
 export function Info({small=false}) {
   const [copied, setCopied] = useState(false);
-  const size = small ? "min-w-12":"min-w-16";
+  const size = "w-12";
 
   function handleEmail(e) {
     if (!copied) navigator.clipboard.writeText("yeenathan21@gmail.com");
@@ -28,7 +28,7 @@ export function Info({small=false}) {
 
   return(
     <div className="flex flex-col items-center md:flex-row gap-2 md:gap-4">
-      <div className="flex flex-row gap-2 md:gap-4">
+      <div className="flex flex-row gap-2">
         <a href={RESUME_LINK} download={"resume"}>
           <img 
             className={size}
