@@ -72,6 +72,9 @@ export function Remedify() {
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
         <p><span className="italic">Remedify</span> was an academic project in which we were tasked with designing and developing an app to assist an underrepresented or disadvantaged community with the use of AI tools. Teams were to organize themselves into multiple sub-teams and simulate a real-world work environment, spanning the whole semester. I was the lead developer of our team, working with two other developers.</p>
         <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
+        <h2 className="case-header">Process</h2>
+        <img src="/images/remedify/figma.jpg"/>
+        <p>WIP</p>
       </div>
       <Footer/>
     </div>
