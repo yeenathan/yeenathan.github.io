@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./index.css";
 import ToTop from "./components/ToTop";
+import ProjectHero from "./components/ProjectHero";
+import ProjectDetails from "./components/ProjectDetails";
 
 const projects = [
   {
@@ -18,9 +20,15 @@ const projects = [
     type: "dev"
   },
   {
+    name: "Dragon Ball: Architecture & Wonders",
+    image: "/images/db-mag/cover.jpg",
+    route: "/db-mag",
+    type: "gd"
+  },
+  {
     name: "Graphic Design Projects",
-    image: "/images/graphic-design-bcit/cover.jpg",
-    route: "/graphic-design-projects",
+    image: "/images/designs/cover.jpg",
+    route: "/designs",
     type: "gd"
   },
   {
@@ -38,32 +46,6 @@ const projects = [
 ]
 
 export default projects;
-
-function ProjectDetails({links, tools}) {
-  return(
-    <div className="flex flex-col gap-2 md:gap-3">
-      <h2 className="subhead font-normal text-xl md:text-2xl">Details</h2>
-      { links && 
-        <div className="flex flex-col md:flex-row md:gap-4">
-        {
-          links.map((link, key) => {
-            return <Link to={link.url} target="_blank" key={key}>{link.label}</Link>
-          })
-        }
-      </div>
-      }
-      <h3>Tools used</h3>
-      <ul className="pl-8 list-disc grid grid-cols-2">
-        {
-          tools.map((tool, key) => {
-            return <li key={key}>{tool}</li>
-          })
-        }
-      </ul>
-      
-    </div>
-  )
-}
 
 export function Remedify() {
   return(
@@ -193,40 +175,27 @@ export function GraphicDesignComms() {
 }
 
 export function GraphicDesignProjs() {
+  const content = <p className="text-l md:text-xl">A compilation of various individual graphic design projects.</p>
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
-      <div className="min-w-full">
-        <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design</h1>
-        <p>A compilation of various academic graphic design projects.</p>
-      </div>
+      <ProjectHero coverPath={"/images/designs/cover.jpg"} content={content} title="Graphic Design Projects"/>
+      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]}/>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">Various poster designs</p>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center">
-          <img src="/images/graphic-design-bcit/motfd.png"></img>
-          <img src="/images/graphic-design-bcit/poster.jpg"></img>
-          <img src="/images/graphic-design-bcit/slizzard.jpg"></img>
+          <img src="/images/designs/motfd.png"></img>
+          <img src="/images/designs/poster.jpg"></img>
+          <img src="/images/designs/slizzard.jpg"></img>
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">A print magazine on the architecture of the Dragon Ball universe. <Link to={"/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0"}>Download</Link> for optimal viewing.</p>
-        <div className="grid grid-cols-2">
-          <img src="/images/graphic-design-bcit/db_Page_06.jpg"></img>
-          <img src="/images/graphic-design-bcit/db_Page_07.jpg"></img>
-        </div>
-        <div className="grid grid-cols-2">
-          <img src="/images/graphic-design-bcit/db_Page_10.jpg"></img>
-          <img src="/images/graphic-design-bcit/db_Page_11.jpg"></img>
-        </div>
-      </div>
-      <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">Misc</p>
         <div className="flex flex-row flex-wrap justify-center gap-1 md:gap-2">
-          <img src="/images/graphic-design-bcit/inclass1.jpg"></img>
-          <img style={{maxWidth: "50%"}} src="/images/graphic-design-bcit/can_Page_3.jpg"></img>
+          <img src="/images/designs/inclass1.jpg"></img>
+          <img style={{maxWidth: "50%"}} src="/images/designs/can_Page_3.jpg"></img>
           <video style={{maxWidth: "40%"}} controls>
-            <source src="/images/graphic-design-bcit/sleep.mp4" type="video/webm"/>
+            <source src="/images/designs/sleep.mp4" type="video/webm"/>
           </video>
         </div>
       </div>
@@ -241,6 +210,31 @@ export function VanGo() {
       <Header/>
       <h1>VAN-GO</h1>
       <ToTop/>
+      <Footer/>
+    </div>
+  )
+}
+
+export function Magazine() {
+  const content = <p className="text-l md:text-xl">A print magazine on the architecture of the Dragon Ball universe. <Link to={"/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0"}>Download</Link> to view full print.</p>
+  const coverPath = "/images/db-mag/cover.jpg";
+  const title = "Dragon Ball: Architecture & Wonders";
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <ToTop/>
+      <ProjectHero coverPath={coverPath} content={content} title={title} />
+      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]} />
+      <div className="flex flex-col min-w-full gap-1 md:gap-2">
+        <div className="grid grid-cols-2">
+          <img src="/images/designs/db_Page_06.jpg"></img>
+          <img src="/images/designs/db_Page_07.jpg"></img>
+        </div>
+        <div className="grid grid-cols-2">
+          <img src="/images/designs/db_Page_10.jpg"></img>
+          <img src="/images/designs/db_Page_11.jpg"></img>
+        </div>
+      </div>
       <Footer/>
     </div>
   )

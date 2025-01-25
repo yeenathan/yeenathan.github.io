@@ -42,7 +42,7 @@ export default function App() {
     })
   }
 
-  const [filter, setFilter] = useState("dev");
+  const [filter, setFilter] = useState("all");
   const [filterProjects, setFilterProjects] = useState(doFilter(filter));
   
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function App() {
   }, [filter])
 
   return (
-    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 text-zinc-100">
+    <div className="container mx-auto flex px-4 pt-8 pb-16 flex-col items-center gap-5 text-zinc-100">
       <Header/>
       <ToTop/>
       <Hero projectRef={ref}/>

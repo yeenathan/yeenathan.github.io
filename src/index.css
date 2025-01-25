@@ -58,7 +58,7 @@ a:hover {
 .totop {
   position: fixed;
   bottom: 0;
-  right: 5rem;
+  right: 10%;
   padding: 1rem 2rem;
   background-color: var(--LIGHT-BLUE);
   z-index: 1;
@@ -68,6 +68,10 @@ a:hover {
 
 .totop:hover {
   background-color: var(--BRIGHT-BLUE);
+}
+
+.header-blue {
+  color: var(--LIGHT-BLUE);
 }
 
 @media screen and (max-width: 768px) {
