@@ -31,12 +31,12 @@ const projects = [
     route: "/designs",
     type: "gd"
   },
-  {
-    name: "VAN-GO",
-    image: "/images/van-go/cover.jpg",
-    route: "/van-go",
-    type: "dev"
-  },
+  // {
+  //   name: "VAN-GO",
+  //   image: "/images/van-go/cover.jpg",
+  //   route: "/van-go",
+  //   type: "dev"
+  // },
   {
     name: "Graphic Design Commissions",
     image: "/images/graphic-design/cover.jpg",
@@ -48,20 +48,14 @@ const projects = [
 export default projects;
 
 export function Remedify() {
+  const content=<p className="text-l md:text-xl">Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance.</p>
+  
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
-      <div className="flex flex-col items-start min-w-full">
-        <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Remedify</h1>
-        <p className="italic">"Remedify aims to improve medication adherence while maintaining a low learning curve to prioritize accessibility. People who are prone to polypharmacy and cognitive impairments will have a convenient reminder and easy support system in their life. In addition to our support system at the touch of your fingers, Remedify aims to empower our users by giving them full control over their schedule and medication details."</p>
-        <div className="grid grid-cols-2 my-4">
-          <img src="/images/remedify/cover.jpg"/>
-          <img src="/images/remedify/asclepius.jpg"/>
-          <img src="/images/remedify/page.jpg"/>
-          <img src="/images/remedify/figma.jpg"/>
-        </div>
-        <ProjectDetails
+      <ProjectHero title={"Remedify"} coverPath={"/images/remedify/cover.jpg"} content={content}/>
+      <ProjectDetails
           links={[
             { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
             { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" },
@@ -75,8 +69,7 @@ export function Remedify() {
             "OpenAI GPT-4o mini"
           ]}
         />
-      </div>
-      <div className="min-w-full flex flex-col gap-2 md:gap-3">
+      <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
         <p><span className="italic">Remedify</span> was an academic project in which we were tasked with designing and developing an app to assist an underrepresented or disadvantaged community with the use of AI tools. Teams were to organize themselves into multiple sub-teams and simulate a real-world work environment, spanning the whole semester. I was the lead developer of our team, working with two other developers.</p>
         <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
       </div>
@@ -111,8 +104,8 @@ export function Studius() {
           ]}
         />
       </div>
-      <div>
-        <p className="mb-2">Academic project done in teams of 3. We were to ideate, design, test, and develop a mobile-focused web app over the course of several months. Within the team I took a lead role in the development process, while contributing meaningfully to ideas and design. This is a frontend development project, so a number of features were not implemented.</p>
+      <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
+        <p>Academic project done in teams of 3. We were to ideate, design, test, and develop a mobile-focused web app over the course of several months. Within the team I took a lead role in the development process, while contributing meaningfully to ideas and design. This is a frontend development project, so a number of features were not implemented.</p>
         <p>From this project I learned a lot about interaction design & theory, and getting used to tools such as Figma and developing in Javascript with the Next.js framework. We originally had very ambitious ideas for our app, and we had to redefine our scope due to our timeline and abilities. As a result we cut out many things that we would have loved to have added.</p>
       </div>
       <Footer/>    
