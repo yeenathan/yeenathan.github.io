@@ -31,18 +31,18 @@ const projects = [
     route: "/designs",
     type: "gd"
   },
-  // {
-  //   name: "VAN-GO",
-  //   image: "/images/van-go/cover.jpg",
-  //   route: "/van-go",
-  //   type: "dev"
-  // },
   {
     name: "Graphic Design Commissions",
     image: "/images/graphic-design/cover.jpg",
     route: "/graphic-design-commissions",
     type: "gd"
-  }
+  },
+  {
+    name: "VAN-GO!",
+    image: "/images/van-go/cover.jpg",
+    route: "/van-go",
+    type: "dev"
+  },
 ]
 
 export default projects;
@@ -198,11 +198,18 @@ export function GraphicDesignProjs() {
 }
 
 export function VanGo() {
+  const content = <p className="text-l md:text-xl">VAN-GO! is a simple web-based game where players have to guess Vancouver locations on a map based on given images.</p>
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
-      <h1>VAN-GO</h1>
       <ToTop/>
+      <ProjectHero title={"VAN-GO!"} content={content} coverPath={"/images/van-go/cover.jpg"}/>
+      <ProjectDetails links={[
+        {url: "https://comp3170-van-go.vercel.app/", label: "VAN-GO! Game"}
+      ]}
+        tools={["React.js"]}
+      />
       <Footer/>
     </div>
   )
