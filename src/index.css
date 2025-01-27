@@ -42,6 +42,7 @@ a:hover {
 .hero-button {
   border: 2px solid var(--LIGHT-BLUE);
   border-radius: .5rem;
+  transition: 0.2s;
 }
 
 .hero-button:hover {
@@ -51,8 +52,14 @@ a:hover {
 }
 
 .project-cover {
-  border: 2px solid var(--DARK-BLUE);
+  /* border: 2px solid var(--DARK-BLUE); */
   border-radius: .5rem;
+  transition: 0.3s;
+}
+
+.project-cover:hover {
+  border: 4px solid var(--BRIGHT-BLUE);
+  scale: 102%;
 }
 
 .totop {
@@ -64,6 +71,7 @@ a:hover {
   z-index: 1;
   color: var(--DARK-GREY);
   border-radius: .5rem .5rem 0 0;
+  transition: 0.2s;
 }
 
 .totop:hover {

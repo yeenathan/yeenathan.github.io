@@ -17,7 +17,7 @@ export default function App() {
           projects.map((project) => {
             return(
               <div className="flex flex-col items-end" style={{cursor: "pointer"}} onClick={() => navigate(project.route)}>
-                <img className="project-cover hover:opacity-80" src={project.image}/>
+                <img className="project-cover" src={project.image}/>
                 <h4 className="text-sky-50 text-xl md:text-2xl subhead mt-1.5">{project.name}</h4>
               </div>
             )
@@ -29,7 +29,7 @@ export default function App() {
 
   function Filter({label, category}) {
     return(
-      <button style={filter===category?{color:"#48cbff"}:null} className="text-xl" onClick={() => setFilter(category)}>
+      <button style={filter===category?{color:"#48cbff"}:null} className="text-xl transition hover:scale-105" onClick={() => setFilter(category)}>
         {label}
       </button>
     )
