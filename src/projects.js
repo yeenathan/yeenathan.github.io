@@ -199,16 +199,17 @@ export function GraphicDesignProjs() {
 }
 
 export function VanGo() {
-  const content = "VAN-GO! is a simple web-based game where players have to guess Vancouver locations on a map based on given images."
+  const content = "VAN-GO! is a simple web-based game where players guess Vancouver locations on a map based on given images."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
       <ProjectHero title={"VAN-GO!"} content={content} coverPath={"/images/van-go/cover.jpg"}/>
       <ProjectDetails links={[
-        {url: "https://comp3170-van-go.vercel.app/", label: "VAN-GO! Game"}
+        {url: "https://comp3170-van-go.vercel.app/", label: "VAN-GO! Game"},
+        {url: "https://github.com/jasantiaguel/comp3170-final-proj", label: "Github Repo"}
       ]}
-        tools={["React.js"]}
+        tools={["React.js", "Leaflet API"]}
       />
       <Footer/>
     </div>
