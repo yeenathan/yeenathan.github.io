@@ -67,7 +67,7 @@ a:hover {
   bottom: 0;
   right: 10%;
   padding: 1rem 2rem;
-  background-color: var(--LIGHT-BLUE);
+  background-color: #c8efffd9;
   z-index: 1;
   color: var(--DARK-GREY);
   border-radius: .5rem .5rem 0 0;
