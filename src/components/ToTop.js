@@ -11,7 +11,7 @@ export default function ToTop() {
   
   return(
     visible &&
-    <button className="totop text-xl" onClick={() => window.scrollTo(0, 0)}>
+    <button className="totop text-l md:text-xl" onClick={() => window.scrollTo(0, 0)}>
       Scroll to top
     </button>
   )

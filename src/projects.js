@@ -48,8 +48,7 @@ const projects = [
 export default projects;
 
 export function Remedify() {
-  const content=<p className="text-l md:text-xl">Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance.</p>
-  
+  const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
@@ -171,8 +170,7 @@ export function GraphicDesignComms() {
 }
 
 export function GraphicDesignProjs() {
-  const content = <p className="text-l md:text-xl">A compilation of various individual graphic design projects.</p>
-
+  const content = "A compilation of various individual graphic design projects."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
@@ -180,14 +178,14 @@ export function GraphicDesignProjs() {
       <ProjectHero coverPath={"/images/designs/cover.jpg"} content={content} title="Graphic Design Projects"/>
       <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]}/>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-2 md:gap-4">
           <img src="/images/designs/motfd.png"></img>
           <img src="/images/designs/poster.jpg"></img>
           <img src="/images/designs/slizzard.jpg"></img>
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <div className="flex flex-row flex-wrap justify-center gap-1 md:gap-2">
+        <div className="flex flex-row flex-wrap justify-center gap-2 md:gap-4">
           <img src="/images/designs/inclass1.jpg"></img>
           <img style={{maxWidth: "50%"}} src="/images/designs/can_Page_3.jpg"></img>
           <video style={{maxWidth: "40%"}} controls>
@@ -201,8 +199,7 @@ export function GraphicDesignProjs() {
 }
 
 export function VanGo() {
-  const content = <p className="text-l md:text-xl">VAN-GO! is a simple web-based game where players guess Vancouver locations on a map based on given images.</p>
-
+  const content = "VAN-GO! is a simple web-based game where players guess Vancouver locations on a map based on given images."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
@@ -220,7 +217,7 @@ export function VanGo() {
 }
 
 export function Magazine() {
-  const content = <p className="text-l md:text-xl">A print magazine on the architecture of the Dragon Ball universe. <Link to={"/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0"}>Download</Link> to view full print.</p>
+  const content = "A print magazine on the architecture of the Dragon Ball universe"
   const coverPath = "/images/db-mag/cover.jpg";
   const title = "Dragon Ball: Architecture & Wonders";
   return(
@@ -228,7 +225,7 @@ export function Magazine() {
       <Header/>
       <ToTop/>
       <ProjectHero coverPath={coverPath} content={content} title={title} />
-      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]} />
+      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]} links={[{url: "/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0", label: "Download print PDF"}]}/>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <div className="grid grid-cols-2">
           <img src="/images/designs/db_Page_06.jpg"></img>
