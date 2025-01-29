@@ -5,6 +5,7 @@ import "./index.css";
 import ToTop from "./components/ToTop";
 import ProjectHero from "./components/ProjectHero";
 import ProjectDetails from "./components/ProjectDetails";
+import Code from "./components/Code";
 
 const projects = [
   {
@@ -48,6 +49,84 @@ const projects = [
 export default projects;
 
 export function Remedify() {
+  const uploadCode = `const _url = await fetch("https://remedify-ocr.azurewebsites.net/api/generateSASUrl?", {
+      method:"POST",
+      body:JSON.stringify({
+        imgname:"myimg.jpg"
+      })
+    });
+    const _txt = await _url.text(); //sas url
+    
+    //first get SAS url for putting a blob in there
+    const _b64resp = await fetch(data);
+    const _blob = await _b64resp.blob();
+
+    const _resp = await fetch(_txt, {
+      method:"PUT",
+      body:_blob,
+      headers:{
+        "x-ms-blob-type":"BlockBlob"
+      }
+    })
+
+    const _ocr = await fetch("https://remedify-ocr.azurewebsites.net/api/doOCR?", {
+      method:"POST",
+      body:JSON.stringify({
+        imgname:"myimg.jpg"
+      })
+    });
+    
+    const _result = await _ocr.json();`
+  const generateSASUrl = `app.http('generateSASUrl', {
+    methods: ['GET', 'POST'],
+    authLevel: 'anonymous',
+    handler: async (request, context) => {
+
+        const json = await request.json();
+
+        const blobClient = containerClient.getBlockBlobClient(json.imgname);
+        var url = await blobClient.generateSasUrl({
+            permissions: BlobSASPermissions.parse('wc'), // write and create
+            startsOn: new Date(),
+            expiresOn: new Date(new Date().valueOf() + 5 * 60 * 1000), // 5 minutes
+            protocol: SASProtocol.HttpsAndHttp, // Optional
+            contentType: "image/*"
+        });
+        return { body: url };
+    }
+});`
+  const doOCR = `app.http('doOCR', {
+    methods: ['GET', 'POST'],
+    authLevel: 'anonymous',
+    handler: async (request, context) => {
+
+        const json = await request.json();
+
+        const blobClient = containerClient.getBlockBlobClient(json.imgname);
+        var url = await blobClient.generateSasUrl({
+            permissions: BlobSASPermissions.parse('r'), // write and create
+            startsOn: new Date(),
+            expiresOn: new Date(new Date().valueOf() + 5 * 60 * 1000), // 5 minutes
+            protocol: SASProtocol.HttpsAndHttp, // Optional
+        });
+
+        //ocr with the url
+        const client = computerVisionClient;
+        const imgURL = url;
+
+        let result = await client.read(imgURL);
+        let operation = result.operationLocation.split('/').slice(-1)[0];
+
+        while (result.status !== "succeeded") {
+            await sleep(1000);
+            result = await client.getReadResult(operation);
+        }
+
+        return {jsonBody: result};
+
+        // return { body: url };
+    }
+});`
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
@@ -74,6 +153,11 @@ export function Remedify() {
         <h2 className="case-header">Process</h2>
         <img src="/images/remedify/figma.jpg"/>
         <p>WIP</p>
+        <h2 className="case-header">Azure AI Vision OCR & Blob Storage</h2>
+        <p></p>
+        <Code text={generateSASUrl} title={"generateSASUrl"} />
+        <Code text={doOCR} title={"doOCR"} />
+        <Code text={uploadCode} title={"Calling the cloud functions"} />
       </div>
       <Footer/>
     </div>
