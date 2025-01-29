@@ -40,6 +40,12 @@ const projects = [
     type: "gd"
   },
   {
+    name: "Currency Converter",
+    image: "/images/currency-converter/cover.jpg",
+    route: "/currency-converter",
+    type: "dev"
+  },
+  {
     name: "VAN-GO!",
     image: "/images/van-go/cover.jpg",
     route: "/van-go",
@@ -434,6 +440,29 @@ export function GraphicDesignProjs() {
         </div>
       </div>
       <Footer/>    
+    </div>
+  )
+}
+
+export function CurrencyConverter() {
+  const content = "Simple currency converter web page using vanilla HTML, CSS, and Javascript";
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <ToTop/>
+      <ProjectHero title={"Currency Converter"} content={content} coverPath={"/images/currency-converter/cover.jpg"}/>
+      <ProjectDetails
+        links={[
+          { url: "https://github.com/yeenathan/currency-converter/", label: "Project Repo"}
+        ]}
+        tools={[
+          "HTML",
+          "CSS",
+          "Javascript",
+          "Frankfurter API"
+        ]}
+      />
+      <Footer/>
     </div>
   )
 }
