@@ -316,30 +316,33 @@ export function Studius() {
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
-      <div className="flex flex-col items-start min-w-full">
-        <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Studius</h1>
-        <p><span className="italic">studiUs</span> is a study helper app designed for college students. It features a self-assessment quiz to help users find their ideal study method(s), and a study group system that can assist users with finding study buddies. </p>
-        <div className="flex min-w-full justify-center my-2 md:my-4">
-          <img src="/images/studius/studius-cover.png"/>
+      <ProjectHero content={"Studius is a study helper app designed for students to both learn about their study habits and find others to study with."} coverPath={"/images/studius/studius-cover.png"} title={"Studius"}/>
+      <ProjectDetails
+        links={[
+          { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
+          { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
+          { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
+          { url: "https://studi-us-style-guide.vercel.app/", label: "Online Style Guide/Case Study" }
+        ]}
+        tools={[
+          "Next.js",
+          "Figma",
+          "Adobe Photoshop",
+          "Adobe Illustrator"
+        ]}
+      />
+      <div className="min-w-full">
+        <div className="mb-2">
+          <p className="font-bold">Takeaways</p>
         </div>
-        <ProjectDetails
-          links={[
-            { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
-            { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
-            { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
-            { url: "https://studi-us-style-guide.vercel.app/", label: "Online Style Guide/Case Study" }
-          ]}
-          tools={[
-            "Next.js",
-            "Figma",
-            "Adobe Photoshop",
-            "Adobe Illustrator"
-          ]}
-        />
+        <ul className="pl-8 list-disc grid grid-cols-1 md:grid-cols-2">
+          <li>Interface design & development</li>
+          <li>UX design</li>
+          <li>Team collaboration</li>
+        </ul>
       </div>
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
-        <p>Academic project done in teams of 3. We were to ideate, design, test, and develop a mobile-focused web app over the course of several months. Within the team I took a lead role in the development process, while contributing meaningfully to ideas and design. This is a frontend development project, so a number of features were not implemented.</p>
-        <p>From this project I learned a lot about interaction design & theory, and getting used to tools such as Figma and developing in Javascript with the Next.js framework. We originally had very ambitious ideas for our app, and we had to redefine our scope due to our timeline and abilities. As a result we cut out many things that we would have loved to have added.</p>
+        <p>Studius is a team project where we were to ideate, research, design and develop interfaces for an application idea.</p>
       </div>
       <Footer/>    
     </div>

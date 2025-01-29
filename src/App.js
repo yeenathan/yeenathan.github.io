@@ -42,7 +42,7 @@ export default function App() {
     })
   }
 
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("dev");
   const [filterProjects, setFilterProjects] = useState(doFilter(filter));
   
   useEffect(() => {
