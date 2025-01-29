@@ -6,6 +6,7 @@ import ToTop from "./components/ToTop";
 import ProjectHero from "./components/ProjectHero";
 import ProjectDetails from "./components/ProjectDetails";
 import Code from "./components/Code";
+import { useRef } from "react";
 
 const projects = [
   {
@@ -193,6 +194,10 @@ export function Remedify() {
     const _ingredientInfo = await fetch(\`https://health-products.canada.ca/api/drug/activeingredient/?id=\${_drugProduct.id}\`).then(resp => resp.json());
     return {ingredient: _ingredientInfo[0].ingredient_name, name: _drugProduct.name};
   }`
+
+  const azure = useRef();
+  const openai = useRef();
+
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
@@ -231,10 +236,19 @@ export function Remedify() {
         <p>Only about 50% of prescribed medications are taken as directed by patients with chronic illnesses. Research identifies two key reasons: misunderstanding of medication instructions and forgetfulness.</p>
         <p>Remedify is an AI-powered medication reminder app that bridges the gap in adherence, making health management easier and more efficient. Going beyond the capabilities of a standard pillbox, Remedify is designed for individuals facing cognitive challenges or managing multiple medications, where the risk of misdosing is high. With a strong focus on accessibility and adherence, the app offers a reminder and a comprehensive medication library to support users in staying on track with their health.</p>
         <h2 className="case-header">Key Features</h2>
+        <div className="flex flex-row justify-between items-center">
+          <p className="font-bold">Automated scanning</p>
+          <a style={{cursor: "pointer"}} onClick={() => azure.current.scrollIntoView()}>Scroll to details</a>
+        </div>
         <img src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
-        <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy</p>
+        <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy.</p>
+        
+        <div className="flex flex-row justify-between items-center">
+          <p className="font-bold">Providing Information and Generated Insights</p>
+          <a style={{cursor: "pointer"}} onClick={() => openai.current.scrollIntoView()}>Scroll to details</a>
+        </div>
         <img src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
-        <p>AI generated insights and additional information based on information fetched from DPD API</p>
+        <p>AI generated insights and additional information based on information fetched from DPD API.</p>
         <h2 className="case-header">Research & Validation</h2>
         <p>A survey and numerous interviews were conducted by members of the team to refine and validate the app's ideas and to help craft the user personas.</p>
         <p className="font-bold">Primary persona: Elderly person</p>
@@ -251,13 +265,13 @@ export function Remedify() {
 
         <h2 className="case-header">Development</h2>
         <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features, described below.</p>
-        <h2 className="case-header">Azure AI Vision OCR & Blob Storage</h2>
+        <h2 className="case-header" ref={azure}>Automated Scanning: Azure AI Vision OCR & Blob Storage</h2>
         <p>The automatic scanning feature starts with Azure AI Vision OCR, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
         <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
         <Code text={doOCR} title={"doOCR (cloud function)"} />
         <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
 
-        <h2 className="case-header">OpenAI GPT-4o mini</h2>
+        <h2 className="case-header" ref={openai}>Parsing Info and Generating Insights: OpenAI GPT-4o mini & DPD API</h2>
         <p>OpenAI's GPT-4o mini is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <Link to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</Link> API.</p>
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
         <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
