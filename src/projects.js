@@ -214,8 +214,8 @@ export function Remedify() {
             "Canadian Drug Produtd Database (DPD)"
           ]}
         />
-      <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
-        <img src="/images/remedify/asclepius.jpg"/>
+      <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
+        <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
         <table>
           <tr>
             <td><strong>Role:</strong></td>
