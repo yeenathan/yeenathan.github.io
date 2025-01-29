@@ -127,6 +127,72 @@ export function Remedify() {
         // return { body: url };
     }
 });`
+  const OpenAiParser = `const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: \`Bearer \${OPENAI_API_KEY}\`,
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a tool that that parses scanned OCR data from medication labels into usable data',
+          },
+          {
+            role: 'user',
+            content: \`
+              this is scanned OCR text from a medication label: \${inputText}. parse into json with properties "nickname", "dose", "frequency", "duration", "strength", "DIN" according to the following descriptions:
+              "nickname": return the medication name
+              "dose": return a dosage amount. example: 1 tablet
+              "frequency": return a number in days. default to 0
+              "duration": return a number in weeks. default to 0
+              "strength": return strength per dose. example: 500mg
+              "DIN": return unique 8 digit number found on every drug product in Canada
+              if confidence levels are low, leave properties as the defaults or null
+            \`
+          },
+        ],
+        response_format: { "type": "json_object" }
+      }),
+    });`;
+  const OpenAIGenerate = `const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: \`Bearer \${OPENAI_API_KEY}\`,
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a tool that that returns general information about given active ingredients given the ingredient name and other relevant information. provide your answers in layman\'s terms',
+          },
+          {
+            role: 'user',
+            content: \`
+              given active ingredient \${drugData.ingredient} and medication name \${drugData.name}, return a json object with properties "description" and "sideEffects".
+              description: is a string. max 250 characters
+              sideEffects: array of strings. each string should be a single word. limit to 3-5 items
+            \`
+          },
+        ],
+        response_format: { "type": "json_object" }
+      }),
+    });`
+  const dinInfo = `async function getInfo(DIN) {
+    async function getID(DIN) {
+      const _resp = await fetch(\`https://health-products.canada.ca/api/drug/drugproduct/?din=\${DIN}\`).then(resp => resp.json());
+      if (!_resp[0]) return null;
+      return {id: _resp[0].drug_code, name: _resp[0].brand_name};
+    }
+    const _drugProduct = await getID(DIN);
+    if (!_drugProduct) return null;
+    const _ingredientInfo = await fetch(\`https://health-products.canada.ca/api/drug/activeingredient/?id=\${_drugProduct.id}\`).then(resp => resp.json());
+    return {ingredient: _ingredientInfo[0].ingredient_name, name: _drugProduct.name};
+  }`
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
@@ -144,24 +210,58 @@ export function Remedify() {
             "Kitten UI",
             "Azure cloud functions & blob storage",
             "Azure Computer Vision (OCR)",
-            "OpenAI GPT-4o mini"
+            "OpenAI GPT-4o mini",
+            "Canadian Drug Produtd Database (DPD)"
           ]}
         />
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
-        <h2 className="case-header">Project Overview</h2>
-        <ul>
-          <li>Role</li>
-          <li>Timeline</li>
-        </ul>
+        <img src="/images/remedify/asclepius.jpg"/>
+        <table>
+          <tr>
+            <td><strong>Role:</strong></td>
+            <td>Lead developer, research & validation</td>
+          </tr>
+          <tr>
+            <td><strong>Timeline:</strong></td>
+            <td>3 months</td>
+          </tr>
+        </table>
+
+        <h2 className="case-header">Context</h2>
+        <p>Only about 50% of prescribed medications are taken as directed by patients with chronic illnesses. Research identifies two key reasons: misunderstanding of medication instructions and forgetfulness.</p>
+        <p>Remedify is an AI-powered medication reminder app that bridges the gap in adherence, making health management easier and more efficient. Going beyond the capabilities of a standard pillbox, Remedify is designed for individuals facing cognitive challenges or managing multiple medications, where the risk of misdosing is high. With a strong focus on accessibility and adherence, the app offers a reminder and a comprehensive medication library to support users in staying on track with their health.</p>
+        <h2 className="case-header">Key Features</h2>
+        <img src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
+        <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy</p>
+        <img src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
+        <p>AI generated insights and additional information based on information fetched from DPD API</p>
         <h2 className="case-header">Research & Validation</h2>
-        <img src="/images/remedify/figma.jpg"/>
-        <p>WIP</p>
-        <h2 className="case-header"></h2>
+        <p>A survey and numerous interviews were conducted by members of the team to refine and validate the app's ideas and to help craft the user personas.</p>
+        <p>Primary persona: Elderly person</p>
+        <ul className="list-disc pl-8">
+          <li>Motivations: Consistent routine, independence in everyday tasks</li>
+          <li>Pain points: Memory lapses which lead to confusion about medication, limited comfort with technology</li>
+        </ul>
+        <p>Secondary persona: Caregiver</p>
+        <ul className="list-disc pl-8">
+          <li>Motivations: Ensuring medical adherence for patients</li>
+          <li>Pain points: Managing the needs of multiple patients</li>
+        </ul>
+        <p>Based on our research, we solidified our core values: accessibility and medical adherance</p>
+
+        <h2 className="case-header">Development</h2>
+        <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features, described below.</p>
         <h2 className="case-header">Azure AI Vision OCR & Blob Storage</h2>
         <p>The automatic scanning feature starts with Azure AI Vision OCR, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
         <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
         <Code text={doOCR} title={"doOCR (cloud function)"} />
-        <Code text={uploadCode} title={"Calling the cloud functions"} />
+        <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
+
+        <h2 className="case-header">OpenAI GPT-4o mini</h2>
+        <p>OpenAI's GPT-4o mini is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <Link to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</Link> API.</p>
+        <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
+        <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
+        <Code text={OpenAIGenerate} title={"Generating insights based on DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIGetInfo.js"}/>
       </div>
       <Footer/>
     </div>

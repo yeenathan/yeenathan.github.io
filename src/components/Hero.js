@@ -6,14 +6,14 @@ const RESUME_LINK = "https://www.dropbox.com/scl/fi/3cs2la7pjk80ttd196bvh/resume
 
 function Icon({url, src, hover, size=null}) {
   return(
-    <Link to={url} target="_blank">
+    <a href={url} target="_blank">
       <img 
         className={size}
         src={src}
         onMouseOver={(e) => e.currentTarget.src=hover}
         onMouseOut={(e) => e.currentTarget.src=src}
       />
-    </Link>
+    </a>
   )
 }
 

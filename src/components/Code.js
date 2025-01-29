@@ -1,7 +1,7 @@
 import { CodeBlock, dracula } from "react-code-blocks";
 import { useState } from "react";
 
-export default function Code({title, text}) {
+export default function Code({title, text, link=null}) {
   const [visible, setVisible] = useState(false);
   return(
     <div>
@@ -11,7 +11,13 @@ export default function Code({title, text}) {
           <p>V</p>
         </div>
       </button>
-      {visible && <CodeBlock text={text} theme={dracula} language="javascript"/>}
+      {
+        visible &&
+        <div style={{fontSize: "1rem"}}>
+          {link && <a href={link} target="_blank">Link to file</a>}
+          <CodeBlock text={text} theme={dracula} language="javascript"/>
+        </div>
+      }
     </div>
   )
 }

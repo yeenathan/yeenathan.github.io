@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function ProjectDetails({links, tools}) {
   return(
     <div className="flex flex-col gap-2 md:gap-3 min-w-full">
-      <h2 className="subhead header-blue font-normal text-xl md:text-2xl">Details</h2>
+      <h2 className="subhead header-blue font-normal text-xl md:text-2xl">Overview</h2>
       { links && 
         <div className="flex flex-col md:flex-row md:gap-4">
         {
