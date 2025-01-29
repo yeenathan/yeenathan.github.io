@@ -323,7 +323,7 @@ export function Studius() {
           { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
           { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
           { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
-          { url: "https://studi-us-style-guide.vercel.app/", label: "Online Style Guide/Case Study" }
+          { url: "https://studi-us-style-guide.vercel.app/", label: "Branding Style Guide" }
         ]}
         tools={[
           "Next.js",
@@ -338,12 +338,17 @@ export function Studius() {
         </div>
         <ul className="pl-8 list-disc grid grid-cols-1 md:grid-cols-2">
           <li>Interface design & development</li>
+          <li>Usability testing, iterative process</li>
           <li>UX design</li>
           <li>Team collaboration</li>
+          <li>Brand design</li>
         </ul>
       </div>
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
         <p>Studius is a team project where we were to ideate, research, design and develop interfaces for an application idea.</p>
+        <h2 className="case-header">Reflection</h2>
+        <p>This experience solidified my understanding of UX design concepts such as consistency, perceivability, learnability, predictability, and feedback. It also taught me the benefits of usability testing and the iterative process.</p>
+        <p>Developing this project taught me the effectiveness of atomic principles in both development and design as well as writing maintainable and scalable code.</p>
       </div>
       <Footer/>    
     </div>
