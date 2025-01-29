@@ -142,21 +142,25 @@ export function Remedify() {
           tools={[
             "Expo/React Native",
             "Kitten UI",
-            "Azure cloud functions",
+            "Azure cloud functions & blob storage",
             "Azure Computer Vision (OCR)",
             "OpenAI GPT-4o mini"
           ]}
         />
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
-        <p><span className="italic">Remedify</span> was an academic project in which we were tasked with designing and developing an app to assist an underrepresented or disadvantaged community with the use of AI tools. Teams were to organize themselves into multiple sub-teams and simulate a real-world work environment, spanning the whole semester. I was the lead developer of our team, working with two other developers.</p>
-        <p>The app was developed using Expo/React Native. We also made use of Azure's cloud functions & computer vision, and OpenAI's GPT-4o mini APIs to build the main features of our app. Refer to the links above to learn more.</p>
-        <h2 className="case-header">Process</h2>
+        <h2 className="case-header">Project Overview</h2>
+        <ul>
+          <li>Role</li>
+          <li>Timeline</li>
+        </ul>
+        <h2 className="case-header">Research & Validation</h2>
         <img src="/images/remedify/figma.jpg"/>
         <p>WIP</p>
+        <h2 className="case-header"></h2>
         <h2 className="case-header">Azure AI Vision OCR & Blob Storage</h2>
-        <p></p>
-        <Code text={generateSASUrl} title={"generateSASUrl"} />
-        <Code text={doOCR} title={"doOCR"} />
+        <p>The automatic scanning feature starts with Azure AI Vision OCR, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
+        <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
+        <Code text={doOCR} title={"doOCR (cloud function)"} />
         <Code text={uploadCode} title={"Calling the cloud functions"} />
       </div>
       <Footer/>
