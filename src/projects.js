@@ -264,7 +264,8 @@ export function Remedify() {
         <p>Based on our research, we solidified our <strong>core values: accessibility and medical adherance</strong></p>
 
         <h2 className="case-header">Development</h2>
-        <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features, described below.</p>
+        <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features. We also made continuous interface changes as the design team iterated on the design based on usability testing and professional feedback.</p>
+        <p>The implementation of our main features is described below.</p>
         <h2 className="case-header" ref={azure}>Automated Scanning: Azure AI Vision OCR & Blob Storage</h2>
         <p>The automatic scanning feature starts with Azure AI Vision OCR, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
         <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
