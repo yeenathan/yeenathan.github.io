@@ -1,6 +1,4 @@
-import { Link } from "react-router";
-
-export default function ProjectDetails({links, tools}) {
+export default function ProjectDetails({links=null, tools, takeaways=null}) {
   return(
     <div className="flex flex-col gap-2 md:gap-3 min-w-full">
       <h2 className="subhead header-blue font-normal text-xl md:text-2xl">Overview</h2>
@@ -8,11 +6,24 @@ export default function ProjectDetails({links, tools}) {
         <div className="flex flex-col md:flex-row md:gap-4">
         {
           links.map((link, key) => {
-            return <Link to={link.url} target="_blank" key={key}>{link.label}</Link>
+            return <a href={link.url} target="_blank" key={key}>{link.label}</a>
           })
         }
       </div>
       }
+      {/* {
+        takeaways &&
+        <div className="flex flex-col md:gap-4">
+          <p className="font-bold">Takeaways</p>
+          <ul className="pl-8 list-disc grid grid-cols-1 md:grid-cols-2">
+          {
+            takeaways.map((takeaway, key) => {
+              return <li key={key}>{takeaway}</li>
+            })
+          }
+          </ul>
+        </div>
+      } */}
       <p className="font-bold">Tools used</p>
       <ul className="pl-8 list-disc grid grid-cols-2">
         {

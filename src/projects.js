@@ -197,6 +197,7 @@ export function Remedify() {
 
   const azure = useRef();
   const openai = useRef();
+  const reflection = useRef();
 
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
   return(
@@ -205,20 +206,32 @@ export function Remedify() {
       <ToTop/>
       <ProjectHero title={"Remedify"} coverPath={"/images/remedify/cover.jpg"} content={content}/>
       <ProjectDetails
-          links={[
-            { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
-            { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" },
-            { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" }
-          ]}
-          tools={[
-            "Expo/React Native",
-            "Kitten UI",
-            "Azure cloud functions & blob storage",
-            "Azure Computer Vision (OCR)",
-            "OpenAI GPT-4o mini",
-            "Canadian Drug Produtd Database (DPD)"
-          ]}
-        />
+        links={[
+          { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
+          { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" },
+          { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" }
+        ]}
+        tools={[
+          "Expo/React Native",
+          "Kitten UI",
+          "Azure cloud functions & blob storage",
+          "Azure Computer Vision (OCR)",
+          "OpenAI GPT-4o mini",
+          "Canadian Drug Produtd Database (DPD)"
+        ]}
+      />
+      <div className="min-w-full">
+        <div className="mb-2">
+          <p className="font-bold">Takeaways</p>
+          <a onClick={() => reflection.current.scrollIntoView()} style={{cursor: "pointer"}}>Read reflection</a>
+        </div>
+        <ul className="pl-8 list-disc grid grid-cols-1 md:grid-cols-2">
+          <li>Working in an agile environment</li>
+          <li>Team collaboration</li>
+          <li>Team leadership & guidance</li>
+          <li>Honing development skills</li>
+        </ul>
+      </div>
       <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
         <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
         <table>
@@ -277,6 +290,21 @@ export function Remedify() {
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
         <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
         <Code text={OpenAIGenerate} title={"Generating insights based on DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIGetInfo.js"}/>
+      
+        <h2 className="case-header" ref={reflection}>Reflection</h2>
+        <p>This project provided me with invaluable experiences in development, working within a team, as well as leadership. As the lead developer of the project I was responsible for not only delivering the results, but also collaborating with the designers to discuss viability of certain features and providing guidance/mentorship to other members of the dev team.</p>
+        <p>In terms of personal contributions to the project, these were the things I completed:</p>
+        <ul className="list-disc pl-8">
+          <li>Routing</li>
+          <li>Scheduling medications & marking them as taken</li>
+          <li>Automatic scanning</li>
+          <li>Generating info</li>
+        </ul>
+        <p>And additionally:</p>
+        <ul className="list-disc pl-8">
+          <li>Contributed to writing & reviewing research survey</li>
+          <li>Usability testing</li>
+        </ul>
       </div>
       <Footer/>
     </div>
