@@ -237,17 +237,17 @@ export function Remedify() {
         <p>AI generated insights and additional information based on information fetched from DPD API</p>
         <h2 className="case-header">Research & Validation</h2>
         <p>A survey and numerous interviews were conducted by members of the team to refine and validate the app's ideas and to help craft the user personas.</p>
-        <p>Primary persona: Elderly person</p>
+        <p className="font-bold">Primary persona: Elderly person</p>
         <ul className="list-disc pl-8">
           <li>Motivations: Consistent routine, independence in everyday tasks</li>
           <li>Pain points: Memory lapses which lead to confusion about medication, limited comfort with technology</li>
         </ul>
-        <p>Secondary persona: Caregiver</p>
+        <p className="font-bold">Secondary persona: Caregiver</p>
         <ul className="list-disc pl-8">
           <li>Motivations: Ensuring medical adherence for patients</li>
           <li>Pain points: Managing the needs of multiple patients</li>
         </ul>
-        <p>Based on our research, we solidified our core values: accessibility and medical adherance</p>
+        <p>Based on our research, we solidified our <strong>core values: accessibility and medical adherance</strong></p>
 
         <h2 className="case-header">Development</h2>
         <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features, described below.</p>
