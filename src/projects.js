@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./index.css";
@@ -38,14 +37,14 @@ const projects = [
     tags: ["Editorial design", "Print design", "Adobe InDesign"]
   },
   {
-    name: "Graphic Design Projects",
+    name: "Graphic Design",
     image: "/images/designs/cover.jpg",
     route: "/designs",
     type: "gd",
     tags: ["Poster design", "Package design", "Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]
   },
   {
-    name: "Graphic Design Commissions",
+    name: "Digital Design Commissions",
     image: "/images/graphic-design/cover.jpg",
     route: "/graphic-design-commissions",
     type: "gd",
@@ -299,7 +298,7 @@ export function Remedify() {
         <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
 
         <h2 className="case-header" ref={openai}>Parsing Info and Generating Insights: OpenAI GPT-4o mini & DPD API</h2>
-        <p>OpenAI's GPT-4o mini is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <Link to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</Link> API.</p>
+        <p>OpenAI's GPT-4o mini is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
         <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
         <Code text={OpenAIGenerate} title={"Generating insights based on DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIGetInfo.js"}/>
@@ -386,15 +385,15 @@ export function GraphicDesignComms() {
       <Header/>
       <ToTop/>
       <div className="min-w-full">
-        <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Graphic Design Commissions</h1>
+        <h1 className="text-3xl md:text-6xl mb-2 md:mb-4">Digital Design Commissions</h1>
         <p>A compilation of graphic design work done for friends & clients.</p>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">For a friend's <Link to={"https://www.youtube.com/watch?v=Gx1JC46uWj4"}>commentary reel</Link></p>
+        <p className="text-l md:text-xl">For a friend's <a to={"https://www.youtube.com/watch?v=Gx1JC46uWj4"}>commentary reel</a></p>
         <img src="/images/graphic-design/jerryreel.jpg"></img>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">For <Link to={"https://www.twitch.tv/merpkun"}>Merp</Link>'s Youtube & Twitch channels</p>
+        <p className="text-l md:text-xl">For <a to={"https://www.twitch.tv/merpkun"}>Merp</a>'s Youtube & Twitch channels</p>
         <h3 className="text-xl md:text-xl">YouTube Thumbnails</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-2">
           {
@@ -411,7 +410,7 @@ export function GraphicDesignComms() {
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <p className="text-l md:text-xl">Logo design for Norcal fighting game local <Link to={"https://www.start.gg/astral"}>Astral Beatdown</Link></p>
+        <p className="text-l md:text-xl">Logo design for Norcal fighting game local <a to={"https://www.start.gg/astral"}>Astral Beatdown</a></p>
         <div className="flex">
           <img style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo.jpg"></img>
           <img style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo-b&w.svg"></img>
