@@ -67,7 +67,7 @@ export default function Hero({projectRef}) {
     projectRef.current.scrollIntoView();
   }
   return(
-    <div style={{minHeight: "70vh"}} className="flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
+    <div style={{minHeight: "70vh"}} className="hero flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
       <div className="flex flex-col items-center md:items-start">
         <h1 className="text-5xl md:text-8xl">Nathan Yee</h1>
         <h2 className="text-center md:text-left text-xl md:text-2xl subhead">Frontend Developer & Designer</h2>
