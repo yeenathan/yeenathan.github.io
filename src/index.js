@@ -2,13 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { HashRouter, Routes, Route } from 'react-router';
+import { HashRouter, Routes, Route, useLocation } from 'react-router';
 import { Remedify, GraphicDesignComms, GraphicDesignProjs, Studius, VanGo, Magazine, CurrencyConverter } from './projects';
 import About from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+function ScrollReset() {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    // if (pathname === "/") return;
+    window.scrollTo(0, 0);
+  }, [pathname])
+
+  return null;
+}
+
 root.render(
+  <>
   <HashRouter>
+    <ScrollReset/>
     <Routes>
       <Route path='/' element={<App />}/>
       <Route path='/remedify' element={<Remedify />}/>
@@ -21,4 +35,5 @@ root.render(
       <Route path='/currency-converter' element={<CurrencyConverter />}/>
     </Routes>
   </HashRouter>
+  </>
 );

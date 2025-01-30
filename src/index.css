@@ -68,10 +68,13 @@ a:hover {
   color: var(--BRIGHT-BLUE)
 }
 
-.totop {
+.totop-container {
   position: fixed;
   bottom: 0;
   right: 10%;
+}
+
+.totop {
   padding: 1rem 2rem;
   background-color: #c8efffd9;
   z-index: 1;
