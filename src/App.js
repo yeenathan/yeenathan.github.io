@@ -18,7 +18,7 @@ export default function App() {
             return(
               <div className="flex flex-col items-end" style={{cursor: "pointer"}} onClick={() => navigate(project.route)}>
                 <img className="project-cover" src={project.image}/>
-                <ul className="pl-2 min-w-full flex flex-row justify-end gap-2 lg:gap-3">
+                <ul className="pl-2 min-w-full flex flex-row flex-wrap justify-end gap-2 lg:gap-3 gap-y-0 lg:gap-y-0">
                   {
                     project.tags.map((tag, key) => {
                       return(
