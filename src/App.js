@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
 import Header from "./components/Header.js"
@@ -42,7 +42,9 @@ export default function App() {
     })
   }
 
-  const [filter, setFilter] = useState("dev");
+  const category = new URLSearchParams(window.location.search).get("category");
+
+  const [filter, setFilter] = useState(category || "all");
   const [filterProjects, setFilterProjects] = useState(doFilter(filter));
   
   useEffect(() => {
