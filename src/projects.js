@@ -13,43 +13,50 @@ const projects = [
     name: "Remedify",
     image: "/images/remedify/cover.jpg",
     route: "/remedify",
-    type: "dev"
+    type: "dev",
+    tags: ["Front-end development", "React Native", "Azure", "OpenAI"]
   },
   {
     name: "Studius",
     image: "/images/studius/studius-cover.png",
     route: "/studius",
-    type: "dev"
-  },
-  {
-    name: "Dragon Ball: Architecture & Wonders",
-    image: "/images/db-mag/cover.jpg",
-    route: "/db-mag",
-    type: "gd"
-  },
-  {
-    name: "Graphic Design Projects",
-    image: "/images/designs/cover.jpg",
-    route: "/designs",
-    type: "gd"
-  },
-  {
-    name: "Graphic Design Commissions",
-    image: "/images/graphic-design/cover.jpg",
-    route: "/graphic-design-commissions",
-    type: "gd"
+    type: "dev gd",
+    tags: ["Front-end development", "React", "UX/UI design", "Branding design", "Figma"]
   },
   {
     name: "Currency Converter",
     image: "/images/currency-converter/cover.jpg",
     route: "/currency-converter",
-    type: "dev"
+    type: "dev",
+    tags: ["HTML", "CSS", "Javascript", "Frankfurter API"]
+  },
+  {
+    name: "Dragon Ball: Architecture & Wonders",
+    image: "/images/db-mag/cover.jpg",
+    route: "/db-mag",
+    type: "gd",
+    tags: ["Editorial design", "Print design", "Adobe InDesign"]
+  },
+  {
+    name: "Graphic Design Projects",
+    image: "/images/designs/cover.jpg",
+    route: "/designs",
+    type: "gd",
+    tags: ["Poster design", "Package design", "Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]
+  },
+  {
+    name: "Graphic Design Commissions",
+    image: "/images/graphic-design/cover.jpg",
+    route: "/graphic-design-commissions",
+    type: "gd",
+    tags: ["Thumbnail design", "Social media promotion & assets", "Photoshop", "Illustrator"]
   },
   {
     name: "VAN-GO!",
     image: "/images/van-go/cover.jpg",
     route: "/van-go",
-    type: "dev"
+    type: "dev",
+    tags: ["React", "Leaflet API"]
   },
 ]
 

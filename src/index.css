@@ -52,14 +52,20 @@ a:hover {
 }
 
 .project-cover {
-  /* border: 2px solid var(--DARK-BLUE); */
   border-radius: .5rem;
   transition: 0.3s;
+  margin-bottom: .25rem;
 }
 
 .project-cover:hover {
   border: 4px solid var(--BRIGHT-BLUE);
   scale: 102%;
+  margin-bottom: .5rem;
+}
+
+.tag {
+  font-size: 1rem;
+  color: var(--BRIGHT-BLUE)
 }
 
 .totop {

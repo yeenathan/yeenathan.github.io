@@ -12,13 +12,22 @@ export default function App() {
   
   function MyProjects ({projects}) {
     return(
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-2 md:my-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-2 lg:my-4">
         {
           projects.map((project) => {
             return(
               <div className="flex flex-col items-end" style={{cursor: "pointer"}} onClick={() => navigate(project.route)}>
                 <img className="project-cover" src={project.image}/>
-                <h4 className="text-sky-50 text-xl md:text-2xl subhead mt-1.5">{project.name}</h4>
+                <ul className="pl-2 min-w-full flex flex-row justify-end gap-2 lg:gap-3">
+                  {
+                    project.tags.map((tag, key) => {
+                      return(
+                        <li className="tag" key={key}>{tag}</li>
+                      )
+                    })
+                  }
+                </ul>
+                <h4 className="text-sky-50 text-xl md:text-2xl subhead">{project.name}</h4>
               </div>
             )
           })
@@ -38,7 +47,7 @@ export default function App() {
   function doFilter(filter) {
     if (filter === "all") return projects;
     return projects.filter((project) => {
-      return project.type === filter;
+      return project.type.includes(filter);
     })
   }
 
