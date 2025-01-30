@@ -431,10 +431,10 @@ export function GraphicDesignProjs() {
       <ProjectHero coverPath={"/images/designs/cover.jpg"} content={content} title="Graphic Design Projects"/>
       <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]}/>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-2 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:gap-4">
           <img src="/images/designs/motfd.png"></img>
-          <img src="/images/designs/poster.jpg"></img>
-          <img src="/images/designs/slizzard.jpg"></img>
+          <img src="/images/designs/posterlong.jpg"></img>
+          {/* <img src="/images/designs/slizzard.jpg"></img> */}
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
