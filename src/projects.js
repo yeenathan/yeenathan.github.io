@@ -468,6 +468,17 @@ export function CurrencyConverter() {
           "Frankfurter API"
         ]}
       />
+      <div className="min-w-full">
+        <h2 className="case-header">Demo Videos</h2>
+          <div className="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <video controls>
+              <source src="/images/currency-converter/cc-demo.mp4" type="video/webm"/>
+            </video>
+            <video controls>
+              <source src="/images/currency-converter/cc-demo2.mp4" type="video/webm"/>
+            </video>
+          </div>
+      </div>
       <Footer/>
     </div>
   )
