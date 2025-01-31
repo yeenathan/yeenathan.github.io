@@ -5,6 +5,7 @@ import Header from "./components/Header.js"
 import Hero from "./components/Hero.js"
 import projects from "./projects.js"
 import ToTop from "./components/ToTop.js";
+import Footer from "./components/Footer.js";
 
 export default function App() {
   const ref = useRef(null);
@@ -73,6 +74,7 @@ export default function App() {
         </div>
         <MyProjects projects={filterProjects}/>
       </div>
+      <Footer/>
     </div>
   )
 }
