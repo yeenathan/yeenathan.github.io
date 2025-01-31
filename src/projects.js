@@ -268,7 +268,7 @@ export function Remedify() {
         <img src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
         <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy.</p>
         
-        <p>The automatic scanning feature starts with Azure AI Vision OCR, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
+        <p>The automatic scanning feature starts with <strong className="text-sky-200">Azure AI Vision OCR</strong>, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
         <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
         <Code text={doOCR} title={"doOCR (cloud function)"} />
         <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
@@ -280,7 +280,7 @@ export function Remedify() {
         <img src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
         <p>AI generated insights and additional information based on information fetched from DPD API.</p>
         
-        <p>OpenAI's GPT-4o mini is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
+        <p><strong className="text-sky-200">OpenAI's GPT-4o mini</strong> is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
         <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
         <Code text={OpenAIGenerate} title={"Generating insights based on DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIGetInfo.js"}/>
