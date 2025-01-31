@@ -308,7 +308,7 @@ export function Remedify() {
         
         <h2 className="case-header" ref={reflection}>Reflection</h2>
         <p>This project provided me with invaluable experiences in development, working within a team, as well as leadership. As the lead developer of the project I was responsible for not only delivering the results, but also collaborating with the designers to discuss viability of certain features and providing guidance/mentorship to other members of the dev team.</p>
-        <p>In terms of personal contributions to the project, these were the things I completed:</p>
+        {/* <p>In terms of personal contributions to the project, these were the things I completed:</p>
         <ul className="list-disc pl-8">
           <li>Interfaces & styling</li>
           <li>Routing</li>
@@ -320,7 +320,7 @@ export function Remedify() {
         <ul className="list-disc pl-8">
           <li>Contributed to writing & reviewing research survey</li>
           <li>Usability testing</li>
-        </ul>
+        </ul> */}
       </div>
       <Footer/>
     </div>
