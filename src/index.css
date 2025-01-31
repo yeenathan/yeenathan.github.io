@@ -11,7 +11,7 @@
 }
 
 .hero {
-  background-image: url("/public/images/image.jpg");
+  background-image: url("/public/images/image.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
