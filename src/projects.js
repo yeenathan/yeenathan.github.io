@@ -229,7 +229,7 @@ export function Remedify() {
           "Azure cloud functions & blob storage",
           "Azure Computer Vision (OCR)",
           "OpenAI GPT-4o mini",
-          "Canadian Drug Produtd Database (DPD)"
+          "Canadian Drug Product Database (DPD)"
         ]}
       />
       <div className="min-w-full">
