@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 const RESUME_LINK = "https://www.dropbox.com/scl/fi/6y9267vtsq70q1m5d14a1/resume.pdf?dl=1";
 
@@ -62,7 +63,10 @@ export function Info({small=false}) {
   )
 }
 
-export default function Hero({projectRef}) { 
+export default function Hero({projectRef, category}) {
+  let showProjs = true;
+  if (category === "gd") showProjs = false;
+
   function handleClick() {
     projectRef.current.scrollIntoView();
   }
@@ -74,9 +78,17 @@ export default function Hero({projectRef}) {
       </div>
       <div className="flex flex-col items-center md:items-start gap-4">
         <p className="text-l md:text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
-        <Info/>
       </div>
-      <button className="mt-2 hero-button text-xl px-6 py-4" onClick={handleClick}>View Projects</button>
+      {
+        showProjs &&
+        <div className="flex flex-col md:flex-row gap-2 md:gap-3 my-2 max-w-full">
+          <Link to={"/remedify"} className="flex justify-center md:flex-none"><img src="/images/remedify/cover.jpg" className="rounded-lg hero-project"/></Link>
+          <Link to={"/studius"} className="flex justify-center md:flex-none"><img src="/images/studius/studius-cover.png" className="rounded-lg hero-project"/></Link>
+        </div>
+      }
+      
+      <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>{showProjs?"More Projects":"View Projects"}</button>
+      <Info/>
     </div>
   )
 }

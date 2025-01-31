@@ -58,6 +58,16 @@ a:hover {
   color: var(--DARK-GREY);
 }
 
+.hero-project {
+  max-width: 13rem;
+  transition: 0.3s;
+}
+
+.hero-project:hover {
+  border: 4px solid var(--BRIGHT-BLUE);
+  scale: 105%;
+}
+
 .project-cover {
   border-radius: .5rem;
   transition: 0.3s;
@@ -122,5 +132,8 @@ a:hover {
   }
   .totop {
     right: 2.5rem;
+  }
+  .hero-project {
+    max-width: 70%;
   }
 }

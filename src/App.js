@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
 import Header from "./components/Header.js"
@@ -7,7 +7,6 @@ import projects from "./projects.js"
 import ToTop from "./components/ToTop.js";
 
 export default function App() {
-  const navigate = useNavigate();
   const ref = useRef(null);
   
   function MyProjects ({projects}) {
@@ -16,7 +15,7 @@ export default function App() {
         {
           projects.map((project) => {
             return(
-              <div className="flex flex-col items-end" style={{cursor: "pointer"}} onClick={() => navigate(project.route)}>
+              <Link className="flex flex-col items-end" style={{cursor: "pointer"}} to={project.route}>
                 <img className="project-cover" src={project.image}/>
                 <ul className="pl-2 min-w-full flex flex-row flex-wrap justify-end gap-2 lg:gap-3 gap-y-0 lg:gap-y-0">
                   {
@@ -28,7 +27,7 @@ export default function App() {
                   }
                 </ul>
                 <h4 className="text-sky-50 text-xl md:text-2xl subhead">{project.name}</h4>
-              </div>
+              </Link>
             )
           })
         }
@@ -64,7 +63,7 @@ export default function App() {
     <div className="container mx-auto flex px-4 pt-8 pb-16 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
-      <Hero projectRef={ref}/>
+      <Hero projectRef={ref} category={category}/>
       <div ref={ref} className="min-w-full flex flex-col gap-2">
         <h3 className="text-2xl md:text-4xl">Projects</h3>
         <div className="flex flex-row gap-4">
