@@ -13,7 +13,7 @@ const projects = [
     image: "/images/remedify/cover.jpg",
     route: "/remedify",
     type: "dev",
-    tags: ["React Native", "Azure", "OpenAI"]
+    tags: ["React Native", "Azure", "OpenAI", "Case Study"]
   },
   {
     name: "Studius",
@@ -207,8 +207,6 @@ export function Remedify() {
     return {ingredient: _ingredientInfo[0].ingredient_name, name: _drugProduct.name};
   }`
 
-  const azure = useRef();
-  const openai = useRef();
   const reflection = useRef();
 
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
@@ -219,13 +217,12 @@ export function Remedify() {
       <ProjectHero title={"Remedify"} coverPath={"/images/remedify/cover.jpg"} content={content}/>
       <ProjectDetails
         links={[
+          { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" },
           { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
-          { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" },
-          { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" }
+          // { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" }
         ]}
         tools={[
           "Expo/React Native",
-          "Kitten UI",
           "Azure cloud functions & blob storage",
           "Azure Computer Vision (OCR)",
           "OpenAI GPT-4o mini",
@@ -249,7 +246,7 @@ export function Remedify() {
         <table>
           <tr>
             <td><strong>Role:</strong></td>
-            <td>Lead developer, research & validation</td>
+            <td><strong className="text-bold text-sky-400">Lead developer</strong>, research & validation</td>
           </tr>
           <tr>
             <td><strong>Timeline:</strong></td>

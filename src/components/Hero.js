@@ -81,7 +81,7 @@ export default function Hero({projectRef, category}) {
       </div>
       {
         showProjs &&
-        <div className="flex flex-col md:flex-row gap-2 md:gap-3 my-2 max-w-full">
+        <div className="flex flex-row flex-wrap gap-2 md:gap-3 my-2 max-w-full">
           <Link to={"/remedify"} className="flex justify-center md:flex-none"><img src="/images/remedify/cover.jpg" className="rounded-lg hero-project"/></Link>
           <Link to={"/studius"} className="flex justify-center md:flex-none"><img src="/images/studius/studius-cover.png" className="rounded-lg hero-project"/></Link>
         </div>
