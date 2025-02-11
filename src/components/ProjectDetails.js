@@ -24,16 +24,19 @@ export default function ProjectDetails({links=null, tools, takeaways=null, remed
           </ul>
         </div>
       } */}
-      <table>
-        <tr>
-          <td><strong>Role:</strong></td>
-          <td><strong className="text-bold">Lead developer</strong>, research & validation</td>
-        </tr>
-        <tr>
-          <td><strong>Timeline:</strong></td>
-          <td>3 months</td>
-        </tr>
-      </table>
+      {
+        remedify && 
+        <table>
+          <tr>
+            <td><strong>Role:</strong></td>
+            <td><strong className="text-bold">Lead developer</strong>, research & validation</td>
+          </tr>
+          <tr>
+            <td><strong>Timeline:</strong></td>
+            <td>3 months</td>
+          </tr>
+        </table>
+      }
       <p className="font-bold">Tools used</p>
       <ul className="pl-8 list-disc grid grid-cols-2">
         {
