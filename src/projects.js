@@ -220,6 +220,7 @@ export function Remedify() {
           { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" },
           { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
           // { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" }
+          { url: "https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0", label: "Research Document"}
         ]}
         tools={[
           "Expo/React Native",
@@ -228,6 +229,7 @@ export function Remedify() {
           "OpenAI GPT-4o mini",
           "Canadian Drug Product Database (DPD)"
         ]}
+        remedify={true}
       />
       <div className="min-w-full">
         <div className="mb-2">
@@ -241,41 +243,37 @@ export function Remedify() {
           <li>Honing development skills</li>
         </ul>
       </div>
+      {/* <div className="flex flex-col justify-start min-w-full">
+        <p><strong>Role:</strong> Lead developer, research & validation</p>
+        <p><strong>Timeline:</strong> 3 months</p>
+      </div> */}
+
       <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
-        <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
-        <table>
-          <tr>
-            <td><strong>Role:</strong></td>
-            <td><strong className="text-bold text-sky-400">Lead developer</strong>, research & validation</td>
-          </tr>
-          <tr>
-            <td><strong>Timeline:</strong></td>
-            <td>3 months</td>
-          </tr>
-        </table>
+
+        <div className="grid grid-cols-3 gap-2 md:gap-3">
+          <img className="rounded" src="/images/remedify/scanning.jpg"/>
+          <img className="rounded" src="/images/remedify/homepage.jpg"/>
+          <img className="rounded" src="/images/remedify/info.jpg"/>
+        </div>
 
         <h2 className="case-header">Context</h2>
         <p>Only about 50% of prescribed medications are taken as directed by patients with chronic illnesses. Research identifies two key reasons: misunderstanding of medication instructions and forgetfulness.</p>
         <p>Remedify is an AI-powered medication reminder app that bridges the gap in adherence, making health management easier and more efficient. Going beyond the capabilities of a standard pillbox, Remedify is designed for individuals facing cognitive challenges or managing multiple medications, where the risk of misdosing is high. With a strong focus on accessibility and adherence, the app offers a reminder and a comprehensive medication library to support users in staying on track with their health.</p>
         <h2 className="case-header">Key Features</h2>
-        <div className="flex flex-row justify-between items-center">
-          <p className="font-bold">Automated scanning</p>
-          {/* <a style={{cursor: "pointer"}} onClick={() => azure.current.scrollIntoView()}>Scroll to details</a> */}
-        </div>
+        <p>The app boasts two main features to assist patients with medical adherence while being as accessible as possible.</p>
+          
+        <p className="font-bold">Automated scanning</p>
         <img src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
-        <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy.</p>
+        <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy. This feature enforces our focus on accessibility by simplifying the interaction to add a medication to the app.</p>
         
         <p>The automatic scanning feature starts with <strong className="text-sky-200">Azure AI Vision OCR</strong>, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
         <Code text={generateSASUrl} title={"generateSASUrl (cloud function)"} />
         <Code text={doOCR} title={"doOCR (cloud function)"} />
         <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
 
-        <div className="flex flex-row justify-between items-center mt-2">
-          <p className="font-bold">Providing Information and Generated Insights</p>
-          {/* <a style={{cursor: "pointer"}} onClick={() => openai.current.scrollIntoView()}>Scroll to details</a> */}
-        </div>
+        <p className="font-bold mt-2">Providing Information and Generated Insights</p>
         <img src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
-        <p>AI generated insights and additional information based on information fetched from DPD API.</p>
+        <p>AI generated insights and additional information based on information fetched from DPD API. By providing this information, this feature addresses one of the main reasons for low medication adherence: confusion.</p>
         
         <p><strong className="text-sky-200">OpenAI's GPT-4o mini</strong> is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
@@ -284,6 +282,9 @@ export function Remedify() {
       
         <h2 className="case-header">Research & Validation</h2>
         <p>A survey and numerous interviews were conducted by members of the team to refine and validate the app's ideas and to help craft the user personas.</p>
+        
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/eqiBsR991DWqKMuktHQb1P/Persona?node-id=64-4&embed-host=share" allowfullscreen></iframe>
+        
         <p className="font-bold">Primary persona: Elderly person</p>
         <ul className="list-disc pl-8">
           <li>Motivations: Consistent routine, independence in everyday tasks</li>
@@ -295,16 +296,13 @@ export function Remedify() {
           <li>Pain points: Managing the needs of multiple patients</li>
         </ul>
         <p>Based on our research, we solidified our <strong>core values: accessibility and medical adherance</strong></p>
-
-        {/* <h2 className="case-header">Development</h2>
-        <p>The development process started with early mock-ups with placeholder data as the team did continuous research on how to implement all the desired features. We also made continuous interface changes as the design team iterated on the design based on usability testing and professional feedback.</p>
-        <p>The implementation of our main features is described below.</p>
-        <h2 className="case-header" ref={azure}>Automated Scanning: Azure AI Vision OCR & Blob Storage</h2>
-        
-        <h2 className="case-header" ref={openai}>Parsing Info and Generating Insights: OpenAI GPT-4o mini & DPD API</h2> */}
+        <a href="https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0">Read the full user findings document</a>
         
         <h2 className="case-header" ref={reflection}>Reflection</h2>
+        <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
+
         <p>This project provided me with invaluable experiences in development, working within a team, as well as leadership. As the lead developer of the project I was responsible for not only delivering the results, but also collaborating with the designers to discuss viability of certain features and providing guidance/mentorship to other members of the dev team.</p>
+        <p>Some challenges included learning new tools along the way, and initially, delegating work to my team because of unfamiliarity with their skillsets. However with a supportive team culture we were able to tackle problems early on and cover for each others' weaknesses.</p>
         {/* <p>In terms of personal contributions to the project, these were the things I completed:</p>
         <ul className="list-disc pl-8">
           <li>Interfaces & styling</li>

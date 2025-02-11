@@ -1,4 +1,4 @@
-export default function ProjectDetails({links=null, tools, takeaways=null}) {
+export default function ProjectDetails({links=null, tools, takeaways=null, remedify=false}) {
   return(
     <div className="flex flex-col gap-2 md:gap-3 min-w-full">
       <h2 className="subhead header-blue font-normal text-xl md:text-2xl">Overview</h2>
@@ -24,6 +24,16 @@ export default function ProjectDetails({links=null, tools, takeaways=null}) {
           </ul>
         </div>
       } */}
+      <table>
+        <tr>
+          <td><strong>Role:</strong></td>
+          <td><strong className="text-bold">Lead developer</strong>, research & validation</td>
+        </tr>
+        <tr>
+          <td><strong>Timeline:</strong></td>
+          <td>3 months</td>
+        </tr>
+      </table>
       <p className="font-bold">Tools used</p>
       <ul className="pl-8 list-disc grid grid-cols-2">
         {

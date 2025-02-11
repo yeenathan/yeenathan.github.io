@@ -25,6 +25,7 @@ body {
   font-family: "Lato", sans-serif;
   background-color: var(--DARK-GREY);
   color: var(--LIGHT-GREY);
+  text-align: justify;
 }
 
 .subhead {
