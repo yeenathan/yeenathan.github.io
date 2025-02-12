@@ -70,7 +70,7 @@ export default function App() {
         <div className="flex flex-row gap-4">
           <Filter label="All" category="all"/>
           <Filter label="Development" category="dev"/>
-          <Filter label="Graphic Design" category="gd"/>
+          <Filter label="Design" category="gd"/>
         </div>
         <MyProjects projects={filterProjects}/>
       </div>

@@ -48,7 +48,7 @@ const projects = [
     image: "/images/graphic-design/cover.jpg",
     route: "/graphic-design-commissions",
     type: "gd",
-    tags: ["Thumbnail design", "Social media promotion & assets", "Photoshop", "Illustrator"]
+    tags: ["Thumbnail design", "Social media promotion & assets", "Adobe Photoshop", "Adobe Illustrator"]
   },
   {
     name: "VAN-GO!",
