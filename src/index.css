@@ -25,7 +25,6 @@ body {
   font-family: "Lato", sans-serif;
   background-color: var(--DARK-GREY);
   color: var(--LIGHT-GREY);
-  text-align: justify;
 }
 
 .subhead {
@@ -124,6 +123,7 @@ a:hover {
 @media screen and (min-width: 769px) {
   body {
     font-size: 1.2rem;
+    text-align: justify;
   }
 }
 
