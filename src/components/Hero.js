@@ -71,7 +71,7 @@ export default function Hero({projectRef, category}) {
     projectRef.current.scrollIntoView();
   }
   return(
-    <div style={{minHeight: "70vh"}} className="hero flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
+    <div style={ showProjs ? {minHeight: "70vh"} : {minHeight: "70vh", backgroundImage: "none"}} className="hero flex flex-col items-center md:items-start min-w-full justify-center gap-2 md:gap-4">
       <div className="flex flex-col items-center md:items-start">
         <h1 className="text-5xl md:text-8xl">Nathan Yee</h1>
         <h2 className="text-center md:text-left text-xl md:text-2xl subhead">Frontend Developer & Designer</h2>
@@ -79,15 +79,18 @@ export default function Hero({projectRef, category}) {
       <div className="flex flex-col items-center md:items-start gap-4">
         <p className="text-l md:text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
       </div>
-      {
-        showProjs &&
-        <div className="flex flex-row flex-wrap gap-2 md:gap-3 my-2 max-w-full">
-          <Link to={"/remedify"} className="flex justify-center md:flex-none"><img src="/images/remedify/cover.jpg" className="rounded-lg hero-project"/></Link>
-          <Link to={"/studius"} className="flex justify-center md:flex-none"><img src="/images/studius/studius-cover.png" className="rounded-lg hero-project"/></Link>
-        </div>
-      }
       
-      <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>{showProjs?"More Projects":"View Projects"}</button>
+      <div className="flex flex-row flex-wrap gap-2 md:gap-3 my-2 max-w-full">
+        {
+          !showProjs &&
+          <Link to={"/db-mag"} className="flex justify-center md:flex-none"><img src="/images/db-mag/cover.jpg" className="rounded-lg hero-project"/></Link>
+        }
+        <Link to={"/remedify"} className="flex justify-center md:flex-none"><img src="/images/remedify/cover.jpg" className="rounded-lg hero-project"/></Link>
+        <Link to={"/studius"} className="flex justify-center md:flex-none"><img src="/images/studius/studius-cover.png" className="rounded-lg hero-project"/></Link>
+      </div>
+      
+      
+      <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>More Projects</button>
       <Info/>
     </div>
   )

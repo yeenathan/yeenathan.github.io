@@ -249,7 +249,6 @@ export function Remedify() {
       </div> */}
 
       <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
-
         <div className="grid grid-cols-3 gap-2 md:gap-3">
           <img className="rounded" src="/images/remedify/scanning.jpg"/>
           <img className="rounded" src="/images/remedify/homepage.jpg"/>
@@ -516,7 +515,16 @@ export function Magazine() {
       <Header/>
       <ToTop/>
       <ProjectHero coverPath={coverPath} content={content} title={title} />
-      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]} links={[{url: "/https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?rlkey=xjqtsnaldnn2irzq4k2kfflwi&st=kl2c9dom&dl=0", label: "Download print PDF"}]}/>
+      <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "ChatGPT (content)"]}
+        links={[
+          {url: "https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?dl=1", label: "Download full print PDF"},
+          {url: "https://www.dropbox.com/scl/fi/vr4d1z27wapx0hlwumctb/db-mag.zip?dl=1", label: "Download INDD package"}
+        ]}
+      />
+      <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
+        <p>With print in mind, the magazine design takes inspiration from Akira Toriyama's <span className="italic">Dragon Ball</span> manga series. Proper use of grids, styles, swatches, etc. ensures visual consistency and coherence.</p>
+        <p>Assets are borrowed from online <span className="italic">Dragon Ball</span> manga panels and/or recreated in Illustrator.</p>
+      </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <div className="grid grid-cols-2">
           <img src="/images/designs/db_Page_06.jpg"></img>
