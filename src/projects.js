@@ -217,7 +217,7 @@ export function Remedify() {
       <ProjectHero title={"Remedify"} coverPath={"/images/remedify/cover.jpg"} content={content}/>
       <ProjectDetails
         links={[
-          { url: "https://github.com/yeenathan/asclepius", label: "Project Repo" },
+          { url: "https://github.com/yeenathan/asclepius", label: "Github Repo" },
           { url: "https://www.remedify.ca/", label: "Remedify Landing Page" },
           // { url: "https://remedify-blog.vercel.app/", label: "Remedify Blog" }
           { url: "https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0", label: "Research Document"}
@@ -323,6 +323,7 @@ export function Remedify() {
 }
 
 export function Studius() {
+  const reflection = useRef();
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
@@ -330,9 +331,9 @@ export function Studius() {
       <ProjectHero content={"Studius is a study helper app designed for students to both learn about their study habits and find others to study with."} coverPath={"/images/studius/studius-cover.png"} title={"Studius"}/>
       <ProjectDetails
         links={[
+          { url: "https://github.com/jasantiaguel/studius-app", label: "Github Repo" },
           { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
           { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
-          { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
           { url: "https://studi-us-style-guide.vercel.app/", label: "Branding Style Guide" },
           { url: "https://docs.google.com/document/d/1frDEKZwsNvP9bPvJhrAL7fmk1ME5Xzkh8s9i74SIsnM/edit?tab=t.0", label: "Usability testing document"}
         ]}
@@ -342,13 +343,16 @@ export function Studius() {
           "Adobe Photoshop",
           "Adobe Illustrator"
         ]}
+        studius={true}
       />
       <div className="min-w-full">
         <div className="mb-2">
           <p className="font-bold">Takeaways</p>
+          <a onClick={() => reflection.current.scrollIntoView()} style={{cursor: "pointer"}}>Read reflection</a>
         </div>
         <ul className="pl-8 list-disc grid grid-cols-1 md:grid-cols-2">
           <li>Interface design & development</li>
+          <li>State management</li>
           <li>Usability testing, iterative process</li>
           <li>UX design</li>
           <li>Team collaboration</li>
@@ -356,14 +360,27 @@ export function Studius() {
         </ul>
       </div>
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
-        <p>Studius is a team project where we were to ideate, research, design and develop interfaces for an application idea.</p>
         <h2 className="case-header">Concept</h2>
+        <iframe width={"100%"} height={400} src="https://embed.figma.com/board/wh3ZXZtqq39bybt72mY98L/StudiUs-A3Inventory?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={300} src="https://embed.figma.com/board/bhOpTVTiAeJDi82TcyUTKe/StudiUs-A2UserPersona?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+        <p>Studius is intended for a variety of students, ranging from those who are seeking or providing mentorship, returning students seeking professional connections, and students who may just have trouble finding friends. In other words, Studius is about connecting students together.</p>
+        <a href="https://studi-us-style-guide.vercel.app/" target="_blank">Refer to the online style guide for branding details.</a>
+        <h2 className="case-header">Initial Iteration</h2>
+        <p className="font-bold">Lo-fi</p>
         <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=168-3447&embed-host=share" allowfullscreen></iframe>
+        <p>An initial prototype was created for testing purposes from this mock up. Findings are reported in the <a href="https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=1722-6749&t=sERZkiK9TtDPSZfD-1" target="_blank">usability testing report</a>.</p>
+        <p>The design was iterated on based on this testing report and other feedback.</p>
+        <h2 className="case-header">Final Hi-fi Mock Up</h2>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&embed-host=share" allowfullscreen></iframe>
         <h2 className="case-header">Prototype</h2>
         <iframe width={"100%"} height={600} src="https://embed.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=425-30829&starting-point-node-id=425%3A30829&embed-host=share" allowfullscreen></iframe>
-        <h2 className="case-header">Reflection</h2>
-        <p>This experience solidified my understanding of UX design concepts such as consistency, perceivability, learnability, predictability, and feedback. It also taught me the benefits of usability testing and the iterative process.</p>
-        <p>Developing this project taught me the effectiveness of atomic principles in both development and design as well as writing maintainable and scalable code.</p>
+        <h2 className="case-header">Development</h2>
+        <p>A web mockup with functional interface was developed and deployed at the end of the design phase.</p>
+        <a href="https://studius-app.vercel.app/" target="_blank">View the Studius web mock up</a>
+        <a href="https://github.com/jasantiaguel/studius-app" target="_blank">Github repository</a>
+        <h2 className="case-header" ref={reflection}>Reflection</h2>
+        <p>This experience solidified my understanding of UX design concepts such as consistency, perceivability, learnability, predictability, and feedback. It also taught me the benefits of usability testing and the iterative process. It was my first time tackling on a project like this.</p>
+        <p>Developing the web mockup taught me the effectiveness of atomic principles in both development and design, and also re-enforced my understanding of React fundamentals, such as managing state and writing re-useable components. As the stronger developer of the team, I would also provide insights and mentorship to my teammates and ensure their successes for that aspect.</p>
       </div>
       <Footer/>    
     </div>
@@ -462,7 +479,7 @@ export function CurrencyConverter() {
       <ProjectHero title={"Currency Converter"} content={content} coverPath={"/images/currency-converter/cover.jpg"}/>
       <ProjectDetails
         links={[
-          { url: "https://github.com/yeenathan/currency-converter/", label: "Project Repo"}
+          { url: "https://github.com/yeenathan/currency-converter/", label: "Github Repo"}
         ]}
         tools={[
           "HTML",
