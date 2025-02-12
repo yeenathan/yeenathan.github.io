@@ -20,7 +20,7 @@ const projects = [
     image: "/images/studius/studius-cover.png",
     route: "/studius",
     type: "dev gd",
-    tags: ["React", "UX/UI design", "Branding design", "Figma"]
+    tags: ["React", "UX/UI", "Branding", "Figma", "Prototyping"]
   },
   {
     name: "Currency Converter",
@@ -333,7 +333,8 @@ export function Studius() {
           { url: "https://studius-app.vercel.app/", label: "Web App Mockup" },
           { url: "https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&t=ojJqbi0ygQHpetxL-1", label: "Figma Prototype" },
           { url: "https://github.com/jasantiaguel/studius-app", label: "Project Repo" },
-          { url: "https://studi-us-style-guide.vercel.app/", label: "Branding Style Guide" }
+          { url: "https://studi-us-style-guide.vercel.app/", label: "Branding Style Guide" },
+          { url: "https://docs.google.com/document/d/1frDEKZwsNvP9bPvJhrAL7fmk1ME5Xzkh8s9i74SIsnM/edit?tab=t.0", label: "Usability testing document"}
         ]}
         tools={[
           "Next.js",
@@ -356,6 +357,10 @@ export function Studius() {
       </div>
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
         <p>Studius is a team project where we were to ideate, research, design and develop interfaces for an application idea.</p>
+        <h2 className="case-header">Concept</h2>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=168-3447&embed-host=share" allowfullscreen></iframe>
+        <h2 className="case-header">Prototype</h2>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=425-30829&starting-point-node-id=425%3A30829&embed-host=share" allowfullscreen></iframe>
         <h2 className="case-header">Reflection</h2>
         <p>This experience solidified my understanding of UX design concepts such as consistency, perceivability, learnability, predictability, and feedback. It also taught me the benefits of usability testing and the iterative process.</p>
         <p>Developing this project taught me the effectiveness of atomic principles in both development and design as well as writing maintainable and scalable code.</p>
