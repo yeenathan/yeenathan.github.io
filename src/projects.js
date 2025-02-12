@@ -276,6 +276,7 @@ export function Remedify() {
         <p>AI generated insights and additional information based on information fetched from DPD API. By providing this information, this feature addresses one of the main reasons for low medication adherence: confusion.</p>
         
         <p><strong className="text-sky-200">OpenAI's GPT-4o mini</strong> is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
+        <p>Due to time constraints, the OpenAI API implementation is done locally with a .env, rather than through a cloud function like the functions OCR above.</p>
         <Code text={OpenAiParser} title={"Parsing text to object"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIParser.js"}/>
         <Code text={dinInfo} title={"Fetching data from DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/pages/new-hifi/FormScreen.js"}/>
         <Code text={OpenAIGenerate} title={"Generating insights based on DPD"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/OpenAIGetInfo.js"}/>
@@ -296,7 +297,7 @@ export function Remedify() {
           <li>Pain points: Managing the needs of multiple patients</li>
         </ul>
         <p>Based on our research, we solidified our <strong>core values: accessibility and medical adherance</strong></p>
-        <a href="https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0">Read the full user findings document</a>
+        <a href="https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0" target="_blank">Read the full user findings document</a>
         
         <h2 className="case-header" ref={reflection}>Reflection</h2>
         <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
@@ -467,6 +468,9 @@ export function CurrencyConverter() {
         ]}
       />
       <div className="min-w-full">
+        <div className="max-w-3xl mx-auto">
+          <p>Simple web app to practice integrating APIs with vanilla JS and implementing basic front-end interactions.</p>
+        </div>
         <h2 className="case-header">Demo Videos</h2>
           <div className="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2">
             <video controls>
@@ -493,8 +497,11 @@ export function VanGo() {
         {url: "https://comp3170-van-go.vercel.app/", label: "VAN-GO! Game"},
         {url: "https://github.com/jasantiaguel/comp3170-final-proj", label: "Github Repo"}
       ]}
-        tools={["React.js", "Leaflet API"]}
+        tools={["React.js", "Leaflet API", "Git/Github"]}
       />
+      <div className="max-w-3xl mx-auto">
+        <p>A simple web-based game built to practice routing and implementing CRUD operations using React.js, as well as version control with git/Github.</p>
+      </div>
       <Footer/>
     </div>
   )
