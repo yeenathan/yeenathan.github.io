@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
 
-const RESUME_LINK = "https://www.dropbox.com/scl/fi/6y9267vtsq70q1m5d14a1/resume.pdf?dl=1";
+const RESUME_DEV = "https://www.dropbox.com/scl/fi/16c0gn8shfnzxg0c0cis9/resume-dev.pdf?dl=1";
+const RESUME_DESIGN = "https://www.dropbox.com/scl/fi/3mo0wtr2q8ovuoyv4xdb9/resume-design.pdf?dl=1";
 
 function Icon({url, src, hover, size=null}) {
   return(
@@ -16,9 +17,11 @@ function Icon({url, src, hover, size=null}) {
   )
 }
 
-export function Info({small=false}) {
+export function Info({category="dev"}) {
   const [copied, setCopied] = useState(false);
   const size = "w-12";
+
+  const resumeLink = category === "gd" ? RESUME_DESIGN:RESUME_DEV;
 
   function handleEmail(e) {
     if (!copied) navigator.clipboard.writeText("yeenathan21@gmail.com");
@@ -28,7 +31,7 @@ export function Info({small=false}) {
   return(
     <div className="flex flex-col items-center md:flex-row gap-2 md:gap-4">
       <div className="flex flex-row gap-2">
-        <a href={RESUME_LINK} download={"resume"}>
+        <a href={resumeLink} download={"resume"}>
           <img 
             className={size}
             src={"/images/icons/resume-black.svg"}
@@ -98,7 +101,7 @@ export default function Hero({projectRef, category}) {
       
       
       <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>More Projects</button>
-      <Info/>
+      <Info category={category}/>
     </div>
   )
 }
