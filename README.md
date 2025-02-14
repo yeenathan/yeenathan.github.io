@@ -1,3 +1,1 @@
-wip
-
-built using reactjs
+https://www.linkedin.com/
