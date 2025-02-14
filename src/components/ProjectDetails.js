@@ -50,7 +50,7 @@ export default function ProjectDetails({links=null, tools, takeaways=null, remed
           </tr>
         </table>
       }
-      <p className="font-bold">Tools used</p>
+      <p className="font-bold">Tools</p>
       <ul className="pl-8 list-disc grid grid-cols-2">
         {
           tools.map((tool, key) => {
