@@ -21,8 +21,8 @@ export default function ToTop() {
       </button>
       {
         !atHome && 
-        <Link className="totop text-l md:text-xl" to={"/"}>
-          Home
+        <Link className="totop text-l md:text-xl" to={{pathname: "/"}} state={{toProjects: true}}>
+          Projects
         </Link>
       }
     </div>

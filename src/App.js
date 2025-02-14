@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
 import Header from "./components/Header.js"
@@ -7,7 +7,7 @@ import projects from "./projects.js"
 import ToTop from "./components/ToTop.js";
 import Footer from "./components/Footer.js";
 
-export default function App() {
+export default function App({state}) {
   const ref = useRef(null);
   
   function MyProjects ({projects}) {
@@ -55,17 +55,25 @@ export default function App() {
 
   const [filter, setFilter] = useState(category || "all");
   const [filterProjects, setFilterProjects] = useState(doFilter(filter));
-  
+
+  const location = useLocation();
+
   useEffect(() => {
     setFilterProjects(doFilter(filter));
   }, [filter])
+
+  useEffect(() => {
+    if (location.state && location.state.toProjects) {
+      ref.current.scrollIntoView();
+    }
+  }, [])
 
   return (
     <div className="container mx-auto flex px-4 pt-8 pb-16 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
       <Hero projectRef={ref} category={category}/>
-      <div ref={ref} className="min-w-full flex flex-col gap-2">
+      <div ref={ref} className="min-w-full flex flex-col gap-2 pt-4">
         <h3 className="text-2xl md:text-4xl">Projects</h3>
         <div className="flex flex-row gap-4">
           <Filter label="All" category="all"/>

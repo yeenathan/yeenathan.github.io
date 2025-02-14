@@ -20,7 +20,7 @@ const projects = [
     image: "/images/studius/studius-cover.png",
     route: "/studius",
     type: "dev gd",
-    tags: ["React", "UX/UI", "Branding", "Figma", "Prototyping"]
+    tags: ["React", "UX/UI", "Branding", "Figma", "Prototyping", "Case Study"]
   },
   {
     name: "Currency Converter",
@@ -283,7 +283,7 @@ export function Remedify() {
         <h2 className="case-header">Research & Validation</h2>
         <p>A survey and numerous interviews were conducted by members of the team to refine and validate the app's ideas and to help craft the user personas.</p>
         
-        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/eqiBsR991DWqKMuktHQb1P/Persona?node-id=64-4&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/eqiBsR991DWqKMuktHQb1P/Persona?node-id=64-4&embed-host=share" ></iframe>
         
         <p className="font-bold">Primary persona: Elderly person</p>
         <ul className="list-disc pl-8">
@@ -361,19 +361,19 @@ export function Studius() {
       </div>
       <div className="mt-2 md:mt-6 max-w-3xl flex flex-col gap-2 md:gap-3">
         <h2 className="case-header">Concept</h2>
-        <iframe width={"100%"} height={400} src="https://embed.figma.com/board/wh3ZXZtqq39bybt72mY98L/StudiUs-A3Inventory?node-id=0-1&embed-host=share" allowfullscreen></iframe>
-        <iframe width={"100%"} height={300} src="https://embed.figma.com/board/bhOpTVTiAeJDi82TcyUTKe/StudiUs-A2UserPersona?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={400} src="https://embed.figma.com/board/wh3ZXZtqq39bybt72mY98L/StudiUs-A3Inventory?node-id=0-1&embed-host=share" ></iframe>
+        <iframe width={"100%"} height={300} src="https://embed.figma.com/board/bhOpTVTiAeJDi82TcyUTKe/StudiUs-A2UserPersona?node-id=0-1&embed-host=share" ></iframe>
         <p>Studius is intended for a variety of students, ranging from those who are seeking or providing mentorship, returning students seeking professional connections, and students who may just have trouble finding friends. In other words, Studius is about connecting students together.</p>
         <a href="https://studi-us-style-guide.vercel.app/" target="_blank">Refer to the online style guide for branding details.</a>
         <h2 className="case-header">Initial Iteration</h2>
         <p className="font-bold">Lo-fi</p>
-        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=168-3447&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=168-3447&embed-host=share" ></iframe>
         <p>An initial prototype was created for testing purposes from this mock up. Findings are reported in the <a href="https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=1722-6749&t=sERZkiK9TtDPSZfD-1" target="_blank">usability testing report</a>.</p>
         <p>The design was iterated on based on this testing report and other feedback.</p>
         <h2 className="case-header">Final Hi-fi Mock Up</h2>
-        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&embed-host=share" ></iframe>
         <h2 className="case-header">Prototype</h2>
-        <iframe width={"100%"} height={600} src="https://embed.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=425-30829&starting-point-node-id=425%3A30829&embed-host=share" allowfullscreen></iframe>
+        <iframe width={"100%"} height={600} src="https://embed.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=425-30829&starting-point-node-id=425%3A30829&embed-host=share" ></iframe>
         <h2 className="case-header">Development</h2>
         <p>A web mockup with functional interface was developed and deployed at the end of the design phase.</p>
         <a href="https://studius-app.vercel.app/" target="_blank">View the Studius web mock up</a>

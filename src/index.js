@@ -12,7 +12,7 @@ function ScrollReset() {
   const { pathname } = useLocation();
 
   React.useEffect(() => {
-    // if (pathname === "/") return;
+    if (pathname === "/") return;
     window.scrollTo(0, 0);
   }, [pathname])
 

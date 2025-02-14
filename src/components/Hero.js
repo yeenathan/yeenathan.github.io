@@ -83,7 +83,7 @@ export default function Hero({projectRef, category}) {
         <p className="text-l md:text-xl text-center md:text-left">Vancouver based frontend developer & visual designer dedicated to providing sophisticated and empathetic solutions.</p>
       </div>
       
-      <div className="flex flex-row flex-wrap gap-2 md:gap-3 my-2 max-w-full">
+      {/* <div className="flex flex-row flex-wrap gap-2 md:gap-3 my-2 max-w-full">
         {
           !showProjs ?
           <>
@@ -97,10 +97,10 @@ export default function Hero({projectRef, category}) {
           <Link to={"/studius"} className="flex justify-center md:flex-none"><img src="/images/studius/studius-cover.png" className="rounded-lg hero-project"/></Link>
           </>
         }
-      </div>
+      </div> */}
       
       
-      <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>More Projects</button>
+      <button className="hero-button px-6 py-2 mb-2 md:mb-0" onClick={handleClick}>View Projects</button>
       <Info category={category}/>
     </div>
   )
