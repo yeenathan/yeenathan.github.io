@@ -121,6 +121,31 @@ a:hover {
   border-radius: .5rem;
 }
 
+.modal {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-window {
+  z-index: 1;
+}
+
+.modal-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #547c9920;
+}
+
 @media screen and (min-width: 769px) {
   body {
     font-size: 1.2rem;

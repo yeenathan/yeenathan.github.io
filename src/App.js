@@ -77,11 +77,11 @@ export default function App({state}) {
     <div className="container mx-auto flex px-4 pt-8 pb-16 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
-      <button onClick={() => setShowGallery(!showGallery)}>
+      <button onClick={() => setShowGallery(true)}>
         gallery
       </button>
       { showGallery &&
-        <Gallery images={ALL_IMAGES}></Gallery>
+        <Gallery images={ALL_IMAGES} setShowModal={setShowGallery}></Gallery>
       }
       <Hero projectRef={ref} category={category}/>
       <div ref={ref} className="min-w-full flex flex-col gap-2 pt-4">
