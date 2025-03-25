@@ -26,12 +26,12 @@ export default function Gallery({images, setShowModal}) {
     <div className="modal">
       <div className="modal-bg" onClick={() => setShowModal(false)}></div>
       <div className="modal-window">
-        <div className="flex p-8 justify-center" style={{backgroundColor: "#547c99"}}>
-          {/* <Link to={_images[position].location}> */}
+        <div className="flex p-8 justify-center" style={{backgroundColor: "#171717", borderRadius: "1rem"}}>
+          <Link to={_images[position].location}>
             <img src={_images[position].path} style={{maxHeight: "55vh"}}/>
-          {/* </Link> */}
+          </Link>
         </div>
-        <div className="flex flex-row gap-2 mt-2">
+        <div className="flex flex-row gap-2 mt-3 overflow-x-scroll">
           {
             _images.map((image, key) => {
               return(

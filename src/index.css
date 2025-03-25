@@ -135,8 +135,6 @@ a:hover {
 
 .modal-window {
   z-index: 1;
-  height: 60vh;
-  width: 60vw;
 }
 
 .modal-bg {
@@ -153,6 +151,10 @@ a:hover {
     font-size: 1.2rem;
     text-align: justify;
   }
+  .modal-window {
+    height: 60vh;
+    width: 60vw;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -164,5 +166,9 @@ a:hover {
   }
   .hero-project {
     max-width: 90%;
+  }
+  .modal-window {
+    height: auto;
+    width: 90%;
   }
 }
