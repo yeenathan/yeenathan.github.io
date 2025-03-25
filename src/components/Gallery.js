@@ -27,13 +27,25 @@ export default function Gallery({images, setShowModal}) {
       <div className="modal-bg" onClick={() => setShowModal(false)}></div>
       <div className="modal-window max-w-6xl">
         <div className="p-8" style={{backgroundColor: "#547c99"}}>
-          <img src={_images[position].path}/>
-          {/* <Link to={_images[position].location}>go to</Link> */}
+          <Link to={_images[position].location}>
+            <img src={_images[position].path}/>
+          </Link>
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 mt-2">
+          {
+            _images.map((image, key) => {
+              return(
+                <img src={image.path} className="max-w-32" key={key} onClick={() => setPosition(key)}
+                  style={{border: position === key ? "2px solid #48cbff" : null, cursor: "pointer"}}
+                ></img>
+              )
+            })
+          }
+        </div>
+        {/* <div className="flex flex-row gap-2">
           <button onClick={() => handlePrev()}>prev</button>
           <button onClick={() => handleNext()}>next</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
