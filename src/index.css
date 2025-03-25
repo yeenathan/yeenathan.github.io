@@ -135,6 +135,8 @@ a:hover {
 
 .modal-window {
   z-index: 1;
+  height: 60vh;
+  width: 60vw;
 }
 
 .modal-bg {
