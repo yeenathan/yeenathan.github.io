@@ -1,11 +1,14 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { getRouteImages } from "./components/Header";
 import "./index.css";
 import ToTop from "./components/ToTop";
 import ProjectHero from "./components/ProjectHero";
 import ProjectDetails from "./components/ProjectDetails";
 import Code from "./components/Code";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import MyImage from "./components/MyImage";
+import Gallery from "./components/Gallery";
 
 const projects = [
   {
@@ -210,10 +213,17 @@ export function Remedify() {
   const reflection = useRef();
 
   const content = "Remedify is a medication reminder app dedicated to accessibility and ensuring medical adherance."
+
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero title={"Remedify"} coverPath={"/images/remedify/cover.jpg"} content={content}/>
       <ProjectDetails
         links={[
@@ -250,9 +260,9 @@ export function Remedify() {
 
       <div className="mt-2 md:mt-6 max-w-full md:max-w-3xl flex flex-col gap-2 md:gap-3">
         <div className="grid grid-cols-3 gap-2 md:gap-3">
-          <img className="rounded" src="/images/remedify/scanning.jpg"/>
-          <img className="rounded" src="/images/remedify/homepage.jpg"/>
-          <img className="rounded" src="/images/remedify/info.jpg"/>
+          <MyImage className="rounded" src="/images/remedify/scanning.jpg" setShowGallery={setShowGallery}/>
+          <MyImage className="rounded" src="/images/remedify/homepage.jpg" setShowGallery={setShowGallery}/>
+          <MyImage className="rounded" src="/images/remedify/info.jpg" setShowGallery={setShowGallery}/>
         </div>
 
         <h2 className="case-header">Context</h2>
@@ -262,7 +272,7 @@ export function Remedify() {
         <p>The app boasts two main features to assist patients with medical adherence while being as accessible as possible.</p>
           
         <p className="font-bold">Automated scanning</p>
-        <img src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
+        <MyImage setShowGallery={setShowGallery} src="/images/remedify/app1.jpg" style={{border: "2px solid #272727"}}/>
         <p className="mb-2 md:mb-4">Automated med scanning while cross-referencing the Canadian Drug Product Database (DPD) for accessibility and accuracy. This feature enforces our focus on accessibility by simplifying the interaction to add a medication to the app.</p>
         
         <p>The automatic scanning feature starts with <strong className="text-sky-200">Azure AI Vision OCR</strong>, specifically the Read API. Image data is uploaded using blob storage via a SAS URL so to be used by the OCR function.</p>
@@ -271,7 +281,7 @@ export function Remedify() {
         <Code text={uploadCode} title={"Calling the cloud functions"} link={"https://github.com/yeenathan/Asclepius/blob/main/app/components/UploadImg.js"}/>
 
         <p className="font-bold mt-2">Providing Information and Generated Insights</p>
-        <img src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
+        <MyImage setShowGallery={setShowGallery} src="/images/remedify/app2.jpg" style={{border: "2px solid #272727"}}/>
         <p>AI generated insights and additional information based on information fetched from DPD API. By providing this information, this feature addresses one of the main reasons for low medication adherence: confusion.</p>
         
         <p><strong className="text-sky-200">OpenAI's GPT-4o mini</strong> is used to parse the text data from OCR into a usable object as well as generate insights, such as side effects, using data fetched from the <a to={"/https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database.html"}>Canadian Drug Database (DPD)</a> API.</p>
@@ -299,7 +309,7 @@ export function Remedify() {
         <a href="https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0" target="_blank">Read the full user findings document</a>
         
         <h2 className="case-header" ref={reflection}>Reflection</h2>
-        <img src="/images/remedify/asclepius.jpg" className="max-w-full"/>
+        <MyImage setShowGallery={setShowGallery} src="/images/remedify/asclepius.jpg" className="max-w-full"/>
 
         <p>This project provided me with invaluable experiences in development, working within a team, as well as leadership. As the lead developer of the project I was responsible for not only delivering the results, but also collaborating with the designers to discuss viability of certain features and providing guidance/mentorship to other members of the dev team.</p>
         <p>Some challenges included learning new tools along the way, and initially, delegating work to my team because of unfamiliarity with their skillsets. However with a supportive team culture we were able to tackle problems early on and cover for each others' weaknesses.</p>
@@ -324,10 +334,16 @@ export function Remedify() {
 
 export function Studius() {
   const reflection = useRef();
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero content={"Studius is a study helper app designed for students to both learn about their study habits and find others to study with."} coverPath={"/images/studius/studius-cover.png"} title={"Studius"}/>
       <ProjectDetails
         links={[
@@ -399,6 +415,7 @@ export function GraphicDesignComms() {
     "/images/graphic-design/merp/merp-thumbnail8.png",
     "/images/graphic-design/merp/merp-thumbnail9.png",
   ]
+  const [showGallery, setShowGallery] = useState(false);
 
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
@@ -410,7 +427,7 @@ export function GraphicDesignComms() {
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <p className="text-l md:text-xl">For a friend's <a to={"https://www.youtube.com/watch?v=Gx1JC46uWj4"}>commentary reel</a></p>
-        <img src="/images/graphic-design/jerryreel.jpg"></img>
+        <MyImage setShowGallery={setShowGallery} src="/images/graphic-design/jerryreel.jpg"></MyImage>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <p className="text-l md:text-xl">For <a to={"https://www.twitch.tv/merpkun"}>Merp</a>'s Youtube & Twitch channels</p>
@@ -418,22 +435,22 @@ export function GraphicDesignComms() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-2">
           {
             merpThumbnails.map((thumbnail, index) => (
-              <img src={thumbnail} key={index}/>
+              <MyImage setShowGallery={setShowGallery} src={thumbnail} key={index}/>
             ))
           }
         </div>
         <h3 className="text-xl md:text-xl">Stream Elements</h3>
         <div className="flex min-w-full gap-1 md:gap-2 justify-center">
-          <img src="/images/graphic-design/merp/merp-banner.png"></img>
-          {/* <img src="/images/graphic-design/merp/merp-schedule2.png"></img>
-          <img src="/images/graphic-design/merp/merp-schedule1.png"></img> */}
+          <MyImage setShowGallery={setShowGallery} src="/images/graphic-design/merp/merp-banner.png"></MyImage>
+          {/* <MyImage setShowGallery={setShowGallery} src="/images/graphic-design/merp/merp-schedule2.png"></MyImage>
+          <MyImage setShowGallery={setShowGallery} src="/images/graphic-design/merp/merp-schedule1.png"></MyImage> */}
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <p className="text-l md:text-xl">Logo design for Norcal fighting game local <a to={"https://www.start.gg/astral"}>Astral Beatdown</a></p>
         <div className="flex">
-          <img style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo.jpg"></img>
-          <img style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo-b&w.svg"></img>
+          <MyImage setShowGallery={setShowGallery} style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo.jpg"></MyImage>
+          <MyImage setShowGallery={setShowGallery} style={{maxWidth: "50%"}} src="/images/graphic-design/astral-logo-b&w.svg"></MyImage>
         </div>
       </div>
       <Footer/>
@@ -443,23 +460,29 @@ export function GraphicDesignComms() {
 
 export function GraphicDesignProjs() {
   const content = "A compilation of various individual graphic design projects."
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero coverPath={"/images/designs/cover.jpg"} content={content} title="Graphic Design Projects"/>
       <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects"]}/>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:gap-4">
-          <img src="/images/designs/motfd.png"></img>
-          <img src="/images/designs/posterlong.jpg"></img>
-          {/* <img src="/images/designs/slizzard.jpg"></img> */}
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/motfd.png"></MyImage>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/posterlong.jpg"></MyImage>
+          {/* <MyImage setShowGallery={setShowGallery} src="/images/designs/slizzard.jpg"></MyImage> */}
         </div>
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <div className="flex flex-row flex-wrap justify-center gap-2 md:gap-4">
-          <img src="/images/designs/inclass1.jpg"></img>
-          <img style={{maxWidth: "50%"}} src="/images/designs/can_Page_3.jpg"></img>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/inclass1.jpg"></MyImage>
+          <MyImage setShowGallery={setShowGallery} style={{maxWidth: "50%"}} src="/images/designs/can_Page_3.jpg"></MyImage>
           <video style={{maxWidth: "40%"}} controls>
             <source src="/images/designs/sleep.mp4" type="video/webm"/>
           </video>
@@ -472,10 +495,16 @@ export function GraphicDesignProjs() {
 
 export function CurrencyConverter() {
   const content = "Simple currency converter web page using vanilla HTML, CSS, and Javascript";
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero title={"Currency Converter"} content={content} coverPath={"/images/currency-converter/cover.jpg"}/>
       <ProjectDetails
         links={[
@@ -509,10 +538,16 @@ export function CurrencyConverter() {
 
 export function VanGo() {
   const content = "VAN-GO! is a simple web-based game where players guess Vancouver locations on a map based on given images."
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero title={"VAN-GO!"} content={content} coverPath={"/images/van-go/cover.jpg"}/>
       <ProjectDetails links={[
         {url: "https://comp3170-van-go.vercel.app/", label: "VAN-GO! Game"},
@@ -532,10 +567,16 @@ export function Magazine() {
   const content = "A print magazine on the architecture of the Dragon Ball universe"
   const coverPath = "/images/db-mag/cover.jpg";
   const title = "Dragon Ball: Architecture & Wonders";
+  const [showGallery, setShowGallery] = useState(false);
+
   return(
     <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
       <Header/>
       <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
       <ProjectHero coverPath={coverPath} content={content} title={title} />
       <ProjectDetails tools={["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "ChatGPT (content)"]}
         links={[
@@ -549,12 +590,12 @@ export function Magazine() {
       </div>
       <div className="flex flex-col min-w-full gap-1 md:gap-2">
         <div className="grid grid-cols-2">
-          <img src="/images/designs/db_Page_06.jpg"></img>
-          <img src="/images/designs/db_Page_07.jpg"></img>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/db_Page_06.jpg"></MyImage>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/db_Page_07.jpg"></MyImage>
         </div>
         <div className="grid grid-cols-2">
-          <img src="/images/designs/db_Page_10.jpg"></img>
-          <img src="/images/designs/db_Page_11.jpg"></img>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/db_Page_10.jpg"></MyImage>
+          <MyImage setShowGallery={setShowGallery} src="/images/designs/db_Page_11.jpg"></MyImage>
         </div>
       </div>
       <Footer/>
