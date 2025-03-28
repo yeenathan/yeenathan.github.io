@@ -1,6 +1,5 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { getRouteImages } from "./components/Header";
 import "./index.css";
 import ToTop from "./components/ToTop";
 import ProjectHero from "./components/ProjectHero";
@@ -9,6 +8,7 @@ import Code from "./components/Code";
 import { useRef, useState } from "react";
 import MyImage from "./components/MyImage";
 import Gallery from "./components/Gallery";
+import { getRouteImages } from "./utils/getRouteImages";
 
 const projects = [
   {
