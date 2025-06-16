@@ -12,6 +12,13 @@ import { getRouteImages } from "./utils/getRouteImages";
 
 const projects = [
   {
+    name: "SomaSync",
+    image: "/images/somasync/somasync.jpg",
+    route: "/somasync",
+    type: "dev",
+    tags: ["AWS Lightsail", "WP API", "php", "React", "Typescript", "Authentication"]
+  },
+  {
     name: "Remedify",
     image: "/images/remedify/cover.jpg",
     route: "/remedify",
@@ -63,6 +70,32 @@ const projects = [
 ]
 
 export default projects;
+
+export function Somasync() {
+  const [showGallery, setShowGallery] = useState(false);
+
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
+      <ProjectHero title={"SomaSync"} content={"SomaSync is a psychological health and safety learning web application"} coverPath={"/images/somasync/somasync.jpg"}/>
+      <ProjectDetails links={[
+        {url: "https://main.d2mh04uaf5zcbb.amplifyapp.com/login", label: "Deployed App"},
+        {url: "https://github.com/yeenathan/SomaSync", label: "Github Repo"}
+      ]}
+        tools={["React.js", "Typescript", "AWS Lightsail", "AWS Amplify", "Wordpress REST API", "php"]}
+      />
+      <div className="max-w-3xl mx-auto">
+        <p>A psychological health and safety learning web application I worked on over a little under 2 months for my practicum. Learned a lot about deployment and back-end systems as it was my first exposure to many tools.</p>
+      </div>
+      <Footer/>
+    </div>
+  )
+}
 
 export function Remedify() {
   const uploadCode = `const _url = await fetch("https://remedify-ocr.azurewebsites.net/api/generateSASUrl?", {
