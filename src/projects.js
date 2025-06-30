@@ -11,19 +11,19 @@ import Gallery from "./components/Gallery";
 import { getRouteImages } from "./utils/getRouteImages";
 
 const projects = [
+    {
+      name: "Remedify",
+      image: "/images/remedify/cover.jpg",
+      route: "/remedify",
+      type: "dev",
+      tags: ["React Native", "Azure", "OpenAI", "Case Study"]
+    },
   {
     name: "SomaSync",
     image: "/images/somasync/somasync.jpg",
     route: "/somasync",
     type: "dev",
     tags: ["AWS Lightsail", "WP API", "php", "React", "Typescript", "Authentication"]
-  },
-  {
-    name: "Remedify",
-    image: "/images/remedify/cover.jpg",
-    route: "/remedify",
-    type: "dev",
-    tags: ["React Native", "Azure", "OpenAI", "Case Study"]
   },
   {
     name: "Studius",
@@ -89,8 +89,11 @@ export function Somasync() {
       ]}
         tools={["React.js", "Typescript", "AWS Lightsail", "AWS Amplify", "Wordpress REST API", "php"]}
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto flex flex-col gap-2">
+        <p className="italic mb-2 text-sky-200">*Not currently online</p>
         <p>A psychological health and safety learning web application I worked on over a little under 2 months for my practicum. Learned a lot about deployment and back-end systems as it was my first exposure to many tools.</p>
+        <p>SomaSync was built from scratch using Wordpress as a backend with a custom React web app frontend, deployed using AWS services (Lightsail, Amplify, S3, CloudFront, etc.). The decision was made to use Wordpress because it comes with user group functionality and an admin dashboard built-in, which was useful considering the short time-frame.</p>
+        <p>While it was a short term project I learned a lot about AWS and deployment, php, DNS and domain management, and integrating frontend/backend together from this experience.</p>
       </div>
       <Footer/>
     </div>
