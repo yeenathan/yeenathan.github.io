@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { HashRouter, Routes, Route, useLocation } from 'react-router';
-import { Remedify, GraphicDesignComms, GraphicDesignProjs, Studius, VanGo, Magazine, CurrencyConverter, Somasync } from './projects';
+import { Remedify, GraphicDesignComms, GraphicDesignProjs, Studius, VanGo, Magazine, CurrencyConverter, Somasync, Neighbour } from './projects';
 import About from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,6 +26,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App />}/>
       <Route path='/remedify' element={<Remedify />}/>
+      <Route path='/dearneighbour' element={<Neighbour/>}/>
       <Route path='/somasync' element={<Somasync/>} />
       <Route path='/graphic-design-commissions' element={<GraphicDesignComms />}/>
       <Route path='/designs' element={<GraphicDesignProjs />}/>

@@ -26,6 +26,13 @@ const projects = [
     tags: ["AWS Lightsail", "WP API", "php", "React", "Typescript", "Authentication"]
   },
   {
+    name: "Dear Neighbour",
+    image: "/images/neighbour/neighbour-icon.png",
+    route: "/dearneighbour",
+    type: "dev",
+    tags: ["Static site", "Next.js", "Typescript"]
+  },
+  {
     name: "Studius",
     image: "/images/studius/studius-cover.png",
     route: "/studius",
@@ -84,7 +91,7 @@ export function Somasync() {
       }
       <ProjectHero title={"SomaSync"} content={"SomaSync is a psychological health and safety learning web application"} coverPath={"/images/somasync/somasync.jpg"}/>
       <ProjectDetails links={[
-        {url: "https://main.d2mh04uaf5zcbb.amplifyapp.com/login", label: "Deployed App"},
+        // {url: "https://main.d2mh04uaf5zcbb.amplifyapp.com/login", label: "Deployed App"},
         {url: "https://github.com/yeenathan/SomaSync", label: "Github Repo"}
       ]}
         tools={["React.js", "Typescript", "AWS Lightsail", "AWS Amplify", "Wordpress REST API", "php"]}
@@ -94,6 +101,32 @@ export function Somasync() {
         <p>A psychological health and safety learning web application I worked on over a little under 2 months for my practicum. Learned a lot about deployment and back-end systems as it was my first exposure to many tools.</p>
         <p>SomaSync was built from scratch using Wordpress as a backend with a custom React web app frontend, deployed using AWS services (Lightsail, Amplify, S3, CloudFront, etc.). The decision was made to use Wordpress because it comes with user group functionality and an admin dashboard built-in, which was useful considering the short time-frame.</p>
         <p>While it was a short term project I learned a lot about AWS and deployment, php, DNS and domain management, and integrating frontend/backend together from this experience.</p>
+      </div>
+      <Footer/>
+    </div>
+  )
+}
+
+export function Neighbour() {
+  const [showGallery, setShowGallery] = useState(false);
+
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
+      <ProjectHero title={"Dear Neighbour Website"} content={"Simple static website for Dear Neighbour, a web design and development freelancing team."} coverPath={"/images/neighbour/neighbour.png"}/>
+      <ProjectDetails links={[
+        {url: "https://dearneighbour.ca", label: "Website"},
+        {url: "https://github.com/tinaduo/dear-neighbour", label: "Github Repo"}
+      ]}
+        tools={["React.js", "Next.js", "Typescript", "Figma"]}
+      />
+      <div className="max-w-3xl mx-auto flex flex-col gap-2">
+        <p>As a developer, worked closely with the design team to reproduce Figma designs into a smooth web experience.</p>
       </div>
       <Footer/>
     </div>
