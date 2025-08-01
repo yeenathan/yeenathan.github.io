@@ -33,6 +33,13 @@ const projects = [
     tags: ["Static site", "Next.js", "Typescript"]
   },
   {
+    name: "Smart N Save Cafe Menu",
+    image: "/images/smartnsave/smartnsave-cover.png",
+    route: "/smartnsave",
+    type: "gd",
+    tags: ["Redesign", "Layout", "Typography"]
+  },
+  {
     name: "Studius",
     image: "/images/studius/studius-cover.png",
     route: "/studius",
@@ -102,6 +109,38 @@ export function Somasync() {
         <p>SomaSync was built from scratch using Wordpress as a backend with a custom React web app frontend, deployed using AWS services (Lightsail, Amplify, S3, CloudFront, etc.). The decision was made to use Wordpress because it comes with user group functionality and an admin dashboard built-in, which was useful considering the short time-frame.</p>
         <p>While it was a short term project I learned a lot about AWS and deployment, php, DNS and domain management, and integrating frontend/backend together from this experience.</p>
       </div>
+      <Footer/>
+    </div>
+  )
+}
+
+export function Smartnsave() {
+  const [showGallery, setShowGallery] = useState(false);
+
+  return(
+    <div className="container mx-auto flex p-4 pt-8 flex-col items-center gap-5 md:gap-8">
+      <Header/>
+      <ToTop/>
+      {
+        showGallery &&
+        <Gallery images={getRouteImages()} setShowModal={setShowGallery}></Gallery>
+      }
+      <ProjectHero title={"Smart N Save Menu Redesign"} content={"Instagram menu redesign for Smart N Save cafe"} coverPath={"/images/smartnsave/smartnsave-cover.png"}/>
+      <ProjectDetails links={[
+        {url: "https://www.instagram.com/smartnsave_cafe/", label: "Smart N Save Cafe Instagram"},
+      ]}
+        tools={["Adobe InDesign", "Adobe Photoshop", "Adobe Illustrator"]}
+      />
+      <p>Simple menu redesign for Smart N Save cafe. Photos and logo were provided.</p>
+      <div className="grid grid-cols-3 gap-4">
+          <img src="/images/smartnsave/smartnsave.jpg"/>
+          <img src="/images/smartnsave/smartnsave2.jpg"/>
+          <img src="/images/smartnsave/smartnsave3.jpg"/>
+          <img src="/images/smartnsave/smartnsave4.jpg"/>
+          <img src="/images/smartnsave/smartnsave5.jpg"/>
+          <img src="/images/smartnsave/smartnsave6.jpg"/>
+          <img src="/images/smartnsave/smartnsave7.jpg"/>
+        </div>  
       <Footer/>
     </div>
   )
