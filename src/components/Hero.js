@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router";
 
-const RESUME_DEV = "https://www.dropbox.com/scl/fi/7mgk1xv5scnqtm1q0sp1z/resume.pdf?dl=1";
-const RESUME_DESIGN = "https://www.dropbox.com/scl/fi/7mgk1xv5scnqtm1q0sp1z/resume.pdf?dl=1";
+const RESUME_DEV = "https://drive.google.com/file/d/1rNy8nZiW6cCdO4hus2YfL7mPSZL1QYZf/view?usp=drive_link";
+const RESUME_DESIGN = "https://drive.google.com/file/d/1rNy8nZiW6cCdO4hus2YfL7mPSZL1QYZf/view?usp=drive_link";
 
 function Icon({url, src, hover, size=null}) {
   return(
