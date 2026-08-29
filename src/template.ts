@@ -1,4 +1,4 @@
-const articleCSS = `
+export const styles = `
 body {
   font-family: Georgia, serif;
   background-color: #faf8f5;
@@ -100,8 +100,8 @@ export function html(pageTitle: string, body: string) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${pageTitle}</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>${articleCSS}</style>
-</head>
+  <link rel="stylesheet" href="/styles.css"/>
+  </head>
 <body class="min-h-screen text-gray-900">
   <main class="max-w-2xl mx-auto px-6 py-12">
     ${body}
