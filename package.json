@@ -6,7 +6,7 @@
     "build": "tsx src/build.ts",
     "serve": "tsx src/serve.ts",
     "dev": "npm run build && npm run serve",
-    "deploy": "npm run build && test -z \"$(git status --porcelain)\" || { echo \"Uncommitted changes detected. Commit or stash first.\"; exit 1; } && git switch gh-pages || git switch -c gh-pages && rm -rf * && cp -r ./dist/* . && git add -A && git commit -m \"deploy: $(date +%Y-%m-%d\\ %H:%M)\" && git push -u origin gh-pages && git switch main"
+    "deploy": "rm -r dist && npm run build && git checkout -B gh-pages && cp -r dist/* . && git add posts static index.html && git commit -m \"build: $(date)\" && git push -u origin gh-pages && git checkout main"
   },
   "dependencies": {
     "markdown-it": "^14.0.0",
