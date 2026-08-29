@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+body {
+  font-family: Georgia, serif;
+  background-color: #faf8f5;
+}
+h1, h2, h3, h4, h5, h6, th {
+  font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+.prose h1 { font-size: 1.875rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.125rem; }
+.prose p { margin-top: 1em; margin-bottom: 1em; line-height: 1.25; }
+.prose a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: #1d4ed8; }
+.prose strong { font-weight: 600; }
+.prose em { font-style: italic; }
+.prose del { text-decoration: line-through; color: #6b7280; }
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875em;
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+.prose pre {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1rem 1.25rem;
+  background: #374151;
+  color: #e5e7eb;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.prose blockquote {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-left: 1em;
+  border-left: 4px solid #e5e7eb;
+  color: #4b5563;
+  font-style: italic;
+}
+.prose ul, .prose ol { margin-top: 1em; margin-bottom: 1em; padding-left: 1.625rem; }
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+.prose li { margin-top: 0.25em; margin-bottom: 0.25em; }
+.prose li > ul, .prose li > ol { margin-top: 0; margin-bottom: 0; }
+.prose hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+.prose img {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+.prose table {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.prose th, .prose td {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+.prose th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+.prose tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+</style>
+</head>
+<body class="min-h-screen text-gray-900">
+  <main class="max-w-2xl mx-auto px-6 py-12">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold mb-2">Nathan Yee</h1>
+      <p class="text-xl text-gray-600 mb-3">Full-stack Developer & Digital Designer</p>
+      <p class="text-gray-700 mb-6">Vancouver based full-stack developer building practical web applications. Experienced with Linux systems and modern AI-assisted development.</p>
+      <nav class="flex flex-wrap gap-6">
+        <a href="/" class="group flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5" title="Resume">
+          <img src="/static/icons/resume.svg" alt="" class="w-4 h-4 grayscale transition-all duration-200 group-hover:saturate-100 group-hover:scale-110" />
+          <span>Resume</span>
+        </a>
+        <a href="https://github.com/yeenathan" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5" title="GitHub">
+          <img src="/static/icons/gh.svg" alt="" class="w-4 h-4 grayscale transition-all duration-200 group-hover:saturate-100 group-hover:scale-110" />
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/yeenathan/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5" title="LinkedIn">
+          <img src="/static/icons/linkedin.svg" alt="" class="w-4 h-4 grayscale transition-all duration-200 group-hover:saturate-100 group-hover:scale-110" />
+          <span>LinkedIn</span>
+        </a>
+        <button onclick="copyEmail('yeenathan21@gmail.com')" class="group flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer" title="Copy email">
+          <img src="/static/icons/mail.svg" alt="" class="w-4 h-4 grayscale transition-all duration-200 group-hover:saturate-100 group-hover:scale-110" />
+          <span id="email-label">Email</span>
+        </button>
+      </nav>
+      <script>
+        function copyEmail(email) {
+          navigator.clipboard.writeText(email).then(() => {
+            const label = document.getElementById('email-label');
+            label.textContent = email + ' (copied.)';
+          });
+        }
+      </script>
+    </header>
+    <div class="flex gap-2 mb-8 justify-end">
+      <button class="filter-btn px-3 py-1 text-sm rounded-full transition-colors data-[active=true]:bg-gray-800 data-[active=true]:text-white data-[active=false]:bg-gray-100 data-[active=false]:text-gray-700 hover:bg-gray-200" data-filter="all">All</button>
+      <button class="filter-btn px-3 py-1 text-sm rounded-full transition-colors data-[active=true]:bg-gray-800 data-[active=true]:text-white data-[active=false]:bg-gray-100 data-[active=false]:text-gray-700 hover:bg-gray-200" data-filter="dev" data-active="true">Dev</button>
+      <button class="filter-btn px-3 py-1 text-sm rounded-full transition-colors data-[active=true]:bg-gray-800 data-[active=true]:text-white data-[active=false]:bg-gray-100 data-[active=false]:text-gray-700 hover:bg-gray-200" data-filter="design">Design</button>
+    </div>
+    <section class="space-y-6">
+      
+        <article data-type="dev">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/remedify/index.html" class="hover:underline">Remedify</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">OCR-powered medication reminder app</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400" title="Pinned"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">React Native</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Azure</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">OCR</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">LLM Integration</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="design">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/studius/index.html" class="hover:underline">Studius</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Study companion app with UX case study</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400" title="Pinned"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">UX Design</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Figma</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Next.js</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Usability Testing</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Brand Design</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Team Collaboration</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="design">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/db-magazine/index.html" class="hover:underline">Dragon Ball: Architecture & Wonders</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Print magazine on Dragon Ball architecture</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400" title="Pinned"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Photoshop</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Illustrator</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe InDesign</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">print design</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="dev">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/local-web-search/index.html" class="hover:underline">Local Web Search Tool</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Local web search tool built with FastAPI</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400" title="Pinned"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">FastAPI</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Python</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Requests</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">BeautifulSoup4</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">DuckDuckGo</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="design">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/digital-design-commissions/index.html" class="hover:underline">Digital Design Commissions</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Freelance design work for friends and clients</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400" title="Pinned"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Illustrator</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Photoshop</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">freelance</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="dev">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/dear-neighbour/index.html" class="hover:underline">Dear Neighbour Website</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Static website for a freelance web dev team</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">React</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Next.js</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">TypeScript</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Figma</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="design">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/graphic-design-projects/index.html" class="hover:underline">Graphic Design Projects</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Compilation of graphic design works</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Photoshop</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Illustrator</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe After Effects</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="design">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/smartnsave-cafe-menu/index.html" class="hover:underline">Smart N Save Menu Redesign</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Redesigned cafe menu for Smart N Save</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe InDesign</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Photoshop</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Adobe Illustrator</span>
+          </div>
+        </article>
+      
+
+
+        <article data-type="dev">
+          <h2 class="text-xl font-semibold">
+            <a href="/post/somasync/index.html" class="hover:underline">SomaSync</a>
+          </h2>
+          <p class="line-clamp-2 text-sm text-gray-600 mt-1">Psychological health and safety learning app</p>
+          <div class="flex items-center flex-wrap gap-2 mt-2">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">React.js</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">TypeScript</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">AWS</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Backend</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Deployment</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Headless Wordpress</span>
+          </div>
+        </article>
+      
+    </section>
+    <script>
+      (function() {
+        const filterPosts = (filter) => {
+          document.querySelectorAll('article[data-type]').forEach(article => {
+            const show = filter === 'all' || article.dataset.type === filter
+            article.classList.toggle('hidden', !show)
+          })
+        }
+        filterPosts('dev')
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter
+            document.querySelectorAll('.filter-btn').forEach(b => b.dataset.active = 'false')
+            btn.dataset.active = 'true'
+            filterPosts(filter)
+          })
+        })
+      })()
+    </script>
+  </main>
+</body>
+</html>
