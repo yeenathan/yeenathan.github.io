@@ -6,7 +6,6 @@
     "build": "tsx src/build.ts",
     "serve": "tsx src/serve.ts",
     "dev": "npm run build && npm run serve",
-    "deploy": "npm run build && git checkout -B gh-pages && cp -r dist/* . && git add posts static index.html && git commit -m \"build: $(date)\" && git push -u origin gh-pages && git checkout main"
   },
   "dependencies": {
     "markdown-it": "^14.0.0",
