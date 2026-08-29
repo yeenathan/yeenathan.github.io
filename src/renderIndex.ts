@@ -21,7 +21,7 @@ export function renderIndex(posts: Post[]): string {
     return a.slug.localeCompare(b.slug)
   })
 
-  const linkClass = 'flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all'
+  const linkClass = 'flex items-center gap-4 text-gray-700 hover:text-gray-900 transition-all'
   const iconClass = 'w-6 h-6 grayscale transition-all duration-200'
   const linkIconClass = 'group-hover:saturate-100 group-hover:scale-110'
 
@@ -42,6 +42,7 @@ export function renderIndex(posts: Post[]): string {
         </a>
         <button onclick="copyEmail('${hero.links.email}')" class="group ${linkClass} cursor-pointer" title="Copy email">
           <img src="/static/icons/mail.svg" alt="" class="${iconClass} ${linkIconClass}" />
+          <span id="email-label"> </span>
         </button>
       </nav>
       <script>
