@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git checkout gh-pages && \
+git pull && \
 rm -rf post static index.html && \
 cp -r dist/* . && \
 git add post static index.html && \
