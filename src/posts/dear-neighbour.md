@@ -18,7 +18,7 @@ As a developer, worked closely with the design team to reproduce Figma designs i
 - [Website](https://dearneighbour.ca)
 - [Github Repo](https://github.com/tinaduo/dear-neighbour)
 
-## Tech Stack
+## Tools
 
 - React.js
 - Next.js

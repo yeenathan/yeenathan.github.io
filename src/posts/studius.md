@@ -76,7 +76,7 @@ Developing the web mockup taught me the effectiveness of atomic principles in bo
 - [Branding Style Guide](https://studi-us-style-guide.vercel.app/)
 - [Usability testing document](https://docs.google.com/document/d/1frDEKZwsNvP9bPvJhrAL7fmk1ME5Xzkh8s9i74SIsnM/edit?tab=t.0)
 
-## Tech Stack
+## Tools
 
 - Next.js
 - Figma

@@ -29,7 +29,7 @@ Assets are borrowed from online _Dragon Ball_ manga panels and/or recreated in I
 - [Download full print PDF](https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?dl=1)
 - [Download INDD package](https://www.dropbox.com/scl/fi/vr4d1z27wapx0hlwumctb/db-mag.zip?dl=1)
 
-## Tech Stack
+## Tools
 
 - Adobe Photoshop
 - Adobe Illustrator

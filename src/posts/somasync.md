@@ -25,7 +25,7 @@ While it was a short term project I learned a lot about AWS and deployment, php,
 
 - [Github Repo](https://github.com/yeenathan/SomaSync)
 
-## Tech Stack
+## Tools
 
 - React.js
 - TypeScript

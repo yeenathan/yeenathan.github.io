@@ -15,7 +15,7 @@ A local HTTP search API that crawls the web and returns ranked results. An exper
 
 [github repository](https://github.com/yeenathan/local-websearch-tool)
 
-## Tech Stack
+## Tools
 
 - FastAPI
 - Python

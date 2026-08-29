@@ -16,9 +16,7 @@ A compilation of various individual graphic design projects.
 ![inclass1](/static/graphic-design-projects/inclass1.jpg)
 ![can Page 3](/static/graphic-design-projects/can_Page_3.jpg)
 
-![sleep animation](/static/graphic-design-projects/sleep.mp4)
-
-## Tech Stack
+## Tools
 
 - Adobe Photoshop
 - Adobe Illustrator

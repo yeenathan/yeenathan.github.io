@@ -22,7 +22,7 @@ Simple menu redesign for Smart N Save cafe. Photos and logo were provided.
 
 - [Smart N Save Cafe Instagram](https://www.instagram.com/smartnsave_cafe/)
 
-## Tech Stack
+## Tools
 
 - Adobe InDesign
 - Adobe Photoshop
