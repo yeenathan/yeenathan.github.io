@@ -31,7 +31,7 @@ export function renderIndex(posts: Post[]): string {
       <p class="text-xl text-gray-600 mb-3">${hero.role}</p>
       <p class="text-gray-700 mb-6">${hero.bio}</p>
       <nav class="flex flex-wrap gap-6">
-        <a href="${hero.links.resume}" class="group ${linkClass}" title="Resume">
+        <a href="${hero.links.resume}" class="group ${linkClass}" title="Resume" target="_blank">
           <img src="/static/icons/resume.svg" alt="" class="${iconClass} ${linkIconClass}" />
           <span>Resume</span>
         </a>

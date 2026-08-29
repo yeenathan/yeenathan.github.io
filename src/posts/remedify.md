@@ -1,6 +1,6 @@
 ---
 title: "Remedify"
-description: "OCR-powered medication reminder app"
+description: "AI-powered medication reminder app"
 type: "dev"
 tags:
   - React Native
