@@ -26,8 +26,8 @@ Assets are borrowed from online _Dragon Ball_ manga panels and/or recreated in I
 
 ## Links
 
-- [Download full print PDF](https://www.dropbox.com/scl/fi/umrvljjv998azi3d5v4ra/db.pdf?dl=1)
-- [Download INDD package](https://www.dropbox.com/scl/fi/vr4d1z27wapx0hlwumctb/db-mag.zip?dl=1)
+- [Download full print PDF](https://drive.google.com/file/d/1XyZYYY2p7GM1NFPpi8ASvUmRvOGgkYiY/view?usp=sharing)
+- [Download INDD package](https://drive.google.com/file/d/19HDxEY24JTi6gYTQb5nTAu0rRkC5n7ru/view?usp=sharing)
 
 ## Tools
 
