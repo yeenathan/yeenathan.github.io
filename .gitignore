@@ -3,5 +3,6 @@ node_modules
 deploy.sh
 AGENTS.md
 .cortexkit
+deploy.sh
 
 MIGRATION_PLAN.md
