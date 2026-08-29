@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studius - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+body {
+  font-family: Georgia, serif;
+  background-color: #faf8f5;
+}
+h1, h2, h3, h4, h5, h6, th {
+  font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+.prose h1 { font-size: 1.875rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.125rem; }
+.prose p { margin-top: 1em; margin-bottom: 1em; line-height: 1.25; }
+.prose a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: #1d4ed8; }
+.prose strong { font-weight: 600; }
+.prose em { font-style: italic; }
+.prose del { text-decoration: line-through; color: #6b7280; }
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875em;
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+.prose pre {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1rem 1.25rem;
+  background: #374151;
+  color: #e5e7eb;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+.prose blockquote {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-left: 1em;
+  border-left: 4px solid #e5e7eb;
+  color: #4b5563;
+  font-style: italic;
+}
+.prose ul, .prose ol { margin-top: 1em; margin-bottom: 1em; padding-left: 1.625rem; }
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+.prose li { margin-top: 0.25em; margin-bottom: 0.25em; }
+.prose li > ul, .prose li > ol { margin-top: 0; margin-bottom: 0; }
+.prose hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+.prose img {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+.prose table {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.prose th, .prose td {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+.prose th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+.prose tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+</style>
+</head>
+<body class="min-h-screen text-gray-900">
+  <main class="max-w-2xl mx-auto px-6 py-12">
+    <a href="/" class="text-sm text-gray-500 hover:underline mb-4 inline-block">← Back to posts</a>
+    <h1 class="text-3xl font-bold mb-2">Studius</h1>
+    <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+      
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">UX Design</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Figma</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Next.js</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Usability Testing</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Brand Design</span><span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Team Collaboration</span>
+        </div>
+      
+    </div>
+    <article class="prose max-w-none">
+      <p>Studius is a study helper app designed for students to both learn about their study habits and find others to study with.</p>
+<p><img src="/static/studius/studius-cover.png" alt="Studius"></p>
+<h2>Takeaways</h2>
+<ul>
+<li>Interface design &amp; development</li>
+<li>State management</li>
+<li>Usability testing, iterative process</li>
+<li>UX design</li>
+<li>Team collaboration</li>
+<li>Brand design</li>
+</ul>
+<p><a href="#reflection" target="_blank">Read reflection</a></p>
+<h2>Concept</h2>
+<iframe width="100%" height="400" src="https://embed.figma.com/board/wh3ZXZtqq39bybt72mY98L/StudiUs-A3Inventory?node-id=0-1&embed-host=share"></iframe>
+<iframe width="100%" height="300" src="https://embed.figma.com/board/bhOpTVTiAeJDi82TcyUTKe/StudiUs-A2UserPersona?node-id=0-1&embed-host=share"></iframe>
+<p>Studius is intended for a variety of students, ranging from those who are seeking or providing mentorship, returning students seeking professional connections, and students who may just have trouble finding friends. In other words, Studius is about connecting students together.</p>
+<p><a href="https://studi-us-style-guide.vercel.app/" target="_blank">Refer to the online style guide for branding details.</a></p>
+<h2>Initial Iteration</h2>
+<p><strong>Lo-fi</strong></p>
+<iframe width="100%" height="600" src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=168-3447&embed-host=share"></iframe>
+<p>An initial prototype was created for testing purposes from this mock up. Findings are reported in the <a href="https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=1722-6749&amp;t=sERZkiK9TtDPSZfD-1" target="_blank">usability testing report</a>.</p>
+<p>The design was iterated on based on this testing report and other feedback.</p>
+<h2>Final Hi-fi Mock Up</h2>
+<iframe width="100%" height="600" src="https://embed.figma.com/design/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&embed-host=share"></iframe>
+<h2>Prototype</h2>
+<iframe width="100%" height="600" src="https://embed.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=425-30829&starting-point-node-id=425%3A30829&embed-host=share"></iframe>
+<h2>Development</h2>
+<p>A web mockup with functional interface was developed and deployed at the end of the design phase.</p>
+<p><a href="https://studius-app.vercel.app/" target="_blank">View the Studius web mock up</a><br>
+<a href="https://github.com/jasantiaguel/studius-app" target="_blank">Github repository</a></p>
+<h2>Reflection</h2>
+<p>This experience solidified my understanding of UX design concepts such as consistency, perceivability, learnability, predictability, and feedback. It also taught me the benefits of usability testing and the iterative process. It was my first time tackling on a project like this.</p>
+<p>Developing the web mockup taught me the effectiveness of atomic principles in both development and design, and also re-enforced my understanding of React fundamentals, such as managing state and writing re-useable components. As the stronger developer of the team, I would also provide insights and mentorship to my teammates and ensure their successes for that aspect.</p>
+<h2>Links</h2>
+<ul>
+<li><a href="https://github.com/jasantiaguel/studius-app" target="_blank">Github Repo</a></li>
+<li><a href="https://studius-app.vercel.app/" target="_blank">Web App Mockup</a></li>
+<li><a href="https://www.figma.com/proto/48H6MS2rhRlXWkWUn09mkG/MDIA-2106-%E2%80%93-StudiUs-Set-H?node-id=223-7512&amp;t=ojJqbi0ygQHpetxL-1" target="_blank">Figma Prototype</a></li>
+<li><a href="https://studi-us-style-guide.vercel.app/" target="_blank">Branding Style Guide</a></li>
+<li><a href="https://docs.google.com/document/d/1frDEKZwsNvP9bPvJhrAL7fmk1ME5Xzkh8s9i74SIsnM/edit?tab=t.0" target="_blank">Usability testing document</a></li>
+</ul>
+<h2>Tech Stack</h2>
+<ul>
+<li>Next.js</li>
+<li>Figma</li>
+<li>Adobe Photoshop</li>
+<li>Adobe Illustrator</li>
+</ul>
+
+    </article>
+  </main>
+</body>
+</html>
