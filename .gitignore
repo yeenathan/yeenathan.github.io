@@ -1,0 +1,7 @@
+dist
+node_modules
+deploy.sh
+AGENTS.md
+.cortexkit
+
+MIGRATION_PLAN.md
