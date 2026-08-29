@@ -21,8 +21,8 @@ export function renderIndex(posts: Post[]): string {
     return a.slug.localeCompare(b.slug)
   })
 
-  const linkClass = 'flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5'
-  const iconClass = 'w-4 h-4 grayscale transition-all duration-200'
+  const linkClass = 'flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-all'
+  const iconClass = 'w-6 h-6 grayscale transition-all duration-200'
   const linkIconClass = 'group-hover:saturate-100 group-hover:scale-110'
 
   const body = `
@@ -33,19 +33,15 @@ export function renderIndex(posts: Post[]): string {
       <nav class="flex flex-wrap gap-6">
         <a href="${hero.links.resume}" class="group ${linkClass}" title="Resume" target="_blank">
           <img src="/static/icons/resume.svg" alt="" class="${iconClass} ${linkIconClass}" />
-          <span>Resume</span>
         </a>
         <a href="${hero.links.github}" target="_blank" rel="noopener noreferrer" class="group ${linkClass}" title="GitHub">
           <img src="/static/icons/gh.svg" alt="" class="${iconClass} ${linkIconClass}" />
-          <span>GitHub</span>
         </a>
         <a href="${hero.links.linkedin}" target="_blank" rel="noopener noreferrer" class="group ${linkClass}" title="LinkedIn">
           <img src="/static/icons/linkedin.svg" alt="" class="${iconClass} ${linkIconClass}" />
-          <span>LinkedIn</span>
         </a>
         <button onclick="copyEmail('${hero.links.email}')" class="group ${linkClass} cursor-pointer" title="Copy email">
           <img src="/static/icons/mail.svg" alt="" class="${iconClass} ${linkIconClass}" />
-          <span id="email-label">Email</span>
         </button>
       </nav>
       <script>
