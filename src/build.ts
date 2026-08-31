@@ -5,6 +5,7 @@ import { parsePost } from './parseMarkdown.js'
 import { renderIndex } from './renderIndex.js'
 import { renderPost } from './renderPost.js'
 import { renderTags } from './renderTags.js'
+import { renderPage } from './renderPage.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -51,6 +52,11 @@ export function build() {
     renderIndex(posts)
   )
 
+  fs.writeFileSync(
+    path.join(distDir, 'page.html'),
+    renderPage()
+  )
+ 
   // fs.writeFileSync(
   //   path.join(distDir, 'tags.html'),
   //   renderTags(posts)
