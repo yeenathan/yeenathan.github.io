@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { parsePost } from './parseMarkdown.js'
 import { renderIndex } from './renderIndex.js'
 import { renderPost } from './renderPost.js'
-import { renderPage } from './renderPage.js'
+import { renderResume } from './renderResume.js'
 import { styles } from './template.ts'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -52,9 +52,13 @@ export function build() {
     renderIndex(posts)
   )
 
+  const resumeContent = fs.readFileSync(
+    path.join(staticDir, 'resume.md'),
+    'utf-8'
+  )
   fs.writeFileSync(
-    path.join(distDir, 'page.html'),
-    renderPage()
+    path.join(distDir, 'resume.html'),
+    renderResume(resumeContent)
   )
  
   fs.writeFileSync(
