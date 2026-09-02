@@ -2,5 +2,4 @@ dist
 node_modules
 AGENTS.md
 .cortexkit
-
-MIGRATION_PLAN.md
+.DS_Store
