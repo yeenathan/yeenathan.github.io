@@ -5,7 +5,7 @@ import { parsePost } from './parseMarkdown.js'
 import { renderIndex } from './renderIndex.js'
 import { renderPost } from './renderPost.js'
 import { renderResume } from './renderResume.js'
-import { styles } from './template.ts'
+import { styles } from './template.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

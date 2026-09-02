@@ -8,13 +8,14 @@
     "dev": "npm run build && npm run serve"
   },
   "dependencies": {
-    "markdown-it": "^14.0.0",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.0.0"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^22.0.0",
     "tsx": "^4.0.0",
-    "typescript": "^5.0.0",
-    "@types/node": "^22.0.0"
+    "typescript": "^5.0.0"
   },
   "allowScripts": {
     "esbuild@0.28.2": true
