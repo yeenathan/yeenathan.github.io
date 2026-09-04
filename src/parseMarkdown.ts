@@ -2,7 +2,7 @@ import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 import type { Post } from './types.js'
 
-const md = new MarkdownIt({
+export const md = new MarkdownIt({
   breaks: true,
   html: true
 })

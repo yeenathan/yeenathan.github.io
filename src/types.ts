@@ -8,21 +8,19 @@ export interface Post {
   html: string
 }
 
-export interface HeroConfig {
-  name: string
-  role: string
-  bio: string
-  links: {
-    resume: string
-    github: string
-    linkedin: string
-    email: string
-  }
-}
-
 export interface SiteConfig {
   title: string
   author: string
   url: string
-  hero: HeroConfig
+  hero: {
+    name: string
+    role: string
+    bio: string
+    links: {
+      resume: string
+      github: string
+      linkedin: string
+      email: string
+    }
+  }
 }

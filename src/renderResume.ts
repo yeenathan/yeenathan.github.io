@@ -1,16 +1,6 @@
 import { config } from './config.js'
 import { html } from './template.js'
-import MarkdownIt from 'markdown-it'
-
-const md = new MarkdownIt({
-  breaks: true,
-  html: true
-})
-
-md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
-  tokens[idx].attrSet('target', '_blank')
-  return self.renderToken(tokens, idx, options)
-}
+import { md } from './parseMarkdown.js'
 
 export function renderResume(content: string): string {
   const htmlContent = md.render(content)

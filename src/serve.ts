@@ -1,12 +1,8 @@
 import { createServer } from 'http'
 import { readFileSync, statSync, existsSync } from 'fs'
 import { join, extname } from 'path'
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const DIST = join(__dirname, '..', 'dist')
+const DIST = join(import.meta.dirname, '..', 'dist')
 const PORTS = [8000, 8800]
 const HOST = '0.0.0.0'
 

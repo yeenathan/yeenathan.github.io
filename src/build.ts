@@ -10,19 +10,7 @@ import { renderResume } from './renderResume.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-function copyDir(src: string, dest: string) {
-  if (!fs.existsSync(src)) return
-  fs.mkdirSync(dest, { recursive: true })
-  for (const entry of fs.readdirSync(src)) {
-    const srcPath = path.join(src, entry)
-    const destPath = path.join(dest, entry)
-    if (fs.statSync(srcPath).isDirectory()) {
-      copyDir(srcPath, destPath)
-    } else {
-      fs.copyFileSync(srcPath, destPath)
-    }
-  }
-}
+
 
 export function build() {
   const rootDir = path.resolve(__dirname, '..')
@@ -45,7 +33,9 @@ export function build() {
   fs.mkdirSync(distDir, { recursive: true })
 
   const staticDir = path.join(rootDir, 'src', 'static')
-  copyDir(staticDir, path.join(distDir, 'static'))
+  if (fs.existsSync(staticDir)) {
+    fs.cpSync(staticDir, path.join(distDir, 'static'), { recursive: true })
+  }
 
   // Compile Tailwind CSS
   const tailwindResult = spawnSync(
@@ -71,13 +61,6 @@ export function build() {
     path.join(distDir, 'resume.html'),
     renderResume(resumeContent)
   )
- 
-
-
-  // fs.writeFileSync(
-  //   path.join(distDir, 'tags.html'),
-  //   renderTags(posts)
-  // )
 
   for (const post of posts) {
     const postDir = path.join(distDir, 'post', post.slug)
