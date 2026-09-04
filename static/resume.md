@@ -1,7 +1,7 @@
 [Download full resume](https://drive.google.com/file/d/1rNy8nZiW6cCdO4hus2YfL7mPSZL1QYZf/view?usp=drive_link)
 # Nathan Yee
 
-Vancouver, BC | yeenathan21@gmail.com | [LinkedIn](https://linkedin.com/in/yeenathan) | [GitHub](https://yeenathan.github.io) 
+Vancouver, BC | yeenathan21@gmail.com | [LinkedIn](https://linkedin.com/in/yeenathan) | [GitHub](https://github.com/yeenathan) 
 
 ## Experience
 
