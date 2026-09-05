@@ -2,8 +2,6 @@ import { SiteConfig } from './types.js'
 
 export const config: SiteConfig = {
   title: 'Portfolio',
-  author: 'Nathan Yee',
-  url: '/',
   hero: {
     name: 'Nathan Yee',
     role: 'Full-stack Developer & Digital Designer',

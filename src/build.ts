@@ -1,19 +1,14 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
 import { parsePost } from './parseMarkdown.js'
 import { renderIndex } from './renderIndex.js'
 import { renderPost } from './renderPost.js'
 import { renderResume } from './renderResume.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const rootDir = path.resolve(import.meta.dirname, '..')
 
-
-
-export function build() {
-  const rootDir = path.resolve(__dirname, '..')
+function build() {
   const postsDir = path.join(rootDir, 'src', 'posts')
   const distDir = path.join(rootDir, 'dist')
 
@@ -74,6 +69,4 @@ export function build() {
   console.log(`Built ${posts.length} post(s) to ${distDir}`)
 }
 
-if (import.meta.url === `file://${__filename}`) {
-  build()
-}
+build()

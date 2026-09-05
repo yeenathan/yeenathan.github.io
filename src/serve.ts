@@ -1,71 +1,82 @@
-import { createServer } from 'http'
-import { readFileSync, statSync, existsSync } from 'fs'
-import { join, extname } from 'path'
+import { createServer } from 'node:http'
+import type { IncomingMessage, ServerResponse } from 'node:http'
+import { readFileSync, statSync, existsSync } from 'node:fs'
+import { join, extname } from 'node:path'
 
 const DIST = join(import.meta.dirname, '..', 'dist')
-const PORTS = [8000, 8800]
+const PORT = 8000
 const HOST = '0.0.0.0'
 
-const mimeTypes: Record<string, string> = {
+const MIME: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
-  '.js': 'text/javascript; charset=utf-8',
-  '.json': 'application/json',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.avif': 'image/avif',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.txt': 'text/plain; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8',
+  '.pdf': 'application/pdf'
 }
 
-const handler = (req: any, res: any) => {
-  let url = req.url || '/'
-  url = url.split('?')[0]
+function getMime(filePath: string): string {
+  const ext = extname(filePath).toLowerCase()
+  return MIME[ext] || 'application/octet-stream'
+}
 
-  let filePath = join(DIST, url)
+function handler(req: IncomingMessage, res: ServerResponse) {
+  const url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`)
+  let pathname = decodeURIComponent(url.pathname)
 
-  if (!existsSync(filePath) || statSync(filePath).isDirectory()) {
-    filePath = join(DIST, url, 'index.html')
+  // Resolve the file path safely to prevent path traversal
+  const safePath = join(DIST, pathname)
+  if (!safePath.startsWith(DIST)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' })
+    res.end('403 Forbidden')
+    return
   }
 
-  if (!existsSync(filePath)) {
-    res.writeHead(404)
+  let filePath = safePath
+
+  // If it's a directory, look for index.html
+  try {
+    const stats = statSync(filePath)
+    if (stats.isDirectory()) {
+      filePath = join(filePath, 'index.html')
+    }
+  } catch {
+    // File doesn't exist yet
+  }
+
+  if (!existsSync(filePath) || !statSync(filePath).isFile()) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' })
     res.end('404 Not Found')
     return
   }
 
-  const ext = extname(filePath)
-  const contentType = mimeTypes[ext] || 'application/octet-stream'
-
-  try {
-    const content = readFileSync(filePath)
-    res.writeHead(200, { 'Content-Type': contentType })
-    res.end(content)
-  } catch {
-    res.writeHead(500)
-    res.end('Internal Server Error')
-  }
+  const content = readFileSync(filePath)
+  res.writeHead(200, { 'Content-Type': getMime(filePath) })
+  res.end(content)
 }
 
-function tryPort(idx: number): void {
-  if (idx >= PORTS.length) {
-    console.error(`Failed to start server on ports ${PORTS.join(', ')}`)
-    process.exit(1)
-  }
+const server = createServer(handler)
 
-  const port = PORTS[idx]
-  const server = createServer(handler)
+server.on('error', (err: NodeJS.ErrnoException) => {
+  console.error(err.message)
+  process.exit(1)
+})
 
-  server.on('error', () => {
-    tryPort(idx + 1)
-  })
-
-  server.listen(port, HOST, () => {
-    console.log(`Serving ${DIST}`)
-    console.log(`Local: http://localhost:${port}`)
-    console.log(`Network: http://${HOST}:${port}`)
-  })
-}
-
-tryPort(0)
+server.listen(PORT, HOST, () => {
+  console.log(`Serving ${DIST}`)
+  console.log(`Local: http://localhost:${PORT}`)
+  console.log(`Network: http://${HOST}:${PORT}`)
+})

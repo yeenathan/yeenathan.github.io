@@ -8,7 +8,6 @@
     "dev": "npm run build && npm run serve"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
     "markdown-it": "^14.0.0"
   },
   "devDependencies": {

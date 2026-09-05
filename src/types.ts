@@ -10,8 +10,6 @@ export interface Post {
 
 export interface SiteConfig {
   title: string
-  author: string
-  url: string
   hero: {
     name: string
     role: string
