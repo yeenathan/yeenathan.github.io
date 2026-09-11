@@ -23,6 +23,12 @@ export function listPosts() {
         order: data.order
       }
     })
+    .sort((a, b) => {
+      const ao = a.order ? Number(a.order) : Infinity
+      const bo = b.order ? Number(b.order) : Infinity
+      if (ao !== bo) return ao - bo
+      return a.title.localeCompare(b.title)
+    })
 }
 
 export function getPost(slug: string) {
