@@ -1,13 +1,13 @@
 ---
-title: "Remedify"
-description: "AI-powered medication reminder app"
-type: "dev"
+title: Remedify
+description: AI-powered medication reminder app
+type: dev
+order: 1
 tags:
   - React Native
   - Azure
   - OCR
   - LLM Integration
-order: 1
 ---
 
 ![Remedify](/static/remedify/cover.jpg)
@@ -21,7 +21,7 @@ Remedify is a medication reminder app dedicated to accessibility and ensuring me
 - [Research Document](https://docs.google.com/document/d/1MGyxeF7pkwpVo4VsNl829hrDaSTTYn5Frfa2RREm4Nc/edit?tab=t.0)
 
 **Tools**
-
+ 
 - Expo/React Native
 - Azure cloud functions & blob storage
 - Azure Computer Vision (OCR)

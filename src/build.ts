@@ -25,11 +25,20 @@ function build() {
     return parsePost(content, slug)
   })
 
+  fs.rmSync(distDir, { recursive: true, force: true })
   fs.mkdirSync(distDir, { recursive: true })
 
   const staticDir = path.join(rootDir, 'src', 'static')
   if (fs.existsSync(staticDir)) {
     fs.cpSync(staticDir, path.join(distDir, 'static'), { recursive: true })
+  }
+
+  // ponytail: admin panel only in dev, not deployed
+  if (process.env.DEPLOY !== '1') {
+    const adminDir = path.join(rootDir, 'admin', 'public')
+    if (fs.existsSync(adminDir)) {
+      fs.cpSync(adminDir, path.join(distDir, 'admin'), { recursive: true })
+    }
   }
 
   // Compile Tailwind CSS

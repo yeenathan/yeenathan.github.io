@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#faf8f5] text-gray-900 font-serif">
+  <div class="max-w-2xl mx-auto px-6 py-12">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-semibold font-sans">Admin</h1>
+      <div class="space-x-2">
+        <button onclick="newPost()" class="px-3 py-1 bg-gray-800 text-white rounded">New Post</button>
+        <button onclick="doBuild()" class="px-3 py-1 bg-amber-700 text-white rounded">Build</button>
+      </div>
+    </div>
+
+    <div id="posts">
+      <h2 class="text-lg font-semibold font-sans mb-2">Posts</h2>
+      <div id="post-list" class="space-y-2 mb-6"></div>
+    </div>
+
+    <div id="editor" class="hidden mb-6">
+      <button onclick="back()" class="text-blue-600 underline mb-2">&larr; back</button>
+      <input id="f-title" class="w-full border border-gray-300 p-2 mb-2 rounded" placeholder="Title">
+      <input id="f-desc" class="w-full border border-gray-300 p-2 mb-2 rounded" placeholder="Description">
+      <div class="flex gap-2 mb-2">
+        <select id="f-type" class="border border-gray-300 p-2 rounded">
+          <option value="dev">dev</option>
+          <option value="design">design</option>
+        </select>
+        <input id="f-order" type="number" class="border border-gray-300 p-2 rounded" placeholder="Order">
+      </div>
+      <input id="f-tags" class="w-full border border-gray-300 p-2 mb-2 rounded" placeholder="Tags (comma-separated)">
+      <textarea id="f-body" rows="20" class="w-full border border-gray-300 p-2 font-mono text-sm rounded"></textarea>
+      <div class="mt-2 space-x-2">
+        <button onclick="savePost()" class="px-3 py-1 bg-amber-700 text-white rounded">Save</button>
+        <button id="del-btn" onclick="delPost()" class="px-3 py-1 bg-red-600 text-white rounded hidden">Delete</button>
+      </div>
+    </div>
+
+    <div id="config-section">
+      <h2 class="text-lg font-semibold font-sans mb-2">Site Config</h2>
+      <div class="grid grid-cols-2 gap-2 max-w-xl">
+        <input id="c-title" class="border border-gray-300 p-2 rounded" placeholder="Site Title">
+        <input id="c-name" class="border border-gray-300 p-2 rounded" placeholder="Name">
+        <input id="c-role" class="border border-gray-300 p-2 rounded" placeholder="Role">
+        <input id="c-email" class="border border-gray-300 p-2 rounded" placeholder="Email">
+        <textarea id="c-bio" rows="3" class="border border-gray-300 p-2 col-span-2 rounded" placeholder="Bio"></textarea>
+        <input id="c-resume" class="border border-gray-300 p-2 rounded" placeholder="Resume URL">
+        <input id="c-github" class="border border-gray-300 p-2 rounded" placeholder="GitHub URL">
+        <input id="c-linkedin" class="border border-gray-300 p-2 rounded" placeholder="LinkedIn URL">
+      </div>
+      <button onclick="saveConfig()" class="mt-2 px-3 py-1 bg-amber-700 text-white rounded">Save Config</button>
+    </div>
+
+    <div id="status" class="mt-4 text-sm text-gray-600 hidden"></div>
+  </div>
+  <script src="/admin/app.js"></script>
+</body>
+</html>

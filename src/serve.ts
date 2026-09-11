@@ -2,6 +2,7 @@ import { createServer } from 'node:http'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { readFileSync, statSync, existsSync } from 'node:fs'
 import { join, extname } from 'node:path'
+import { listPosts, getPost, savePost, deletePost, getConfig, saveConfig, build } from './admin-api.js'
 
 const DIST = join(import.meta.dirname, '..', 'dist')
 const PORT = 8000
@@ -33,9 +34,81 @@ function getMime(filePath: string): string {
   return MIME[ext] || 'application/octet-stream'
 }
 
-function handler(req: IncomingMessage, res: ServerResponse) {
+function json(res: ServerResponse, data: any, status = 200) {
+  res.writeHead(status, { 'Content-Type': 'application/json' })
+  res.end(JSON.stringify(data))
+}
+
+async function readBody(req: IncomingMessage): Promise<string> {
+  return new Promise((resolve, reject) => {
+    let body = ''
+    req.on('data', chunk => body += chunk)
+    req.on('end', () => resolve(body))
+    req.on('error', reject)
+  })
+}
+
+async function handleApi(req: IncomingMessage, res: ServerResponse, pathname: string) {
+  try {
+    // POST /api/build
+    if (pathname === '/api/build' && req.method === 'POST') {
+      return json(res, build())
+    }
+
+    // GET /api/posts
+    if (pathname === '/api/posts' && req.method === 'GET') {
+      return json(res, listPosts())
+    }
+
+    // POST /api/posts (create)
+    if (pathname === '/api/posts' && req.method === 'POST') {
+      const body = JSON.parse(await readBody(req))
+      savePost(body.slug, body)
+      return json(res, { ok: true })
+    }
+
+    // GET/PUT/DELETE /api/posts/:slug
+    const postMatch = pathname.match(/^\/api\/posts\/([^\/]+)$/)  
+    if (postMatch) {
+      const slug = postMatch[1]
+      if (req.method === 'GET') {
+        return json(res, getPost(slug))
+      }
+      if (req.method === 'PUT') {
+        const body = JSON.parse(await readBody(req))
+        savePost(slug, body)
+        return json(res, { ok: true })
+      }
+      if (req.method === 'DELETE') {
+        deletePost(slug)
+        return json(res, { ok: true })
+      }
+    }
+
+    // GET/PUT /api/config
+    if (pathname === '/api/config') {
+      if (req.method === 'GET') {
+        return json(res, getConfig())
+      }
+      if (req.method === 'PUT') {
+        const body = JSON.parse(await readBody(req))
+        saveConfig(body)
+        return json(res, { ok: true })
+      }
+    }
+  } catch (e: any) {
+    json(res, { error: e.message }, 500)
+  }
+}
+
+async function handler(req: IncomingMessage, res: ServerResponse) {
   const url = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`)
   let pathname = decodeURIComponent(url.pathname)
+
+  // API routes
+  if (pathname.startsWith('/api/')) {
+    return handleApi(req, res, pathname)
+  }
 
   // Resolve the file path safely to prevent path traversal
   const safePath = join(DIST, pathname)

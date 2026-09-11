@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DEPLOY=1 npm run build && \
 git checkout gh-pages && \
 git pull && \
 find . -maxdepth 1 ! -path . ! -name .git ! -name dist -exec rm -rf {} + && \
