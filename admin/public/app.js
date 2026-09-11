@@ -60,7 +60,7 @@ async function savePost() {
     tags: document.getElementById('f-tags').value.split(',').map(t => t.trim()).filter(Boolean),
     body: document.getElementById('f-body').value
   }
-  await api('posts/' + slug, cur ? 'PUT' : 'POST', data)
+  await api(cur ? 'posts/' + slug : 'posts', cur ? 'PUT' : 'POST', data)
   status('saved')
   back()
 }
