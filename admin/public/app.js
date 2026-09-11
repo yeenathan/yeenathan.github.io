@@ -61,9 +61,8 @@ async function savePost() {
     body: document.getElementById('f-body').value
   }
   await api('posts/' + slug, cur ? 'PUT' : 'POST', data)
-  cur = slug
-  document.getElementById('del-btn').classList.remove('hidden')
   status('saved')
+  back()
 }
 
 async function delPost() {
