@@ -40,20 +40,19 @@ Vancouver, BC | yeenathan21@gmail.com | [LinkedIn](https://linkedin.com/in/yeena
 ## Education
 
 ### BCIT
-**Diploma — Digital Design and Development**
+#### Diploma — Digital Design and Development
 *Sep 2023 – Jun 2025*
 
 - Coursework in UX design, full-stack web development, visual design, and project-based software delivery
 - Led development of a React Native mobile app prototype over several months as part of a school capstone project, serving as the primary developer within a small team
 
-### BCIT
-**Certificate — Graphic Design**
+#### Certificate — Graphic Design
 *Sep 2022 – Mar 2023*
 
 - Applied fundamentals of typography, colour theory, and visual hierarchy across multiple design projects
 
 ### Langara College
-**Associate of Science — Computer Science**
+#### Associate of Science — Computer Science
 *Sep 2019 – Jun 2022*
 
 - Studied algorithms, data structures, object-oriented programming, and databases using C++, Java, Python, SQL, and other technologies
